@@ -1,0 +1,280 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9DB9860916390E2600B46470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9860816390E2600B46470 /* UIKit.framework */; };
+		9DB9860B16390E2600B46470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9860A16390E2600B46470 /* Foundation.framework */; };
+		9DB9860D16390E2600B46470 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9860C16390E2600B46470 /* CoreGraphics.framework */; };
+		9DB9861316390E2600B46470 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9861116390E2600B46470 /* InfoPlist.strings */; };
+		9DB9861516390E2600B46470 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9861416390E2600B46470 /* main.m */; };
+		9DB9861916390E2600B46470 /* SSQUAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9861816390E2600B46470 /* SSQUAppDelegate.m */; };
+		9DB9861C16390E2600B46470 /* SSQUViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DB9861B16390E2600B46470 /* SSQUViewController.m */; };
+		9DB9861F16390E2600B46470 /* SSQUViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9861D16390E2600B46470 /* SSQUViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9DB9860416390E2600B46470 /* QueryUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueryUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9DB9860816390E2600B46470 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9DB9860A16390E2600B46470 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9DB9860C16390E2600B46470 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9DB9861016390E2600B46470 /* QueryUtilities-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "QueryUtilities-Info.plist"; sourceTree = "<group>"; };
+		9DB9861216390E2600B46470 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9DB9861416390E2600B46470 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9DB9861616390E2600B46470 /* QueryUtilities-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QueryUtilities-Prefix.pch"; sourceTree = "<group>"; };
+		9DB9861716390E2600B46470 /* SSQUAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSQUAppDelegate.h; sourceTree = "<group>"; };
+		9DB9861816390E2600B46470 /* SSQUAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSQUAppDelegate.m; sourceTree = "<group>"; };
+		9DB9861A16390E2600B46470 /* SSQUViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SSQUViewController.h; sourceTree = "<group>"; };
+		9DB9861B16390E2600B46470 /* SSQUViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SSQUViewController.m; sourceTree = "<group>"; };
+		9DB9861E16390E2600B46470 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SSQUViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9DB9860116390E2600B46470 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB9860916390E2600B46470 /* UIKit.framework in Frameworks */,
+				9DB9860B16390E2600B46470 /* Foundation.framework in Frameworks */,
+				9DB9860D16390E2600B46470 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9DB985F916390E2500B46470 = {
+			isa = PBXGroup;
+			children = (
+				9DB9860E16390E2600B46470 /* QueryUtilities */,
+				9DB9860716390E2600B46470 /* Frameworks */,
+				9DB9860516390E2600B46470 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9DB9860516390E2600B46470 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9860416390E2600B46470 /* QueryUtilities.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9DB9860716390E2600B46470 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9860816390E2600B46470 /* UIKit.framework */,
+				9DB9860A16390E2600B46470 /* Foundation.framework */,
+				9DB9860C16390E2600B46470 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9DB9860E16390E2600B46470 /* QueryUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9861716390E2600B46470 /* SSQUAppDelegate.h */,
+				9DB9861816390E2600B46470 /* SSQUAppDelegate.m */,
+				9DB9861A16390E2600B46470 /* SSQUViewController.h */,
+				9DB9861B16390E2600B46470 /* SSQUViewController.m */,
+				9DB9861D16390E2600B46470 /* SSQUViewController.xib */,
+				9DB9860F16390E2600B46470 /* Supporting Files */,
+			);
+			path = QueryUtilities;
+			sourceTree = "<group>";
+		};
+		9DB9860F16390E2600B46470 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9DB9861016390E2600B46470 /* QueryUtilities-Info.plist */,
+				9DB9861116390E2600B46470 /* InfoPlist.strings */,
+				9DB9861416390E2600B46470 /* main.m */,
+				9DB9861616390E2600B46470 /* QueryUtilities-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9DB9860316390E2600B46470 /* QueryUtilities */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DB9862216390E2600B46470 /* Build configuration list for PBXNativeTarget "QueryUtilities" */;
+			buildPhases = (
+				9DB9860016390E2600B46470 /* Sources */,
+				9DB9860116390E2600B46470 /* Frameworks */,
+				9DB9860216390E2600B46470 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QueryUtilities;
+			productName = QueryUtilities;
+			productReference = 9DB9860416390E2600B46470 /* QueryUtilities.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9DB985FB16390E2600B46470 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = SSQU;
+				LastUpgradeCheck = 0430;
+			};
+			buildConfigurationList = 9DB985FE16390E2600B46470 /* Build configuration list for PBXProject "QueryUtilities" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9DB985F916390E2500B46470;
+			productRefGroup = 9DB9860516390E2600B46470 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9DB9860316390E2600B46470 /* QueryUtilities */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9DB9860216390E2600B46470 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB9861316390E2600B46470 /* InfoPlist.strings in Resources */,
+				9DB9861F16390E2600B46470 /* SSQUViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9DB9860016390E2600B46470 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9DB9861516390E2600B46470 /* main.m in Sources */,
+				9DB9861916390E2600B46470 /* SSQUAppDelegate.m in Sources */,
+				9DB9861C16390E2600B46470 /* SSQUViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9DB9861116390E2600B46470 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DB9861216390E2600B46470 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9DB9861D16390E2600B46470 /* SSQUViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9DB9861E16390E2600B46470 /* en */,
+			);
+			name = SSQUViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9DB9862016390E2600B46470 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		9DB9862116390E2600B46470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9DB9862316390E2600B46470 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QueryUtilities/QueryUtilities-Prefix.pch";
+				INFOPLIST_FILE = "QueryUtilities/QueryUtilities-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9DB9862416390E2600B46470 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "QueryUtilities/QueryUtilities-Prefix.pch";
+				INFOPLIST_FILE = "QueryUtilities/QueryUtilities-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9DB985FE16390E2600B46470 /* Build configuration list for PBXProject "QueryUtilities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DB9862016390E2600B46470 /* Debug */,
+				9DB9862116390E2600B46470 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DB9862216390E2600B46470 /* Build configuration list for PBXNativeTarget "QueryUtilities" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9DB9862316390E2600B46470 /* Debug */,
+				9DB9862416390E2600B46470 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9DB985FB16390E2600B46470 /* Project object */;
+}
