@@ -9,7 +9,7 @@
 #import "SSQUAppDelegate.h"
 
 #import "SSQUViewController.h"
-
+#import <RestKit/RestKit.h>
 @implementation SSQUAppDelegate
 
 @synthesize window = _window;
@@ -29,6 +29,7 @@
     self.viewController = [[[SSQUViewController alloc] initWithNibName:@"SSQUViewController" bundle:nil] autorelease];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 

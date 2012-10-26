@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F99B3261639870F0062597B /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F99B31B163986330062597B /* libRestKit.a */; };
+		0F99B34E163994490062597B /* SSMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F99B34D163994490062597B /* SSMenuView.m */; };
+		0F99B357163994DF0062597B /* SSMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F99B356163994DF0062597B /* SSMenuItemView.m */; };
+		0FA708EA16397B14009824D5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708E916397B14009824D5 /* CFNetwork.framework */; };
+		0FA708EC16397B1D009824D5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708EB16397B1D009824D5 /* CoreData.framework */; };
+		0FA708EE16397B6D009824D5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708ED16397B6D009824D5 /* MobileCoreServices.framework */; };
+		0FA708F016397B76009824D5 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708EF16397B76009824D5 /* Security.framework */; };
+		0FA708F216397B7D009824D5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708F116397B7D009824D5 /* SystemConfiguration.framework */; };
+		0FA708F416397B85009824D5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708F316397B85009824D5 /* QuartzCore.framework */; };
+		0FA708F616397B91009824D5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708F516397B91009824D5 /* libxml2.dylib */; };
 		9DB9860916390E2600B46470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9860816390E2600B46470 /* UIKit.framework */; };
 		9DB9860B16390E2600B46470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9860A16390E2600B46470 /* Foundation.framework */; };
 		9DB9860D16390E2600B46470 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9860C16390E2600B46470 /* CoreGraphics.framework */; };
@@ -17,7 +27,64 @@
 		9DB9861F16390E2600B46470 /* SSQUViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DB9861D16390E2600B46470 /* SSQUViewController.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0F99B31A163986330062597B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F99B30F163986330062597B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D1614564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+		0F99B31C163986330062597B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F99B30F163986330062597B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160D2614564E820060A5C5;
+			remoteInfo = RestKitTests;
+		};
+		0F99B31E163986330062597B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F99B30F163986330062597B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E62145651060060A5C5;
+			remoteInfo = RestKitFramework;
+		};
+		0F99B320163986330062597B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F99B30F163986330062597B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 25160E78145651060060A5C5;
+			remoteInfo = RestKitFrameworkTests;
+		};
+		0F99B322163986330062597B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F99B30F163986330062597B /* RestKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 259C301615128079003066A2;
+			remoteInfo = RestKitResources;
+		};
+		0F99B324163986480062597B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0F99B30F163986330062597B /* RestKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 25160D1514564E810060A5C5;
+			remoteInfo = RestKit;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		0F99B30F163986330062597B /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		0F99B34C163994490062597B /* SSMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMenuView.h; path = Views/SSMenuView/SSMenuView.h; sourceTree = "<group>"; };
+		0F99B34D163994490062597B /* SSMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMenuView.m; path = Views/SSMenuView/SSMenuView.m; sourceTree = "<group>"; };
+		0F99B355163994DF0062597B /* SSMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMenuItemView.h; path = Views/SSMenuView/SSMenuItemView.h; sourceTree = "<group>"; };
+		0F99B356163994DF0062597B /* SSMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMenuItemView.m; path = Views/SSMenuView/SSMenuItemView.m; sourceTree = "<group>"; };
+		0FA708E916397B14009824D5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		0FA708EB16397B1D009824D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		0FA708ED16397B6D009824D5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		0FA708EF16397B76009824D5 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		0FA708F116397B7D009824D5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		0FA708F316397B85009824D5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0FA708F516397B91009824D5 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		9DB9860416390E2600B46470 /* QueryUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueryUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB9860816390E2600B46470 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9DB9860A16390E2600B46470 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -38,6 +105,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F99B3261639870F0062597B /* libRestKit.a in Frameworks */,
+				0FA708F616397B91009824D5 /* libxml2.dylib in Frameworks */,
+				0FA708F416397B85009824D5 /* QuartzCore.framework in Frameworks */,
+				0FA708F216397B7D009824D5 /* SystemConfiguration.framework in Frameworks */,
+				0FA708F016397B76009824D5 /* Security.framework in Frameworks */,
+				0FA708EE16397B6D009824D5 /* MobileCoreServices.framework in Frameworks */,
+				0FA708EC16397B1D009824D5 /* CoreData.framework in Frameworks */,
+				0FA708EA16397B14009824D5 /* CFNetwork.framework in Frameworks */,
 				9DB9860916390E2600B46470 /* UIKit.framework in Frameworks */,
 				9DB9860B16390E2600B46470 /* Foundation.framework in Frameworks */,
 				9DB9860D16390E2600B46470 /* CoreGraphics.framework in Frameworks */,
@@ -47,9 +122,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F99B310163986330062597B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0F99B31B163986330062597B /* libRestKit.a */,
+				0F99B31D163986330062597B /* RestKitTests.octest */,
+				0F99B31F163986330062597B /* RestKit.framework */,
+				0F99B321163986330062597B /* RestKitFrameworkTests.octest */,
+				0F99B323163986330062597B /* RestKitResources.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0F99B349163993C00062597B /* SSUI */ = {
+			isa = PBXGroup;
+			children = (
+				0F99B34A163993D60062597B /* Views */,
+			);
+			name = SSUI;
+			sourceTree = "<group>";
+		};
+		0F99B34A163993D60062597B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0F99B34B163993E40062597B /* SSMenuView */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0F99B34B163993E40062597B /* SSMenuView */ = {
+			isa = PBXGroup;
+			children = (
+				0F99B34C163994490062597B /* SSMenuView.h */,
+				0F99B34D163994490062597B /* SSMenuView.m */,
+				0F99B355163994DF0062597B /* SSMenuItemView.h */,
+				0F99B356163994DF0062597B /* SSMenuItemView.m */,
+			);
+			name = SSMenuView;
+			sourceTree = "<group>";
+		};
 		9DB985F916390E2500B46470 = {
 			isa = PBXGroup;
 			children = (
+				0F99B30F163986330062597B /* RestKit.xcodeproj */,
 				9DB9860E16390E2600B46470 /* QueryUtilities */,
 				9DB9860716390E2600B46470 /* Frameworks */,
 				9DB9860516390E2600B46470 /* Products */,
@@ -67,6 +182,13 @@
 		9DB9860716390E2600B46470 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0FA708F516397B91009824D5 /* libxml2.dylib */,
+				0FA708F316397B85009824D5 /* QuartzCore.framework */,
+				0FA708F116397B7D009824D5 /* SystemConfiguration.framework */,
+				0FA708EF16397B76009824D5 /* Security.framework */,
+				0FA708ED16397B6D009824D5 /* MobileCoreServices.framework */,
+				0FA708EB16397B1D009824D5 /* CoreData.framework */,
+				0FA708E916397B14009824D5 /* CFNetwork.framework */,
 				9DB9860816390E2600B46470 /* UIKit.framework */,
 				9DB9860A16390E2600B46470 /* Foundation.framework */,
 				9DB9860C16390E2600B46470 /* CoreGraphics.framework */,
@@ -77,6 +199,7 @@
 		9DB9860E16390E2600B46470 /* QueryUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				0F99B349163993C00062597B /* SSUI */,
 				9DB9861716390E2600B46470 /* SSQUAppDelegate.h */,
 				9DB9861816390E2600B46470 /* SSQUAppDelegate.m */,
 				9DB9861A16390E2600B46470 /* SSQUViewController.h */,
@@ -112,6 +235,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0F99B325163986480062597B /* PBXTargetDependency */,
 			);
 			name = QueryUtilities;
 			productName = QueryUtilities;
@@ -137,12 +261,56 @@
 			mainGroup = 9DB985F916390E2500B46470;
 			productRefGroup = 9DB9860516390E2600B46470 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0F99B310163986330062597B /* Products */;
+					ProjectRef = 0F99B30F163986330062597B /* RestKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				9DB9860316390E2600B46470 /* QueryUtilities */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0F99B31B163986330062597B /* libRestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRestKit.a;
+			remoteRef = 0F99B31A163986330062597B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0F99B31D163986330062597B /* RestKitTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitTests.octest;
+			remoteRef = 0F99B31C163986330062597B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0F99B31F163986330062597B /* RestKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = RestKit.framework;
+			remoteRef = 0F99B31E163986330062597B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0F99B321163986330062597B /* RestKitFrameworkTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitFrameworkTests.octest;
+			remoteRef = 0F99B320163986330062597B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0F99B323163986330062597B /* RestKitResources.bundle */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = RestKitResources.bundle;
+			remoteRef = 0F99B322163986330062597B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		9DB9860216390E2600B46470 /* Resources */ = {
@@ -164,10 +332,20 @@
 				9DB9861516390E2600B46470 /* main.m in Sources */,
 				9DB9861916390E2600B46470 /* SSQUAppDelegate.m in Sources */,
 				9DB9861C16390E2600B46470 /* SSQUViewController.m in Sources */,
+				0F99B34E163994490062597B /* SSMenuView.m in Sources */,
+				0F99B357163994DF0062597B /* SSMenuItemView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0F99B325163986480062597B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = RestKit;
+			targetProxy = 0F99B324163986480062597B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9DB9861116390E2600B46470 /* InfoPlist.strings */ = {
@@ -235,10 +413,17 @@
 		9DB9862316390E2600B46470 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/RestKit/Tests/Vendor/OCHamcrest\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QueryUtilities/QueryUtilities-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build";
 				INFOPLIST_FILE = "QueryUtilities/QueryUtilities-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -247,10 +432,17 @@
 		9DB9862416390E2600B46470 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/RestKit/Tests/Vendor/OCHamcrest\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QueryUtilities/QueryUtilities-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build";
 				INFOPLIST_FILE = "QueryUtilities/QueryUtilities-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				LIBRARY_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
