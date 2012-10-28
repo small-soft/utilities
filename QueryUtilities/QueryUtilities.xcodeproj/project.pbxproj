@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F8ECFEC163C290200E757D9 /* SSQUWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ECFEB163C290200E757D9 /* SSQUWeatherViewController.m */; };
+		0F8ECFF2163C296100E757D9 /* SSMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ECFEE163C296100E757D9 /* SSMenuItemView.m */; };
+		0F8ECFF3163C296100E757D9 /* SSMenuItemViewStyleImageAndText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ECFEF163C296100E757D9 /* SSMenuItemViewStyleImageAndText.xib */; };
+		0F8ECFF4163C296100E757D9 /* SSMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ECFF1163C296100E757D9 /* SSMenuView.m */; };
+		0F8ECFF6163C2B9900E757D9 /* SSQUWeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ECFF5163C2B9900E757D9 /* SSQUWeatherViewController.xib */; };
 		0F99B3261639870F0062597B /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F99B31B163986330062597B /* libRestKit.a */; };
-		0F99B34E163994490062597B /* SSMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F99B34D163994490062597B /* SSMenuView.m */; };
-		0F99B357163994DF0062597B /* SSMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F99B356163994DF0062597B /* SSMenuItemView.m */; };
 		0FA708EA16397B14009824D5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708E916397B14009824D5 /* CFNetwork.framework */; };
 		0FA708EC16397B1D009824D5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708EB16397B1D009824D5 /* CoreData.framework */; };
 		0FA708EE16397B6D009824D5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708ED16397B6D009824D5 /* MobileCoreServices.framework */; };
@@ -73,11 +76,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0F8ECFEA163C290200E757D9 /* SSQUWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUWeatherViewController.h; path = SSQUWeather/SSQUWeatherViewController.h; sourceTree = "<group>"; };
+		0F8ECFEB163C290200E757D9 /* SSQUWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUWeatherViewController.m; path = SSQUWeather/SSQUWeatherViewController.m; sourceTree = "<group>"; };
+		0F8ECFED163C296100E757D9 /* SSMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMenuItemView.h; path = SSUI/Views/SSMenuView/SSMenuItemView.h; sourceTree = "<group>"; };
+		0F8ECFEE163C296100E757D9 /* SSMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMenuItemView.m; path = SSUI/Views/SSMenuView/SSMenuItemView.m; sourceTree = "<group>"; };
+		0F8ECFEF163C296100E757D9 /* SSMenuItemViewStyleImageAndText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSMenuItemViewStyleImageAndText.xib; path = SSUI/Views/SSMenuView/SSMenuItemViewStyleImageAndText.xib; sourceTree = "<group>"; };
+		0F8ECFF0163C296100E757D9 /* SSMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMenuView.h; path = SSUI/Views/SSMenuView/SSMenuView.h; sourceTree = "<group>"; };
+		0F8ECFF1163C296100E757D9 /* SSMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMenuView.m; path = SSUI/Views/SSMenuView/SSMenuView.m; sourceTree = "<group>"; };
+		0F8ECFF5163C2B9900E757D9 /* SSQUWeatherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSQUWeatherViewController.xib; path = SSQUWeather/SSQUWeatherViewController.xib; sourceTree = "<group>"; };
 		0F99B30F163986330062597B /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
-		0F99B34C163994490062597B /* SSMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMenuView.h; path = Views/SSMenuView/SSMenuView.h; sourceTree = "<group>"; };
-		0F99B34D163994490062597B /* SSMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMenuView.m; path = Views/SSMenuView/SSMenuView.m; sourceTree = "<group>"; };
-		0F99B355163994DF0062597B /* SSMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMenuItemView.h; path = Views/SSMenuView/SSMenuItemView.h; sourceTree = "<group>"; };
-		0F99B356163994DF0062597B /* SSMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMenuItemView.m; path = Views/SSMenuView/SSMenuItemView.m; sourceTree = "<group>"; };
 		0FA708E916397B14009824D5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0FA708EB16397B1D009824D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0FA708ED16397B6D009824D5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -122,6 +129,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F8ECFE4163C265A00E757D9 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0F8ECFE5163C266C00E757D9 /* SSViewController */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0F8ECFE5163C266C00E757D9 /* SSViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SSViewController;
+			sourceTree = "<group>";
+		};
+		0F8ECFE6163C272900E757D9 /* SSQUWeather */ = {
+			isa = PBXGroup;
+			children = (
+				0F8ECFEA163C290200E757D9 /* SSQUWeatherViewController.h */,
+				0F8ECFEB163C290200E757D9 /* SSQUWeatherViewController.m */,
+				0F8ECFF5163C2B9900E757D9 /* SSQUWeatherViewController.xib */,
+			);
+			name = SSQUWeather;
+			sourceTree = "<group>";
+		};
+		0F8ECFE7163C276800E757D9 /* SSQUExchangeRate */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SSQUExchangeRate;
+			sourceTree = "<group>";
+		};
+		0F8ECFE8163C286E00E757D9 /* SSQULocale */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = SSQULocale;
+			sourceTree = "<group>";
+		};
 		0F99B310163986330062597B /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +183,7 @@
 		0F99B349163993C00062597B /* SSUI */ = {
 			isa = PBXGroup;
 			children = (
+				0F8ECFE4163C265A00E757D9 /* ViewControllers */,
 				0F99B34A163993D60062597B /* Views */,
 			);
 			name = SSUI;
@@ -153,10 +200,11 @@
 		0F99B34B163993E40062597B /* SSMenuView */ = {
 			isa = PBXGroup;
 			children = (
-				0F99B34C163994490062597B /* SSMenuView.h */,
-				0F99B34D163994490062597B /* SSMenuView.m */,
-				0F99B355163994DF0062597B /* SSMenuItemView.h */,
-				0F99B356163994DF0062597B /* SSMenuItemView.m */,
+				0F8ECFED163C296100E757D9 /* SSMenuItemView.h */,
+				0F8ECFEE163C296100E757D9 /* SSMenuItemView.m */,
+				0F8ECFEF163C296100E757D9 /* SSMenuItemViewStyleImageAndText.xib */,
+				0F8ECFF0163C296100E757D9 /* SSMenuView.h */,
+				0F8ECFF1163C296100E757D9 /* SSMenuView.m */,
 			);
 			name = SSMenuView;
 			sourceTree = "<group>";
@@ -199,6 +247,9 @@
 		9DB9860E16390E2600B46470 /* QueryUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				0F8ECFE8163C286E00E757D9 /* SSQULocale */,
+				0F8ECFE7163C276800E757D9 /* SSQUExchangeRate */,
+				0F8ECFE6163C272900E757D9 /* SSQUWeather */,
 				0F99B349163993C00062597B /* SSUI */,
 				9DB9861716390E2600B46470 /* SSQUAppDelegate.h */,
 				9DB9861816390E2600B46470 /* SSQUAppDelegate.m */,
@@ -319,6 +370,8 @@
 			files = (
 				9DB9861316390E2600B46470 /* InfoPlist.strings in Resources */,
 				9DB9861F16390E2600B46470 /* SSQUViewController.xib in Resources */,
+				0F8ECFF3163C296100E757D9 /* SSMenuItemViewStyleImageAndText.xib in Resources */,
+				0F8ECFF6163C2B9900E757D9 /* SSQUWeatherViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,8 +385,9 @@
 				9DB9861516390E2600B46470 /* main.m in Sources */,
 				9DB9861916390E2600B46470 /* SSQUAppDelegate.m in Sources */,
 				9DB9861C16390E2600B46470 /* SSQUViewController.m in Sources */,
-				0F99B34E163994490062597B /* SSMenuView.m in Sources */,
-				0F99B357163994DF0062597B /* SSMenuItemView.m in Sources */,
+				0F8ECFEC163C290200E757D9 /* SSQUWeatherViewController.m in Sources */,
+				0F8ECFF2163C296100E757D9 /* SSMenuItemView.m in Sources */,
+				0F8ECFF4163C296100E757D9 /* SSMenuView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -26,7 +26,11 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.viewController = [[[SSQUViewController alloc] initWithNibName:@"SSQUViewController" bundle:nil] autorelease];
+    SSQUViewController* mainViewController = [[SSQUViewController alloc] initWithNibName:@"SSQUViewController" bundle:nil] ;
+    mainViewController.navigationItem.title = @"首页";
+    
+    _viewController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    [mainViewController release];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
 

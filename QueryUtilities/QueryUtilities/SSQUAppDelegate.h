@@ -8,12 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class SSQUViewController;
-
 @interface SSQUAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) SSQUViewController *viewController;
+@property (strong, nonatomic) UINavigationController *viewController;
 
 @end
