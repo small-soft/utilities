@@ -10,6 +10,7 @@
 #import "SSMenuItemView.h"
 #import "SSMenuView.h"
 #import "SSQUWeatherViewController.h"
+#import "SSQUExchangeRateViewController.h"
 @interface SSQUViewController()<SSMenuViewDelegate>
 @property (nonatomic,retain) IBOutlet SSMenuView * menuView;
 @property (nonatomic,retain) NSArray *menuTitle;
@@ -36,6 +37,11 @@
         weatherViewController.navigationItem.title = @"天气";
         [self.navigationController pushViewController:weatherViewController animated:YES];
         [weatherViewController release];
+    }else if ([menuTileForIndex isEqualToString:@"汇率"]){
+        SSQUExchangeRateViewController *exchangeRateViewController = [[SSQUExchangeRateViewController alloc] initWithNibName:@"SSQUExchangeRateViewController" bundle:nil];
+        exchangeRateViewController.navigationItem.title = @"汇率";
+        [self.navigationController pushViewController:exchangeRateViewController animated:YES];
+        [exchangeRateViewController release];
     }
 }
 
