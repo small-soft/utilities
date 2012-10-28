@@ -26,6 +26,7 @@
 		0FD541D5163D2D2D0092B559 /* SSQUExchangeRateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541D4163D2D2D0092B559 /* SSQUExchangeRateViewController.xib */; };
 		0FD541D9163D307C0092B559 /* SSLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541D8163D307C0092B559 /* SSLoadingView.m */; };
 		0FD541DD163D30E00092B559 /* SSLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541DC163D30E00092B559 /* SSLoadingView.xib */; };
+		0FD541E0163D40B40092B559 /* MoneyUnit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541DE163D40B40092B559 /* MoneyUnit.plist */; };
 		9DB9860916390E2600B46470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9860816390E2600B46470 /* UIKit.framework */; };
 		9DB9860B16390E2600B46470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9860A16390E2600B46470 /* Foundation.framework */; };
 		9DB9860D16390E2600B46470 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9860C16390E2600B46470 /* CoreGraphics.framework */; };
@@ -107,6 +108,7 @@
 		0FD541D7163D307C0092B559 /* SSLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSLoadingView.h; path = SSUI/Views/SSLoadingView/SSLoadingView.h; sourceTree = "<group>"; };
 		0FD541D8163D307C0092B559 /* SSLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSLoadingView.m; path = SSUI/Views/SSLoadingView/SSLoadingView.m; sourceTree = "<group>"; };
 		0FD541DC163D30E00092B559 /* SSLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSLoadingView.xib; path = SSUI/Views/SSLoadingView/SSLoadingView.xib; sourceTree = "<group>"; };
+		0FD541DF163D40B40092B559 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/MoneyUnit.plist; sourceTree = "<group>"; };
 		9DB9860416390E2600B46470 /* QueryUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueryUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB9860816390E2600B46470 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9DB9860A16390E2600B46470 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -300,6 +302,7 @@
 				9DB9861116390E2600B46470 /* InfoPlist.strings */,
 				9DB9861416390E2600B46470 /* main.m */,
 				9DB9861616390E2600B46470 /* QueryUtilities-Prefix.pch */,
+				0FD541DE163D40B40092B559 /* MoneyUnit.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				0F8ED017163D227B00E757D9 /* SSQUWeatherViewController.xib in Resources */,
 				0FD541D5163D2D2D0092B559 /* SSQUExchangeRateViewController.xib in Resources */,
 				0FD541DD163D30E00092B559 /* SSLoadingView.xib in Resources */,
+				0FD541E0163D40B40092B559 /* MoneyUnit.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +450,14 @@
 				0F8ED011163D113F00E757D9 /* en */,
 			);
 			name = ProvincesAndCities.plist;
+			sourceTree = "<group>";
+		};
+		0FD541DE163D40B40092B559 /* MoneyUnit.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0FD541DF163D40B40092B559 /* en */,
+			);
+			name = MoneyUnit.plist;
 			sourceTree = "<group>";
 		};
 		9DB9861116390E2600B46470 /* InfoPlist.strings */ = {
