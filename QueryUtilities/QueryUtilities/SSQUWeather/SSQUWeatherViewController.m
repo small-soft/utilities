@@ -9,7 +9,7 @@
 #import "SSQUWeatherViewController.h"
 #import <RestKit/RestKit.h>
 #import "SSQULocation.h"
-#import "SSLoadingView.h"
+
 @interface SSQUWeatherViewController ()<RKRequestDelegate>
 @property (nonatomic, retain) RKRequest * request;
 @property (nonatomic, retain) NSArray *provinces;
@@ -17,7 +17,7 @@
 @property (nonatomic, retain) SSQULocation *currentLocation;
 @property (nonatomic, retain) IBOutlet UIButton * selectButton;
 @property (nonatomic, retain) IBOutlet UILabel *resultLabel;
-@property (nonatomic, retain) SSLoadingView * loadingView;
+
 @end
 
 @implementation SSQUWeatherViewController
@@ -28,8 +28,9 @@
 @synthesize locationPicker = _locationPicker;
 @synthesize selectButton = _selectButton;
 @synthesize resultLabel = _resultLabel;
-@synthesize loadingView = _loadingView;
+
 -(void)dealloc{
+    [self.request cancel];
     self.request = nil;
     self.provinces = nil;
     self.cities = nil;
@@ -37,18 +38,11 @@
     self.selectButton = nil;
     self.locationPicker =nil;
     self.resultLabel = nil;
-    self.loadingView = nil;
+
     [super dealloc];
 }
 
--(SSLoadingView *)loadingView{
-    if (nil==_loadingView) {
-        _loadingView = [[SSLoadingView alloc] init];
-        [self.view addSubview:_loadingView];
-        _loadingView.hidden = YES;
-    }
-    return _loadingView;
-}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

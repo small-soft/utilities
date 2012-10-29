@@ -15,6 +15,9 @@
 		0F8ED015163D131500E757D9 /* SSQULocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ED014163D131400E757D9 /* SSQULocation.m */; };
 		0F8ED017163D227B00E757D9 /* SSQUWeatherViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED016163D227B00E757D9 /* SSQUWeatherViewController.xib */; };
 		0F99B3261639870F0062597B /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F99B31B163986330062597B /* libRestKit.a */; };
+		0F9F2196163EB1F60051822D /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F2195163EB1F60051822D /* SSViewController.m */; };
+		0F9F219A163EB52B0051822D /* SSQUTranslateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F2199163EB52B0051822D /* SSQUTranslateViewController.m */; };
+		0F9F219C163EB58F0051822D /* SSQUTranslateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9F219B163EB58F0051822D /* SSQUTranslateViewController.xib */; };
 		0FA708EA16397B14009824D5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708E916397B14009824D5 /* CFNetwork.framework */; };
 		0FA708EC16397B1D009824D5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708EB16397B1D009824D5 /* CoreData.framework */; };
 		0FA708EE16397B6D009824D5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708ED16397B6D009824D5 /* MobileCoreServices.framework */; };
@@ -95,6 +98,11 @@
 		0F8ED014163D131400E757D9 /* SSQULocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQULocation.m; path = SSQUWeather/SSQULocation.m; sourceTree = "<group>"; };
 		0F8ED016163D227B00E757D9 /* SSQUWeatherViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSQUWeatherViewController.xib; path = SSQUWeather/SSQUWeatherViewController.xib; sourceTree = "<group>"; };
 		0F99B30F163986330062597B /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
+		0F9F2194163EB1F60051822D /* SSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSViewController.h; path = SSUI/ViewControllers/SSViewController.h; sourceTree = "<group>"; };
+		0F9F2195163EB1F60051822D /* SSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSViewController.m; path = SSUI/ViewControllers/SSViewController.m; sourceTree = "<group>"; };
+		0F9F2198163EB52B0051822D /* SSQUTranslateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUTranslateViewController.h; path = SSQUTranslate/SSQUTranslateViewController.h; sourceTree = "<group>"; };
+		0F9F2199163EB52B0051822D /* SSQUTranslateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUTranslateViewController.m; path = SSQUTranslate/SSQUTranslateViewController.m; sourceTree = "<group>"; };
+		0F9F219B163EB58F0051822D /* SSQUTranslateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSQUTranslateViewController.xib; path = SSQUTranslate/SSQUTranslateViewController.xib; sourceTree = "<group>"; };
 		0FA708E916397B14009824D5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0FA708EB16397B1D009824D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0FA708ED16397B6D009824D5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -157,6 +165,8 @@
 		0F8ECFE5163C266C00E757D9 /* SSViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0F9F2194163EB1F60051822D /* SSViewController.h */,
+				0F9F2195163EB1F60051822D /* SSViewController.m */,
 			);
 			name = SSViewController;
 			sourceTree = "<group>";
@@ -232,6 +242,16 @@
 			name = SSMenuView;
 			sourceTree = "<group>";
 		};
+		0F9F2197163EB4D20051822D /* SSQUTranslate */ = {
+			isa = PBXGroup;
+			children = (
+				0F9F2198163EB52B0051822D /* SSQUTranslateViewController.h */,
+				0F9F2199163EB52B0051822D /* SSQUTranslateViewController.m */,
+				0F9F219B163EB58F0051822D /* SSQUTranslateViewController.xib */,
+			);
+			name = SSQUTranslate;
+			sourceTree = "<group>";
+		};
 		0FD541D6163D303F0092B559 /* SSLoadingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +300,7 @@
 		9DB9860E16390E2600B46470 /* QueryUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				0F9F2197163EB4D20051822D /* SSQUTranslate */,
 				0F8ECFE8163C286E00E757D9 /* SSQULocale */,
 				0F8ECFE7163C276800E757D9 /* SSQUExchangeRate */,
 				0F8ECFE6163C272900E757D9 /* SSQUWeather */,
@@ -411,6 +432,7 @@
 				0FD541D5163D2D2D0092B559 /* SSQUExchangeRateViewController.xib in Resources */,
 				0FD541DD163D30E00092B559 /* SSLoadingView.xib in Resources */,
 				0FD541E0163D40B40092B559 /* MoneyUnit.plist in Resources */,
+				0F9F219C163EB58F0051822D /* SSQUTranslateViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +452,8 @@
 				0F8ED015163D131500E757D9 /* SSQULocation.m in Sources */,
 				0FD541D3163D2CF90092B559 /* SSQUExchangeRateViewController.m in Sources */,
 				0FD541D9163D307C0092B559 /* SSLoadingView.m in Sources */,
+				0F9F2196163EB1F60051822D /* SSViewController.m in Sources */,
+				0F9F219A163EB52B0051822D /* SSQUTranslateViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

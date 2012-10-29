@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "QueryUtilities/SSQUViewController.m"
-         timestampString = "373112368.644523"
+         timestampString = "373214046.774432"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
+         startingLineNumber = "67"
+         endingLineNumber = "67"
          landmarkName = "-menuView:ItemViewForRowAtIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "QueryUtilities/SSQUViewController.m"
-         timestampString = "373112368.644523"
+         timestampString = "373214046.774432"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "34"
-         endingLineNumber = "34"
+         startingLineNumber = "48"
+         endingLineNumber = "48"
          landmarkName = "-menuView:didSelectItemAtIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -53,6 +53,58 @@
          startingLineNumber = "483"
          endingLineNumber = "483"
          landmarkName = "-sendAsynchronously"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "QueryUtilities/SSQUTranslate/SSQUTranslateViewController.m"
+         timestampString = "373218366.829663"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "122"
+         endingLineNumber = "122"
+         landmarkName = "-request:didFailLoadWithError:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "QueryUtilities/SSQUTranslate/SSQUTranslateViewController.m"
+         timestampString = "373218366.829663"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "112"
+         endingLineNumber = "112"
+         landmarkName = "-request:didLoadResponse:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "QueryUtilities/SSQUWeather/SSQUWeatherViewController.m"
+         timestampString = "373218438.74016"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
+         landmarkName = "-request:didFailLoadWithError:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "QueryUtilities/SSQUWeather/SSQUWeatherViewController.m"
+         timestampString = "373218445.036314"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "90"
+         endingLineNumber = "90"
+         landmarkName = "-request:didLoadResponse:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

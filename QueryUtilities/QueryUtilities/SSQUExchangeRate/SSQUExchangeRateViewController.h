@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface SSQUExchangeRateViewController : UIViewController
+#import "SSViewController.h"
+@interface SSQUExchangeRateViewController : SSViewController
 @property (nonatomic, retain) IBOutlet UIPickerView * countryPickerView;
 @end

@@ -13,7 +13,6 @@
 @property (nonatomic, retain) IBOutlet UIButton * selectButton;
 @property (nonatomic, retain) IBOutlet UILabel * resultLabel;
 @property (nonatomic, retain) NSArray * countries;
-@property (nonatomic, retain) SSLoadingView * loadingView;
 @property (nonatomic, retain) RKRequest * request;
 @property (nonatomic, retain) NSMutableDictionary * currentCountryDic;
 @end
@@ -24,14 +23,6 @@
 @synthesize resultLabel = _resultLabel;
 @synthesize countries = _countries;
 @synthesize currentCountryDic = _currentCountryDic;
--(SSLoadingView *)loadingView{
-    if (nil==_loadingView) {
-        _loadingView = [[SSLoadingView alloc] init];
-        [self.view addSubview:_loadingView];
-        _loadingView.hidden = YES;
-    }
-    return _loadingView;
-}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,7 +43,7 @@
     self.selectButton = nil;
     self.resultLabel = nil;
     self.countries = nil;
-    self.loadingView = nil;
+    [self.request cancel];
     self.request = nil;
     self.currentCountryDic=nil;
     [super dealloc];
