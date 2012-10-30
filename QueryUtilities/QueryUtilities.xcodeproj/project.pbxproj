@@ -18,6 +18,8 @@
 		0F9F2196163EB1F60051822D /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F2195163EB1F60051822D /* SSViewController.m */; };
 		0F9F219A163EB52B0051822D /* SSQUTranslateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F2199163EB52B0051822D /* SSQUTranslateViewController.m */; };
 		0F9F219C163EB58F0051822D /* SSQUTranslateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9F219B163EB58F0051822D /* SSQUTranslateViewController.xib */; };
+		0F9F21BD163EE1DA0051822D /* SSQUMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F21BC163EE1DA0051822D /* SSQUMoreViewController.m */; };
+		0F9F21BF163EE1FF0051822D /* SSQUMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9F21BE163EE1FF0051822D /* SSQUMoreViewController.xib */; };
 		0FA708EA16397B14009824D5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708E916397B14009824D5 /* CFNetwork.framework */; };
 		0FA708EC16397B1D009824D5 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708EB16397B1D009824D5 /* CoreData.framework */; };
 		0FA708EE16397B6D009824D5 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708ED16397B6D009824D5 /* MobileCoreServices.framework */; };
@@ -25,6 +27,7 @@
 		0FA708F216397B7D009824D5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708F116397B7D009824D5 /* SystemConfiguration.framework */; };
 		0FA708F416397B85009824D5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708F316397B85009824D5 /* QuartzCore.framework */; };
 		0FA708F616397B91009824D5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708F516397B91009824D5 /* libxml2.dylib */; };
+		0FCD0BCA1640384F00847D3F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCD0BC91640384F00847D3F /* MessageUI.framework */; };
 		0FD541D3163D2CF90092B559 /* SSQUExchangeRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541D2163D2CF90092B559 /* SSQUExchangeRateViewController.m */; };
 		0FD541D5163D2D2D0092B559 /* SSQUExchangeRateViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541D4163D2D2D0092B559 /* SSQUExchangeRateViewController.xib */; };
 		0FD541D9163D307C0092B559 /* SSLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541D8163D307C0092B559 /* SSLoadingView.m */; };
@@ -103,6 +106,9 @@
 		0F9F2198163EB52B0051822D /* SSQUTranslateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUTranslateViewController.h; path = SSQUTranslate/SSQUTranslateViewController.h; sourceTree = "<group>"; };
 		0F9F2199163EB52B0051822D /* SSQUTranslateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUTranslateViewController.m; path = SSQUTranslate/SSQUTranslateViewController.m; sourceTree = "<group>"; };
 		0F9F219B163EB58F0051822D /* SSQUTranslateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSQUTranslateViewController.xib; path = SSQUTranslate/SSQUTranslateViewController.xib; sourceTree = "<group>"; };
+		0F9F21BB163EE1DA0051822D /* SSQUMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUMoreViewController.h; path = SSQUMore/SSQUMoreViewController.h; sourceTree = "<group>"; };
+		0F9F21BC163EE1DA0051822D /* SSQUMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUMoreViewController.m; path = SSQUMore/SSQUMoreViewController.m; sourceTree = "<group>"; };
+		0F9F21BE163EE1FF0051822D /* SSQUMoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSQUMoreViewController.xib; path = SSQUMore/SSQUMoreViewController.xib; sourceTree = "<group>"; };
 		0FA708E916397B14009824D5 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		0FA708EB16397B1D009824D5 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		0FA708ED16397B6D009824D5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -110,6 +116,7 @@
 		0FA708F116397B7D009824D5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		0FA708F316397B85009824D5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0FA708F516397B91009824D5 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		0FCD0BC91640384F00847D3F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		0FD541D1163D2CF90092B559 /* SSQUExchangeRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUExchangeRateViewController.h; path = SSQUExchangeRate/SSQUExchangeRateViewController.h; sourceTree = "<group>"; };
 		0FD541D2163D2CF90092B559 /* SSQUExchangeRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUExchangeRateViewController.m; path = SSQUExchangeRate/SSQUExchangeRateViewController.m; sourceTree = "<group>"; };
 		0FD541D4163D2D2D0092B559 /* SSQUExchangeRateViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSQUExchangeRateViewController.xib; path = SSQUExchangeRate/SSQUExchangeRateViewController.xib; sourceTree = "<group>"; };
@@ -137,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FCD0BCA1640384F00847D3F /* MessageUI.framework in Frameworks */,
 				0F99B3261639870F0062597B /* libRestKit.a in Frameworks */,
 				0FA708F616397B91009824D5 /* libxml2.dylib in Frameworks */,
 				0FA708F416397B85009824D5 /* QuartzCore.framework in Frameworks */,
@@ -252,6 +260,16 @@
 			name = SSQUTranslate;
 			sourceTree = "<group>";
 		};
+		0F9F21BA163EE1B10051822D /* SSQUMore */ = {
+			isa = PBXGroup;
+			children = (
+				0F9F21BB163EE1DA0051822D /* SSQUMoreViewController.h */,
+				0F9F21BC163EE1DA0051822D /* SSQUMoreViewController.m */,
+				0F9F21BE163EE1FF0051822D /* SSQUMoreViewController.xib */,
+			);
+			name = SSQUMore;
+			sourceTree = "<group>";
+		};
 		0FD541D6163D303F0092B559 /* SSLoadingView */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +301,7 @@
 		9DB9860716390E2600B46470 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0FCD0BC91640384F00847D3F /* MessageUI.framework */,
 				0FA708F516397B91009824D5 /* libxml2.dylib */,
 				0FA708F316397B85009824D5 /* QuartzCore.framework */,
 				0FA708F116397B7D009824D5 /* SystemConfiguration.framework */,
@@ -300,6 +319,7 @@
 		9DB9860E16390E2600B46470 /* QueryUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				0F9F21BA163EE1B10051822D /* SSQUMore */,
 				0F9F2197163EB4D20051822D /* SSQUTranslate */,
 				0F8ECFE8163C286E00E757D9 /* SSQULocale */,
 				0F8ECFE7163C276800E757D9 /* SSQUExchangeRate */,
@@ -433,6 +453,7 @@
 				0FD541DD163D30E00092B559 /* SSLoadingView.xib in Resources */,
 				0FD541E0163D40B40092B559 /* MoneyUnit.plist in Resources */,
 				0F9F219C163EB58F0051822D /* SSQUTranslateViewController.xib in Resources */,
+				0F9F21BF163EE1FF0051822D /* SSQUMoreViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +475,7 @@
 				0FD541D9163D307C0092B559 /* SSLoadingView.m in Sources */,
 				0F9F2196163EB1F60051822D /* SSViewController.m in Sources */,
 				0F9F219A163EB52B0051822D /* SSQUTranslateViewController.m in Sources */,
+				0F9F21BD163EE1DA0051822D /* SSQUMoreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

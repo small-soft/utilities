@@ -12,6 +12,7 @@
 #import "SSQUWeatherViewController.h"
 #import "SSQUExchangeRateViewController.h"
 #import "SSQUTranslateViewController.h"
+#import "SSQUMoreViewController.h"
 @interface SSQUViewController()<SSMenuViewDelegate>
 @property (nonatomic,retain) IBOutlet SSMenuView * menuView;
 @property (nonatomic,retain) NSArray *menuTitle;
@@ -23,7 +24,7 @@
 
 -(NSArray *)menuTitle{
     if(nil==_menuTitle){
-        _menuTitle = [[NSArray alloc] initWithObjects:@"汉译英",@"英译汉",@"天气",@"归属地",@"汇率", nil];
+        _menuTitle = [[NSArray alloc] initWithObjects:@"汉译英",@"英译汉",@"天气",@"汇率",@"更多", nil];
     }
         
     return _menuTitle;
@@ -55,6 +56,11 @@
         exchangeRateViewController.navigationItem.title = @"汇率";
         [self.navigationController pushViewController:exchangeRateViewController animated:YES];
         [exchangeRateViewController release];
+    }else if ([menuTileForIndex isEqualToString:@"更多"]){
+        SSQUMoreViewController *moreViewController = [[SSQUMoreViewController alloc] initWithNibName:@"SSQUMoreViewController" bundle:nil];
+        moreViewController.navigationItem.title = @"更多";
+        [self.navigationController pushViewController:moreViewController animated:YES];
+        [moreViewController release];
     }
 }
 
@@ -91,6 +97,7 @@
     self.menuView.menuDelegate = self;
     self.menuView.topPadding = 10;
     self.menuView.yPadding = 10;
+    self.menuView.columnCount = 3;
     [self.menuView reloadData];
 }
 
