@@ -13,6 +13,8 @@
 #import "SSQUExchangeRateViewController.h"
 #import "SSQUTranslateViewController.h"
 #import "SSQUMoreViewController.h"
+#import "SSQUFontChangeViewController.h"
+#import "SSQULocaleViewController.h"
 @interface SSQUViewController()<SSMenuViewDelegate>
 @property (nonatomic,retain) IBOutlet SSMenuView * menuView;
 @property (nonatomic,retain) NSArray *menuTitle;
@@ -24,7 +26,7 @@
 
 -(NSArray *)menuTitle{
     if(nil==_menuTitle){
-        _menuTitle = [[NSArray alloc] initWithObjects:@"汉译英",@"英译汉",@"天气",@"汇率",@"更多", nil];
+        _menuTitle = [[NSArray alloc] initWithObjects:@"汉译英",@"英译汉",@"简转繁",@"繁转简",@"手机归属地",@"ip归属地",@"天气",@"汇率",@"更多", nil];
     }
         
     return _menuTitle;
@@ -46,6 +48,30 @@
         translateViewController.selectIndex = 1;
         [self.navigationController pushViewController:translateViewController animated:YES];
         [translateViewController release];
+    }else if ([menuTileForIndex isEqualToString:@"简转繁"]){
+        SSQUFontChangeViewController * fontChangeViewController = [[SSQUFontChangeViewController alloc] initWithNibName:@"SSQUFontChangeViewController" bundle:nil];
+        fontChangeViewController.navigationItem.title = @"字体转换";
+        fontChangeViewController.selectIndex = 0;
+        [self.navigationController pushViewController:fontChangeViewController animated:YES];
+        [fontChangeViewController release];
+    }else if ([menuTileForIndex isEqualToString:@"繁转简"]){
+        SSQUFontChangeViewController * fontChangeViewController = [[SSQUFontChangeViewController alloc] initWithNibName:@"SSQUFontChangeViewController" bundle:nil];
+        fontChangeViewController.navigationItem.title = @"字体转换";
+        fontChangeViewController.selectIndex = 1;
+        [self.navigationController pushViewController:fontChangeViewController animated:YES];
+        [fontChangeViewController release];
+    }else if ([menuTileForIndex isEqualToString:@"手机归属地"]){
+        SSQULocaleViewController * localeViewController = [[SSQULocaleViewController alloc] initWithNibName:@"SSQULocaleViewController" bundle:nil];
+        localeViewController.navigationItem.title = @"归属地";
+        localeViewController.selectIndex = 0;
+        [self.navigationController pushViewController:localeViewController animated:YES];
+        [localeViewController release];
+    }else if ([menuTileForIndex isEqualToString:@"ip归属地"]){
+        SSQULocaleViewController * localeViewController = [[SSQULocaleViewController alloc] initWithNibName:@"SSQULocaleViewController" bundle:nil];
+        localeViewController.navigationItem.title = @"归属地";
+        localeViewController.selectIndex = 1;
+        [self.navigationController pushViewController:localeViewController animated:YES];
+        [localeViewController release];
     }else if ([menuTileForIndex isEqualToString:@"天气"]) {
         SSQUWeatherViewController * weatherViewController = [[SSQUWeatherViewController alloc] initWithNibName:@"SSQUWeatherViewController" bundle:nil];
         weatherViewController.navigationItem.title = @"天气";
