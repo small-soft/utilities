@@ -12,3 +12,6 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define GRAY_BG @"c_first_bg"
+#define SET_GRAY_BG(_viewController) (_viewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:GRAY_BG]])

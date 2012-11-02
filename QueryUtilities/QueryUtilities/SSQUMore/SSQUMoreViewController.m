@@ -37,6 +37,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.versionLabel.text = [NSString stringWithFormat:@"V %@" ,[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+    self.contentTableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:GRAY_BG]];
 }
 
 - (void)didReceiveMemoryWarning
