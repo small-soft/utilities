@@ -10,6 +10,7 @@
 
 #import "SSQUViewController.h"
 #import <RestKit/RestKit.h>
+#import "SSQUMoreViewController.h"
 @implementation SSQUAppDelegate
 
 @synthesize window = _window;
@@ -31,7 +32,14 @@
     
     _viewController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     _viewController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    UIButton * infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+
+    UIBarButtonItem * infoButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+    [infoButton addTarget:self action:@selector(infoBtnPress) forControlEvents:UIControlEventTouchUpInside];
     
+    mainViewController.navigationItem.rightBarButtonItem = infoButtonItem ;
+    
+    [infoButtonItem release];
     [mainViewController release];
     
     self.window.rootViewController = self.viewController;
@@ -65,6 +73,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)infoBtnPress{
+    SSQUMoreViewController *moreViewController = [[SSQUMoreViewController alloc] initWithNibName:@"SSQUMoreViewController" bundle:nil];
+    SET_GRAY_BG(moreViewController);
+    moreViewController.navigationItem.title = @"更多";
+    [self.viewController pushViewController:moreViewController animated:YES];
+    [moreViewController release];
 }
 
 @end

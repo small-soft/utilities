@@ -8,22 +8,22 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "QueryUtilities/SSQUViewController.m"
-         timestampString = "373533477.77368"
+         timestampString = "373557324.381833"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "418"
-         endingLineNumber = "418">
+         startingLineNumber = "420"
+         endingLineNumber = "420">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "QueryUtilities/SSQUViewController.m"
-         timestampString = "373533477.77368"
+         timestampString = "373557324.381833"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "349"
-         endingLineNumber = "349">
+         startingLineNumber = "351"
+         endingLineNumber = "351">
       </FileBreakpoint>
    </FileBreakpoints>
 </Bucket>

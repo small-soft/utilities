@@ -36,7 +36,7 @@
 
 -(NSArray *)menuImage{
     if(nil==_menuImage){
-        self.menuImage = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"han"],[UIImage imageNamed:@"en"],[UIImage imageNamed:@"jian"],[UIImage imageNamed:@"fan"],[UIImage imageNamed:@"phone"],[UIImage imageNamed:@"IP"],[UIImage imageNamed:@"tianqi"],[UIImage imageNamed:@"huilv"],[UIImage imageNamed:@"more"], nil];
+        self.menuImage = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"han"],[UIImage imageNamed:@"en"],[UIImage imageNamed:@"jian"],[UIImage imageNamed:@"fan"],[UIImage imageNamed:@"phone"],[UIImage imageNamed:@"ip"],[UIImage imageNamed:@"tianqi"],[UIImage imageNamed:@"huilv"],[UIImage imageNamed:@"more"], nil];
     }
     
     return _menuImage;
@@ -116,6 +116,8 @@
     SSMenuItemView * menuItemView = [[[SSMenuItemView alloc] init] autorelease];
     menuItemView.label.text = [self.menuTitle objectAtIndex:index];
     menuItemView.imageView.image = [self.menuImage objectAtIndex:index];
+    menuItemView.maskImageView.frame = menuItemView.imageView.frame;
+    menuItemView.maskImageView.image = [UIImage imageNamed:@"gray_mengban"];
     return menuItemView;
 }
 
