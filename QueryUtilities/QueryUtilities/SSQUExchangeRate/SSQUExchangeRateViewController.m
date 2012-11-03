@@ -107,13 +107,21 @@
     NSString * firstCountryName = [[self.currentCountryDic objectForKey:@"first_country_code"] objectForKey:@"name"];
     NSString * secondCountryName = [[self.currentCountryDic objectForKey:@"second_country_code"] objectForKey:@"name"];
     self.resultLabel.text = [NSString stringWithFormat:@"100 %@ = %@ %@\n%@对%@汇率:%@",firstCountryName,[response bodyAsString],secondCountryName,firstCountryName,secondCountryName,[response bodyAsString]];
-    
+    self.resultLabel.numberOfLines = 0;
+    CGSize constraint = CGSizeMake(280, 20000.0f);
+    CGSize labelSize = [self.resultLabel.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    self.resultLabel.frame = CGRectMake(self.resultLabel.frame.origin.x, self.resultLabel.frame.origin.y, labelSize.width, labelSize.height);
     [self.loadingView hideLoadingView];
     
 }
 
 -(void)request:(RKRequest *)request didFailLoadWithError:(NSError *)error{
     NSLog(@"failed :%@", error);
+    self.resultLabel.text = @"网络好像有点问题，请检查您的网络^_^";
+    self.resultLabel.numberOfLines = 0;
+    CGSize constraint = CGSizeMake(280, 20000.0f);
+    CGSize labelSize = [self.resultLabel.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    self.resultLabel.frame = CGRectMake(self.resultLabel.frame.origin.x, self.resultLabel.frame.origin.y, labelSize.width, labelSize.height);
     [self.loadingView hideLoadingView];
 }
 @end

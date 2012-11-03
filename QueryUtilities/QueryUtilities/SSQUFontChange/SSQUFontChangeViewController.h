@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SSViewController.h"
-@interface SSQUFontChangeViewController : SSViewController
-@property (nonatomic, assign) NSUInteger selectIndex;
+#import "SSQUSegmentedViewController.h"
+@interface SSQUFontChangeViewController : SSQUSegmentedViewController
+
 @end

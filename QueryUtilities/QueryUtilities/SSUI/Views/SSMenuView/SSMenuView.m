@@ -86,7 +86,7 @@
         
         itemView.tag = i;
         
-        [itemView addTarget:self action:@selector(itemPressed:) forControlEvents:UIControlEventTouchUpInside];
+        [itemView addTarget:self action:@selector(itemPressedUp:) forControlEvents:UIControlEventTouchUpInside];
         [itemView addTarget:self action:@selector(itemPressedDown:) forControlEvents:UIControlEventTouchDown];
         [itemView addTarget:self action:@selector(itemPressedUpOutsideAction:) forControlEvents:UIControlEventTouchUpOutside];
         [itemView addTarget:self action:@selector(itemPressedUpOutsideAction:) forControlEvents:UIControlEventTouchCancel];
@@ -113,16 +113,17 @@
     }
 }
 
-- (void)itemPressed:(UIButton *)sender {
+- (void)itemPressedUp:(UIButton *)sender {
 	NSParameterAssert(sender);
     SSMenuItemView *view = (SSMenuItemView *)[sender superview];
-    [self.menuDelegate menuView:self didSelectItemAtIndex:sender.tag];
     if ([self.menuDelegate respondsToSelector:@selector(menuView:ItemPressedAtIndex:)]) {
         [self.menuDelegate menuView:self ItemPressedAtIndex:sender.tag];
     }
     else {
-        view.maskImageView.alpha = 0.0f;
+        [UIView animateWithDuration:0.1 animations:^(void){view.maskImageView.alpha = 0.0f;}];
+        
     }
+    [self.menuDelegate menuView:self didSelectItemAtIndex:sender.tag];
 }
 
 - (void)itemPressedDown:(UIButton *)sender {

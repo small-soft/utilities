@@ -94,13 +94,21 @@
         [tempResult appendFormat:@"%@\n",tempResultLine];
     }
     self.resultLabel.text = tempResult;
-    
+    self.resultLabel.numberOfLines = 0;
+    CGSize constraint = CGSizeMake(280, 20000.0f);
+    CGSize labelSize = [self.resultLabel.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    self.resultLabel.frame = CGRectMake(self.resultLabel.frame.origin.x, self.resultLabel.frame.origin.y, labelSize.width, labelSize.height);
     [self.loadingView hideLoadingView];
 
 }
 
 -(void)request:(RKRequest *)request didFailLoadWithError:(NSError *)error{
     NSLog(@"failed :%@", error);
+    self.resultLabel.text = @"网络好像有点问题，请检查您的网络^_^";
+    self.resultLabel.numberOfLines = 0;
+    CGSize constraint = CGSizeMake(280, 20000.0f);
+    CGSize labelSize = [self.resultLabel.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    self.resultLabel.frame = CGRectMake(self.resultLabel.frame.origin.x, self.resultLabel.frame.origin.y, labelSize.width, labelSize.height);
     [self.loadingView hideLoadingView];
 }
 

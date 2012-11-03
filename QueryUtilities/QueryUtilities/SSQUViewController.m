@@ -46,42 +46,42 @@
 -(void)menuView:(SSMenuView *)menuView didSelectItemAtIndex:(NSUInteger)index{
     NSString * menuTileForIndex = [self.menuTitle objectAtIndex:index];
     if ([menuTileForIndex isEqualToString:@"汉译英"]) {
-        SSQUTranslateViewController * translateViewController = [[SSQUTranslateViewController alloc] initWithNibName:@"SSQUTranslateViewController" bundle:nil];
+        SSQUTranslateViewController * translateViewController = [[SSQUTranslateViewController alloc] init];
         translateViewController.navigationItem.title = @"翻译";
         translateViewController.selectIndex = 0;
         SET_GRAY_BG(translateViewController);
         [self.navigationController pushViewController:translateViewController animated:YES];
         [translateViewController release];
     }else if ([menuTileForIndex isEqualToString:@"英译汉"]){
-        SSQUTranslateViewController * translateViewController = [[SSQUTranslateViewController alloc] initWithNibName:@"SSQUTranslateViewController" bundle:nil];
+        SSQUTranslateViewController * translateViewController = [[SSQUTranslateViewController alloc] init];
         translateViewController.navigationItem.title = @"翻译";
         translateViewController.selectIndex = 1;
         SET_GRAY_BG(translateViewController);
         [self.navigationController pushViewController:translateViewController animated:YES];
         [translateViewController release];
     }else if ([menuTileForIndex isEqualToString:@"简转繁"]){
-        SSQUFontChangeViewController * fontChangeViewController = [[SSQUFontChangeViewController alloc] initWithNibName:@"SSQUFontChangeViewController" bundle:nil];
+        SSQUFontChangeViewController * fontChangeViewController = [[SSQUFontChangeViewController alloc] init];
         fontChangeViewController.navigationItem.title = @"字体转换";
         fontChangeViewController.selectIndex = 0;
         SET_GRAY_BG(fontChangeViewController);
         [self.navigationController pushViewController:fontChangeViewController animated:YES];
         [fontChangeViewController release];
     }else if ([menuTileForIndex isEqualToString:@"繁转简"]){
-        SSQUFontChangeViewController * fontChangeViewController = [[SSQUFontChangeViewController alloc] initWithNibName:@"SSQUFontChangeViewController" bundle:nil];
+        SSQUFontChangeViewController * fontChangeViewController = [[SSQUFontChangeViewController alloc] init];
         fontChangeViewController.navigationItem.title = @"字体转换";
         fontChangeViewController.selectIndex = 1;
         SET_GRAY_BG(fontChangeViewController);
         [self.navigationController pushViewController:fontChangeViewController animated:YES];
         [fontChangeViewController release];
     }else if ([menuTileForIndex isEqualToString:@"手机归属地"]){
-        SSQULocaleViewController * localeViewController = [[SSQULocaleViewController alloc] initWithNibName:@"SSQULocaleViewController" bundle:nil];
+        SSQULocaleViewController * localeViewController = [[SSQULocaleViewController alloc] init];
         localeViewController.navigationItem.title = @"归属地";
         localeViewController.selectIndex = 0;
         SET_GRAY_BG(localeViewController);
         [self.navigationController pushViewController:localeViewController animated:YES];
         [localeViewController release];
     }else if ([menuTileForIndex isEqualToString:@"ip归属地"]){
-        SSQULocaleViewController * localeViewController = [[SSQULocaleViewController alloc] initWithNibName:@"SSQULocaleViewController" bundle:nil];
+        SSQULocaleViewController * localeViewController = [[SSQULocaleViewController alloc] init];
         localeViewController.navigationItem.title = @"归属地";
         localeViewController.selectIndex = 1;
         SET_GRAY_BG(localeViewController);
