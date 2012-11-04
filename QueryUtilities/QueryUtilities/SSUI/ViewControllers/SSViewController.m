@@ -18,6 +18,7 @@
 -(SSLoadingView *)loadingView{
     if (nil==_loadingView) {
         _loadingView = [[SSLoadingView alloc] init];
+        _loadingView.frame = self.view.frame;
         [self.view addSubview:_loadingView];
         _loadingView.hidden = YES;
     }
