@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SSViewController.h"
-@interface SSQUWeatherViewController : SSViewController<UIPickerViewDataSource,UIPickerViewDelegate>
-@property (retain, nonatomic) IBOutlet UIPickerView *locationPicker;
+#import "SSQUPickerViewController.h"
+@interface SSQUWeatherViewController : SSQUPickerViewController
 
 @end
 

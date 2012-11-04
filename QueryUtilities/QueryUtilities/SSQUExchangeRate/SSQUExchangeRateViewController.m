@@ -7,22 +7,29 @@
 //
 
 #import "SSQUExchangeRateViewController.h"
-#import "SSLoadingView.h"
-#import <RestKit/RestKit.h>
+
 @interface SSQUExchangeRateViewController ()<RKRequestDelegate>
-@property (nonatomic, retain) IBOutlet UIButton * selectButton;
-@property (nonatomic, retain) IBOutlet UILabel * resultLabel;
+
 @property (nonatomic, retain) NSArray * countries;
-@property (nonatomic, retain) RKRequest * request;
+
 @property (nonatomic, retain) NSMutableDictionary * currentCountryDic;
 @end
 
 @implementation SSQUExchangeRateViewController
-@synthesize countryPickerView = _countryPickerView ;
-@synthesize selectButton = _selectButton;
-@synthesize resultLabel = _resultLabel;
+
 @synthesize countries = _countries;
 @synthesize currentCountryDic = _currentCountryDic;
+
+-(id)init{
+    self = [super init];
+    if (self) {
+        _countries = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"MoneyUnit.plist" ofType:nil]];
+        _currentCountryDic = [[NSMutableDictionary alloc] init];
+        [self.currentCountryDic setValue:[self.countries objectAtIndex:0] forKey:@"first_country_code"];
+        [self.currentCountryDic setValue:[self.countries objectAtIndex:1] forKey:@"second_country_code"];
+    }
+    return self;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -39,12 +46,8 @@
 }
 
 -(void)dealloc{
-    self.countryPickerView = nil;
-    self.selectButton = nil;
-    self.resultLabel = nil;
+
     self.countries = nil;
-    [self.request cancel];
-    self.request = nil;
     self.currentCountryDic=nil;
     [super dealloc];
 }
@@ -53,18 +56,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    // 设置按钮
-    UIImage *buttonImageNormal = [UIImage imageNamed:@"gray_btn_small"];
-    UIImage *stretchableButtonImageNormal = [buttonImageNormal stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-    [self.selectButton setBackgroundImage:stretchableButtonImageNormal forState:UIControlStateNormal];
-    
-    
-    UIImage *buttonImagePressed = [UIImage imageNamed:@"gray_btn_small_p"];
-    UIImage *stretchableButtonImagePressed = [buttonImagePressed stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-    [self.selectButton setBackgroundImage:stretchableButtonImagePressed forState:UIControlStateHighlighted];
-    
-    [self.countryPickerView selectRow:1 inComponent:1 animated:YES];
-    [self.selectButton addTarget:self action:@selector(selectButtonPressDown:) forControlEvents:UIControlEventTouchUpInside];
+    [self.pickerView selectRow:1 inComponent:1 animated:YES];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -100,14 +93,8 @@
     NSStringEncoding encode = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
     
     self.request = [RKRequest requestWithURL:[NSURL URLWithString:[[NSString stringWithFormat:@"http://api.liqwei.com/currency/?exchange=%@|%@&count=100",[[self.currentCountryDic objectForKey:@"first_country_code"] objectForKey:@"code"],[[self.currentCountryDic objectForKey:@"second_country_code"] objectForKey:@"code"]] stringByAddingPercentEscapesUsingEncoding:encode]]];
-    self.request.delegate = self;
-    [self.loadingView showLoadingView];
-    [self.request send];
+    [super loadObjectsFromRemote];
     
-}
-
--(IBAction)selectButtonPressDown:(id)sender{
-    [self loadObjectsFromRemote];
 }
 
 
@@ -117,21 +104,9 @@
     NSString * firstCountryName = [[self.currentCountryDic objectForKey:@"first_country_code"] objectForKey:@"name"];
     NSString * secondCountryName = [[self.currentCountryDic objectForKey:@"second_country_code"] objectForKey:@"name"];
     self.resultLabel.text = [NSString stringWithFormat:@"100 %@ = %@ %@\n%@对%@汇率:%@",firstCountryName,[response bodyAsString],secondCountryName,firstCountryName,secondCountryName,[response bodyAsString]];
-    self.resultLabel.numberOfLines = 0;
-    CGSize constraint = CGSizeMake(280, 20000.0f);
-    CGSize labelSize = [self.resultLabel.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
-    self.resultLabel.frame = CGRectMake(self.resultLabel.frame.origin.x, self.resultLabel.frame.origin.y, labelSize.width, labelSize.height);
-    [self.loadingView hideLoadingView];
+    
+    [super request:request didLoadResponse:response];
     
 }
 
--(void)request:(RKRequest *)request didFailLoadWithError:(NSError *)error{
-    NSLog(@"failed :%@", error);
-    self.resultLabel.text = @"网络好像有点问题，请检查您的网络^_^";
-    self.resultLabel.numberOfLines = 0;
-    CGSize constraint = CGSizeMake(280, 20000.0f);
-    CGSize labelSize = [self.resultLabel.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
-    self.resultLabel.frame = CGRectMake(self.resultLabel.frame.origin.x, self.resultLabel.frame.origin.y, labelSize.width, labelSize.height);
-    [self.loadingView hideLoadingView];
-}
 @end

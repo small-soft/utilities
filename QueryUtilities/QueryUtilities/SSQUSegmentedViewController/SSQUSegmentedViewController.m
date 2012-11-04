@@ -114,8 +114,13 @@
 -(void)sendRequestButtonPressed{
     [self.inputTextField resignFirstResponder];
 
-    if (![[self.inputTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]) {
+    if (![[self.inputTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] isEqualToString:@""]&&self.inputTextField.text!=nil) {
         [self loadObjectsFromRemote];
+    }else{
+        self.outputLabel.text = @"请您在输入框输入条件^_^";
+        CGSize constraint = CGSizeMake(260, 20000.0f);
+        CGSize labelSize = [self.outputLabel.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+        self.outputLabel.frame = CGRectMake(self.outputLabel.frame.origin.x, self.outputLabel.frame.origin.y, labelSize.width, labelSize.height);
     }
 
 }

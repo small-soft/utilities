@@ -89,13 +89,13 @@
         [self.navigationController pushViewController:localeViewController animated:YES];
         [localeViewController release];
     }else if ([menuTileForIndex isEqualToString:@"天气"]) {
-        SSQUWeatherViewController * weatherViewController = [[SSQUWeatherViewController alloc] initWithNibName:@"SSQUWeatherViewController" bundle:nil];
+        SSQUWeatherViewController * weatherViewController = [[SSQUWeatherViewController alloc] init];
         weatherViewController.navigationItem.title = @"天气";
         SET_GRAY_BG(weatherViewController);
         [self.navigationController pushViewController:weatherViewController animated:YES];
         [weatherViewController release];
     }else if ([menuTileForIndex isEqualToString:@"汇率"]){
-        SSQUExchangeRateViewController *exchangeRateViewController = [[SSQUExchangeRateViewController alloc] initWithNibName:@"SSQUExchangeRateViewController" bundle:nil];
+        SSQUExchangeRateViewController *exchangeRateViewController = [[SSQUExchangeRateViewController alloc] init];
         exchangeRateViewController.navigationItem.title = @"汇率";
         SET_GRAY_BG(exchangeRateViewController);
         [self.navigationController pushViewController:exchangeRateViewController animated:YES];
