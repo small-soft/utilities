@@ -67,6 +67,17 @@
     if (self.sendRequestButtonTitle==nil) {
         self.sendRequestButtonTitle = @"查询";
     }
+    
+    // 设置按钮
+    UIImage *buttonImageNormal = [UIImage imageNamed:@"gray_btn_small"];
+    UIImage *stretchableButtonImageNormal = [buttonImageNormal stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [self.sendrequestButton setBackgroundImage:stretchableButtonImageNormal forState:UIControlStateNormal];
+    
+    
+    UIImage *buttonImagePressed = [UIImage imageNamed:@"gray_btn_small_p"];
+    UIImage *stretchableButtonImagePressed = [buttonImagePressed stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [self.sendrequestButton setBackgroundImage:stretchableButtonImagePressed forState:UIControlStateHighlighted];
+    
     [self.sendrequestButton setTitle:self.sendRequestButtonTitle forState:UIControlStateNormal];
     [self.segmentedControl addTarget:self action:@selector(segemtControlIndexChange)  forControlEvents:UIControlEventValueChanged];
     [self.sendrequestButton addTarget:self action:@selector(sendRequestButtonPressed) forControlEvents:UIControlEventTouchUpInside];

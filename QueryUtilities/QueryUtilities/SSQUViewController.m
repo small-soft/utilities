@@ -37,7 +37,7 @@
 
 -(NSArray *)menuImage{
     if(nil==_menuImage){
-        self.menuImage = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"han"],[UIImage imageNamed:@"en"],[UIImage imageNamed:@"jian"],[UIImage imageNamed:@"fan"],[UIImage imageNamed:@"phone"],[UIImage imageNamed:@"ip"],[UIImage imageNamed:@"tianqi"],[UIImage imageNamed:@"huilv"],[UIImage imageNamed:@"more"], nil];
+        self.menuImage = [[NSArray alloc] initWithObjects:[UIImage imageNamed:@"han"],[UIImage imageNamed:@"en"],[UIImage imageNamed:@"jian"],[UIImage imageNamed:@"fan"],[UIImage imageNamed:@"phone"],[UIImage imageNamed:@"ip"],[UIImage imageNamed:@"tianqi"],[UIImage imageNamed:@"huilv"],[UIImage imageNamed:@"id"], nil];
     }
     
     return _menuImage;

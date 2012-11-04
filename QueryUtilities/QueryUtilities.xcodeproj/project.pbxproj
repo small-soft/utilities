@@ -70,6 +70,10 @@
 		9D8A034B164407A4005BA9C5 /* gray_mengban.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8A0349164407A4005BA9C5 /* gray_mengban.png */; };
 		9D8A034C164407A4005BA9C5 /* gray_mengban@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8A034A164407A4005BA9C5 /* gray_mengban@2x.png */; };
 		9D8A034E16453E7B005BA9C5 /* c_first_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8A034D16453E7B005BA9C5 /* c_first_bg@2x.png */; };
+		9D8A0462164623CE005BA9C5 /* blueButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8A0460164623CD005BA9C5 /* blueButton.png */; };
+		9D8A0463164623CE005BA9C5 /* whiteButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8A0461164623CD005BA9C5 /* whiteButton.png */; };
+		9D8A0465164626BF005BA9C5 /* gray_btn_small.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8A0464164626BF005BA9C5 /* gray_btn_small.png */; };
+		9D8A04671646288D005BA9C5 /* gray_btn_small_p.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D8A04661646288D005BA9C5 /* gray_btn_small_p.png */; };
 		9DB9860916390E2600B46470 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9860816390E2600B46470 /* UIKit.framework */; };
 		9DB9860B16390E2600B46470 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9860A16390E2600B46470 /* Foundation.framework */; };
 		9DB9860D16390E2600B46470 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9DB9860C16390E2600B46470 /* CoreGraphics.framework */; };
@@ -209,6 +213,10 @@
 		9D8A0349164407A4005BA9C5 /* gray_mengban.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_mengban.png; sourceTree = "<group>"; };
 		9D8A034A164407A4005BA9C5 /* gray_mengban@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gray_mengban@2x.png"; sourceTree = "<group>"; };
 		9D8A034D16453E7B005BA9C5 /* c_first_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c_first_bg@2x.png"; sourceTree = "<group>"; };
+		9D8A0460164623CD005BA9C5 /* blueButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueButton.png; sourceTree = "<group>"; };
+		9D8A0461164623CD005BA9C5 /* whiteButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = whiteButton.png; sourceTree = "<group>"; };
+		9D8A0464164626BF005BA9C5 /* gray_btn_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_btn_small.png; sourceTree = "<group>"; };
+		9D8A04661646288D005BA9C5 /* gray_btn_small_p.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_btn_small_p.png; sourceTree = "<group>"; };
 		9DB9860416390E2600B46470 /* QueryUtilities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QueryUtilities.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9DB9860816390E2600B46470 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9DB9860A16390E2600B46470 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -420,6 +428,10 @@
 		9D8A03441643F226005BA9C5 /* button */ = {
 			isa = PBXGroup;
 			children = (
+				9D8A04661646288D005BA9C5 /* gray_btn_small_p.png */,
+				9D8A0464164626BF005BA9C5 /* gray_btn_small.png */,
+				9D8A0460164623CD005BA9C5 /* blueButton.png */,
+				9D8A0461164623CD005BA9C5 /* whiteButton.png */,
 				9D8A03451643F226005BA9C5 /* gray_btn.png */,
 				9D8A03461643F226005BA9C5 /* gray_btn_p.png */,
 			);
@@ -708,6 +720,10 @@
 				9D8A034C164407A4005BA9C5 /* gray_mengban@2x.png in Resources */,
 				9D8A034E16453E7B005BA9C5 /* c_first_bg@2x.png in Resources */,
 				0F98109716454439008A6C04 /* SSQUSegmentedViewController.xib in Resources */,
+				9D8A0462164623CE005BA9C5 /* blueButton.png in Resources */,
+				9D8A0463164623CE005BA9C5 /* whiteButton.png in Resources */,
+				9D8A0465164626BF005BA9C5 /* gray_btn_small.png in Resources */,
+				9D8A04671646288D005BA9C5 /* gray_btn_small_p.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

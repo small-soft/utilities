@@ -32,6 +32,8 @@
     self.sendRequestButtonTitle = @"转换";
     [self.segmentedControl setTitle:@"简转繁" forSegmentAtIndex:0];
     [self.segmentedControl setTitle:@"繁转简" forSegmentAtIndex:1];
+    self.inputTextField.placeholder = @"请输入要转换的原文";
+
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     

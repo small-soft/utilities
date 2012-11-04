@@ -32,6 +32,8 @@
     self.sendRequestButtonTitle = @"翻译";
     [self.segmentedControl setTitle:@"汉译英" forSegmentAtIndex:0];
     [self.segmentedControl setTitle:@"英译汉" forSegmentAtIndex:1];
+    self.inputTextField.placeholder = @"请输入要翻译的原文";
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     

@@ -29,6 +29,9 @@
     self.sendRequestButtonTitle = @"查询";
     self.segmentedControl.hidden = YES;
     self.inputTextField.frame = CGRectMake(self.inputTextField.frame.origin.x, self.inputTextField.frame.origin.y-20, self.inputTextField.frame.size.width, self.inputTextField.frame.size.height);
+    self.inputTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    
+    self.inputTextField.placeholder = @"请输入身份证号码";
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 }

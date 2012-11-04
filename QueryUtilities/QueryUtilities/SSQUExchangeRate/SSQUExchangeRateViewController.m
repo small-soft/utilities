@@ -53,6 +53,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    // 设置按钮
+    UIImage *buttonImageNormal = [UIImage imageNamed:@"gray_btn_small"];
+    UIImage *stretchableButtonImageNormal = [buttonImageNormal stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [self.selectButton setBackgroundImage:stretchableButtonImageNormal forState:UIControlStateNormal];
+    
+    
+    UIImage *buttonImagePressed = [UIImage imageNamed:@"gray_btn_small_p"];
+    UIImage *stretchableButtonImagePressed = [buttonImagePressed stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [self.selectButton setBackgroundImage:stretchableButtonImagePressed forState:UIControlStateHighlighted];
+    
     [self.countryPickerView selectRow:1 inComponent:1 animated:YES];
     [self.selectButton addTarget:self action:@selector(selectButtonPressDown:) forControlEvents:UIControlEventTouchUpInside];
 }

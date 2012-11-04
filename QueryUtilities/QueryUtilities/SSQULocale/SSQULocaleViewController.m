@@ -32,6 +32,8 @@
     self.sendRequestButtonTitle = @"查询";
     [self.segmentedControl setTitle:@"手机号" forSegmentAtIndex:0];
     [self.segmentedControl setTitle:@"IP" forSegmentAtIndex:1];
+    self.inputTextField.keyboardType = UIKeyboardTypeNumbersAndPunctuation;
+    
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 
