@@ -11,3 +11,4 @@
 @interface SSQULocaleViewController : SSQUSegmentedViewController
 
 @end
+

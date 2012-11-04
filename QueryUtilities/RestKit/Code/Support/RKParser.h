@@ -46,5 +46,6 @@
  @return A string representation of the serialized object or nil if an error occurred.
  */
 - (NSString *)stringFromObject:(id)object error:(NSError **)error;
-
+@optional
+-(id)objectFromString:(NSString *)string error:(NSError **)error usingEncoding:(NSStringEncoding)encoding;
 @end

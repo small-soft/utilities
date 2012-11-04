@@ -15,6 +15,7 @@
 #import "SSQUMoreViewController.h"
 #import "SSQUFontChangeViewController.h"
 #import "SSQULocaleViewController.h"
+#import "SSQUIDViewController.h"
 @interface SSQUViewController()<SSMenuViewDelegate>
 @property (nonatomic,retain) IBOutlet SSMenuView * menuView;
 @property (nonatomic,retain) NSArray *menuTitle;
@@ -28,7 +29,7 @@
 
 -(NSArray *)menuTitle{
     if(nil==_menuTitle){
-        self.menuTitle = [[NSArray alloc] initWithObjects:@"汉译英",@"英译汉",@"简转繁",@"繁转简",@"手机归属地",@"ip归属地",@"天气",@"汇率",@"更多", nil];
+        self.menuTitle = [[NSArray alloc] initWithObjects:@"汉译英",@"英译汉",@"简转繁",@"繁转简",@"手机归属地",@"ip归属地",@"天气",@"汇率",@"身份证", nil];
     }
         
     return _menuTitle;
@@ -99,13 +100,20 @@
         SET_GRAY_BG(exchangeRateViewController);
         [self.navigationController pushViewController:exchangeRateViewController animated:YES];
         [exchangeRateViewController release];
-    }else if ([menuTileForIndex isEqualToString:@"更多"]){
-        SSQUMoreViewController *moreViewController = [[SSQUMoreViewController alloc] initWithNibName:@"SSQUMoreViewController" bundle:nil];
-        SET_GRAY_BG(moreViewController);
-        moreViewController.navigationItem.title = @"更多";
-        [self.navigationController pushViewController:moreViewController animated:YES];
-        [moreViewController release];
+    }else if([menuTileForIndex isEqualToString:@"身份证"]){
+        SSQUIDViewController *IDViewController = [[SSQUIDViewController alloc] init];
+        IDViewController.navigationItem.title = @"身份证";
+        SET_GRAY_BG(IDViewController);
+        [self.navigationController pushViewController:IDViewController animated:YES];
+        [IDViewController release];
     }
+//    }else if ([menuTileForIndex isEqualToString:@"更多"]){
+//        SSQUMoreViewController *moreViewController = [[SSQUMoreViewController alloc] initWithNibName:@"SSQUMoreViewController" bundle:nil];
+//        SET_GRAY_BG(moreViewController);
+//        moreViewController.navigationItem.title = @"更多";
+//        [self.navigationController pushViewController:moreViewController animated:YES];
+//        [moreViewController release];
+//    }
 }
 
 -(NSUInteger)menuViewNumberOfItems:(SSMenuView*)menuView{
