@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "SSLoadingView.h"
+
 @interface SSViewController : UIViewController
 @property (nonatomic, retain) SSLoadingView * loadingView;
+
 @end

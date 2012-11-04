@@ -23,6 +23,10 @@
 		0F9C25CC1646122A0076694B /* SSQUIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9C25CB1646122A0076694B /* SSQUIDViewController.m */; };
 		0F9C26111646829C0076694B /* SSQUPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9C260F1646829C0076694B /* SSQUPickerViewController.m */; };
 		0F9C26121646829C0076694B /* SSQUPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9C26101646829C0076694B /* SSQUPickerViewController.xib */; };
+		0F9C26461646C1300076694B /* MobWin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9C26431646C1300076694B /* MobWin.a */; };
+		0F9C26481646C39E0076694B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9C26471646C39E0076694B /* CoreLocation.framework */; };
+		0F9C264A1646C3E00076694B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9C26491646C3E00076694B /* libz.dylib */; };
+		0F9C264C1646C56C0076694B /* LBSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9C264B1646C56C0076694B /* LBSSDK.framework */; };
 		0F9F2196163EB1F60051822D /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F2195163EB1F60051822D /* SSViewController.m */; };
 		0F9F219A163EB52B0051822D /* SSQUTranslateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F2199163EB52B0051822D /* SSQUTranslateViewController.m */; };
 		0F9F21BD163EE1DA0051822D /* SSQUMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F21BC163EE1DA0051822D /* SSQUMoreViewController.m */; };
@@ -162,6 +166,12 @@
 		0F9C260E1646829C0076694B /* SSQUPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUPickerViewController.h; path = SSQUPickerViewController/SSQUPickerViewController.h; sourceTree = "<group>"; };
 		0F9C260F1646829C0076694B /* SSQUPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUPickerViewController.m; path = SSQUPickerViewController/SSQUPickerViewController.m; sourceTree = "<group>"; };
 		0F9C26101646829C0076694B /* SSQUPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSQUPickerViewController.xib; path = SSQUPickerViewController/SSQUPickerViewController.xib; sourceTree = "<group>"; };
+		0F9C26431646C1300076694B /* MobWin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = MobWin.a; path = Lib/MobWin.a; sourceTree = "<group>"; };
+		0F9C26441646C1300076694B /* MobWinBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobWinBannerView.h; path = Lib/MobWinBannerView.h; sourceTree = "<group>"; };
+		0F9C26451646C1300076694B /* MobWinBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobWinBannerViewDelegate.h; path = Lib/MobWinBannerViewDelegate.h; sourceTree = "<group>"; };
+		0F9C26471646C39E0076694B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0F9C26491646C3E00076694B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0F9C264B1646C56C0076694B /* LBSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LBSSDK.framework; path = QueryUtilities/Lib/build/Framework/LBSSDK.framework; sourceTree = "<group>"; };
 		0F9F2194163EB1F60051822D /* SSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSViewController.h; path = SSUI/ViewControllers/SSViewController.h; sourceTree = "<group>"; };
 		0F9F2195163EB1F60051822D /* SSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSViewController.m; path = SSUI/ViewControllers/SSViewController.m; sourceTree = "<group>"; };
 		0F9F2198163EB52B0051822D /* SSQUTranslateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUTranslateViewController.h; path = SSQUTranslate/SSQUTranslateViewController.h; sourceTree = "<group>"; };
@@ -243,10 +253,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F9C264C1646C56C0076694B /* LBSSDK.framework in Frameworks */,
+				0F9C264A1646C3E00076694B /* libz.dylib in Frameworks */,
 				0FCD0BCA1640384F00847D3F /* MessageUI.framework in Frameworks */,
+				0FA708F416397B85009824D5 /* QuartzCore.framework in Frameworks */,
+				0F9C26481646C39E0076694B /* CoreLocation.framework in Frameworks */,
 				0F99B3261639870F0062597B /* libRestKit.a in Frameworks */,
 				0FA708F616397B91009824D5 /* libxml2.dylib in Frameworks */,
-				0FA708F416397B85009824D5 /* QuartzCore.framework in Frameworks */,
 				0FA708F216397B7D009824D5 /* SystemConfiguration.framework in Frameworks */,
 				0FA708F016397B76009824D5 /* Security.framework in Frameworks */,
 				0FA708EE16397B6D009824D5 /* MobileCoreServices.framework in Frameworks */,
@@ -255,6 +268,7 @@
 				9DB9860916390E2600B46470 /* UIKit.framework in Frameworks */,
 				9DB9860B16390E2600B46470 /* Foundation.framework in Frameworks */,
 				9DB9860D16390E2600B46470 /* CoreGraphics.framework in Frameworks */,
+				0F9C26461646C1300076694B /* MobWin.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,6 +419,16 @@
 			name = SSQUPickerViewController;
 			sourceTree = "<group>";
 		};
+		0F9C26421646C0CA0076694B /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				0F9C26431646C1300076694B /* MobWin.a */,
+				0F9C26441646C1300076694B /* MobWinBannerView.h */,
+				0F9C26451646C1300076694B /* MobWinBannerViewDelegate.h */,
+			);
+			name = Lib;
+			sourceTree = "<group>";
+		};
 		0F9F2197163EB4D20051822D /* SSQUTranslate */ = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +474,9 @@
 		9DB985F916390E2500B46470 = {
 			isa = PBXGroup;
 			children = (
+				0F9C264B1646C56C0076694B /* LBSSDK.framework */,
+				0F9C26491646C3E00076694B /* libz.dylib */,
+				0F9C26471646C39E0076694B /* CoreLocation.framework */,
 				9DF2530416435D6E00869CFE /* icon.png */,
 				9DF2530516435D6E00869CFE /* Icon@2x.png */,
 				9DF2530816435D9A00869CFE /* Default-568h@2x.png */,
@@ -491,6 +518,7 @@
 		9DB9860E16390E2600B46470 /* QueryUtilities */ = {
 			isa = PBXGroup;
 			children = (
+				0F9C26421646C0CA0076694B /* Lib */,
 				0F9C260C1646823B0076694B /* SSQUPickerViewController */,
 				0F9C25C9164611E80076694B /* SSQUID */,
 				0F9C25C416460EC10076694B /* SSQUModel */,
@@ -861,14 +889,23 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/RestKit/Tests/Vendor/OCHamcrest\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/QueryUtilities/Lib/build/Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QueryUtilities/QueryUtilities-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build";
 				INFOPLIST_FILE = "QueryUtilities/QueryUtilities-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				LIBRARY_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)";
-				OTHER_LDFLAGS = "-ObjC";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
+					"\"$(SRCROOT)/QueryUtilities/Lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "972A2771-A316-4FCA-B85D-D952CF6BD74A";
 				VALID_ARCHS = armv7;
@@ -883,14 +920,23 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/RestKit/Tests/Vendor/OCHamcrest\"",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/QueryUtilities/Lib/build/Framework\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "QueryUtilities/QueryUtilities-Prefix.pch";
 				HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build";
 				INFOPLIST_FILE = "QueryUtilities/QueryUtilities-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				LIBRARY_SEARCH_PATHS = "$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)";
-				OTHER_LDFLAGS = "-ObjC";
+				LIBRARY_SEARCH_PATHS = (
+					"$(SOURCE_ROOT)/RestKit/Build/$(BUILD_STYLE)-$(PLATFORM_NAME)",
+					"\"$(SRCROOT)/QueryUtilities/Lib\"",
+				);
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"-lstdc++",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "972A2771-A316-4FCA-B85D-D952CF6BD74A";
 				VALID_ARCHS = armv7;

@@ -11,13 +11,20 @@
 #import "SSQUViewController.h"
 #import <RestKit/RestKit.h>
 #import "SSQUMoreViewController.h"
+#import "MobWinBannerView.h"
+@interface SSQUAppDelegate()
+@property (nonatomic, retain) MobWinBannerView *advBannerView;
+@end
 @implementation SSQUAppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
-
+@synthesize advBannerView = _advBannerView;
 - (void)dealloc
 {
+    [self.advBannerView stopRequest];
+    [self.advBannerView removeFromSuperview];
+    self.advBannerView = nil;
     [_window release];
     [_viewController release];
     [super dealloc];
@@ -41,6 +48,16 @@
     
     [infoButtonItem release];
     [mainViewController release];
+    
+    _advBannerView = [[MobWinBannerView alloc] initMobWinBannerSizeIdentifier:MobWINBannerSizeIdentifier320x50];
+	self.advBannerView.rootViewController = self.viewController;
+	[self.advBannerView setAdUnitID:@"A495798C12C030F28E7711F3613DFC1B"];
+//    NSLog(@"advframe %f %f %f %f",self.advBannerView.frame.origin.x,self.advBannerView.frame.origin.y,self.advBannerView.frame.size.width,self.advBannerView.frame.size.height);
+    self.advBannerView.frame = CGRectMake(self.viewController.view.frame.origin.x, self.viewController.view.frame.size.height-self.advBannerView.frame.size.height, self.advBannerView.frame.size.width, self.advBannerView.frame.size.height);
+//    NSLog(@"advframe %f %f %f %f",self.advBannerView.frame.origin.x,self.advBannerView.frame.origin.y,self.advBannerView.frame.size.width,self.advBannerView.frame.size.height);
+	[self.viewController.view addSubview:self.advBannerView];
+    self.advBannerView.adGpsMode = NO;
+    [self.advBannerView startRequest];
     
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
@@ -73,6 +90,7 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
 }
 
 - (void)infoBtnPress{
