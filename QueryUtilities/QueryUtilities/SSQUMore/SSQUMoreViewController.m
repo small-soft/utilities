@@ -109,7 +109,7 @@
             [self sendEmailToSmallSoft];
         }else if([indexPath row]==1){
             //appId为
-            NSString *appId = @"";
+            NSString *appId = @"576287096";
             NSString *urlValue =[NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",appId];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlValue]];
         }
