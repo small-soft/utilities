@@ -9,14 +9,22 @@
 #import "SSQUAppDelegate.h"
 
 #import "SSQUViewController.h"
-
+#import <RestKit/RestKit.h>
+#import "SSQUMoreViewController.h"
+#import "MobWinBannerView.h"
+@interface SSQUAppDelegate()
+@property (nonatomic, retain) MobWinBannerView *advBannerView;
+@end
 @implementation SSQUAppDelegate
 
 @synthesize window = _window;
 @synthesize viewController = _viewController;
-
+@synthesize advBannerView = _advBannerView;
 - (void)dealloc
 {
+    [self.advBannerView stopRequest];
+    [self.advBannerView removeFromSuperview];
+    self.advBannerView = nil;
     [_window release];
     [_viewController release];
     [super dealloc];
@@ -26,9 +34,34 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    self.viewController = [[[SSQUViewController alloc] initWithNibName:@"SSQUViewController" bundle:nil] autorelease];
+    SSQUViewController* mainViewController = [[SSQUViewController alloc] initWithNibName:@"SSQUViewController" bundle:nil] ;
+    mainViewController.navigationItem.title = @"工具箱";
+    
+    _viewController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    _viewController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    UIButton * infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+
+    UIBarButtonItem * infoButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+    [infoButton addTarget:self action:@selector(infoBtnPress) forControlEvents:UIControlEventTouchUpInside];
+    
+    mainViewController.navigationItem.rightBarButtonItem = infoButtonItem ;
+    
+    [infoButtonItem release];
+    [mainViewController release];
+    
+    _advBannerView = [[MobWinBannerView alloc] initMobWinBannerSizeIdentifier:MobWINBannerSizeIdentifier320x50];
+	self.advBannerView.rootViewController = self.viewController;
+	[self.advBannerView setAdUnitID:@"F2730496033B03EA0115BF9B992675B5"];
+//    NSLog(@"advframe %f %f %f %f",self.advBannerView.frame.origin.x,self.advBannerView.frame.origin.y,self.advBannerView.frame.size.width,self.advBannerView.frame.size.height);
+    self.advBannerView.frame = CGRectMake(self.viewController.view.frame.origin.x, self.viewController.view.frame.size.height-self.advBannerView.frame.size.height, self.advBannerView.frame.size.width, self.advBannerView.frame.size.height);
+//    NSLog(@"advframe %f %f %f %f",self.advBannerView.frame.origin.x,self.advBannerView.frame.origin.y,self.advBannerView.frame.size.width,self.advBannerView.frame.size.height);
+	[self.viewController.view addSubview:self.advBannerView];
+    self.advBannerView.adGpsMode = NO;
+    [self.advBannerView startRequest];
+    
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 
@@ -57,6 +90,15 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+
+}
+
+- (void)infoBtnPress{
+    SSQUMoreViewController *moreViewController = [[SSQUMoreViewController alloc] initWithNibName:@"SSQUMoreViewController" bundle:nil];
+    SET_GRAY_BG(moreViewController);
+    moreViewController.navigationItem.title = @"更多";
+    [self.viewController pushViewController:moreViewController animated:YES];
+    [moreViewController release];
 }
 
 @end
