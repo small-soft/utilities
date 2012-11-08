@@ -1,0 +1,17 @@
+//
+// Prefix header for all source files of the 'QueryUtilities' target in the 'QueryUtilities' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <Foundation/Foundation.h>
+#endif
+
+#define GRAY_BG @"c_first_bg"
+#define SET_GRAY_BG(_viewController) (_viewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:GRAY_BG]])
