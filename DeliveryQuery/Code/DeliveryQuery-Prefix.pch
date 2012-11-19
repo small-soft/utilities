@@ -15,3 +15,11 @@
 
 #define GRAY_BG @"c_first_bg"
 #define SET_GRAY_BG(_viewController) (_viewController.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:GRAY_BG]])
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen]bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen]bounds].size.height)
+#define RESIZE_VIEW(srcView) (srcView.frame = CGRectMake(srcView.frame.origin.x, srcView.frame.origin.y, srcView.frame.size.width, SCREEN_HEIGHT - srcView.frame.origin.y))
+#define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+#define SET_AD_FRAME(srcView) (CGRectMake(srcView.frame.origin.x, srcView.frame.origin.y, srcView.frame.size.width, srcView.frame.size.height - 25))
+#define DBNAME @"DeliveryQueryDB"
+#define GETDB ([(SSQUAppDelegate *)[[UIApplication sharedApplication] delegate] db])

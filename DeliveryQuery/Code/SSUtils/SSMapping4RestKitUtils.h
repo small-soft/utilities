@@ -11,4 +11,5 @@
 @interface SSMapping4RestKitUtils : NSObject
 +(id)performMappingWithMapping:(RKObjectMappingDefinition*)configuredObjectMapping forXmlString:(NSString*)xmlString;
 +(id)performMappingWithMapping:(RKObjectMappingDefinition*)configuredObjectMapping forXmlString:(NSString*)xmlString usingEncoding:(NSStringEncoding)encoding;
++(id)performMappingWithMapping:(RKObjectMappingDefinition*)configuredObjectMapping forJsonString:(NSString*)jsonString;
 @end

@@ -12,21 +12,27 @@
 #import <RestKit/RestKit.h>
 #import "SSQUMoreViewController.h"
 #import "MobWinBannerView.h"
+
 @interface SSQUAppDelegate()
 @property (nonatomic, retain) MobWinBannerView *advBannerView;
 @end
 @implementation SSQUAppDelegate
 
 @synthesize window = _window;
-@synthesize viewController = _viewController;
+//@synthesize viewController = _viewController;
+@synthesize rootViewController = _rootViewController;
 @synthesize advBannerView = _advBannerView;
+@synthesize navigationController = _navigationController;
+@synthesize db = _db;
+
 - (void)dealloc
 {
     [self.advBannerView stopRequest];
     [self.advBannerView removeFromSuperview];
     self.advBannerView = nil;
     [_window release];
-    [_viewController release];
+    self.navigationController = nil;
+    self.rootViewController = nil;
     [super dealloc];
 }
 
@@ -35,10 +41,11 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     SSQUViewController* mainViewController = [[SSQUViewController alloc] initWithNibName:@"SSQUViewController" bundle:nil] ;
-    mainViewController.navigationItem.title = @"工具箱";
+    mainViewController.navigationItem.title = @"查快递";
     
-    _viewController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
-    _viewController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    _navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    self.navigationController.view.frame = CGRectMake(self.navigationController.view.frame.origin.x, self.navigationController.view.frame.origin.y, self.navigationController.view.frame.size.width, self.navigationController.view.frame.size.height - 25);
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     UIButton * infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
 
     UIBarButtonItem * infoButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
@@ -49,19 +56,29 @@
     [infoButtonItem release];
     [mainViewController release];
     
-    _advBannerView = [[MobWinBannerView alloc] initMobWinBannerSizeIdentifier:MobWINBannerSizeIdentifier320x50];
-	self.advBannerView.rootViewController = self.viewController;
+    _advBannerView = [[MobWinBannerView alloc] initMobWinBannerSizeIdentifier:MobWINBannerSizeIdentifier320x25];
+    
+    _rootViewController = [[UIViewController alloc] init];
+    UIView * rootView = [[UIView alloc] initWithFrame:self.window.frame];
+    _rootViewController.view = rootView;
+    [rootView release];
+    
+    [self.rootViewController.view addSubview:self.navigationController.view];
+    
+	self.advBannerView.rootViewController = self.rootViewController;
 	[self.advBannerView setAdUnitID:@"F2730496033B03EA0115BF9B992675B5"];
 //    NSLog(@"advframe %f %f %f %f",self.advBannerView.frame.origin.x,self.advBannerView.frame.origin.y,self.advBannerView.frame.size.width,self.advBannerView.frame.size.height);
-    self.advBannerView.frame = CGRectMake(self.viewController.view.frame.origin.x, self.viewController.view.frame.size.height-self.advBannerView.frame.size.height, self.advBannerView.frame.size.width, self.advBannerView.frame.size.height);
+    self.advBannerView.frame = CGRectMake(self.rootViewController.view.frame.origin.x, self.rootViewController.view.frame.size.height-45, self.advBannerView.frame.size.width, 25);
 //    NSLog(@"advframe %f %f %f %f",self.advBannerView.frame.origin.x,self.advBannerView.frame.origin.y,self.advBannerView.frame.size.width,self.advBannerView.frame.size.height);
-	[self.viewController.view addSubview:self.advBannerView];
+//	[self.viewController.view addSubview:self.advBannerView];
+    [self.rootViewController.view addSubview:self.advBannerView];
     self.advBannerView.adGpsMode = NO;
     [self.advBannerView startRequest];
     
-    self.window.rootViewController = self.viewController;
+    self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
 
+    [self initDB];
     return YES;
 }
 
@@ -97,8 +114,25 @@
     SSQUMoreViewController *moreViewController = [[SSQUMoreViewController alloc] initWithNibName:@"SSQUMoreViewController" bundle:nil];
     SET_GRAY_BG(moreViewController);
     moreViewController.navigationItem.title = @"更多";
-    [self.viewController pushViewController:moreViewController animated:YES];
+    [self.navigationController pushViewController:moreViewController animated:YES];
     [moreViewController release];
+}
+
+- (void)initDB {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSLog(@"%@",documentsDirectory);
+    
+    NSString *writableDBPath = [documentsDirectory stringByAppendingPathComponent:@"mydb.sqlite"];
+    
+    NSLog(@"db path:%@",writableDBPath);
+    if (![[NSFileManager defaultManager] fileExistsAtPath:writableDBPath]) {
+        [[NSFileManager defaultManager] copyItemAtPath:[[NSBundle mainBundle] pathForResource:DBNAME ofType:@"sqlite" ] toPath:writableDBPath error:nil];
+    }
+    
+    
+    self.db = [FMDatabase databaseWithPath:writableDBPath];
 }
 
 @end

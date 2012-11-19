@@ -16,6 +16,10 @@
 #import "SSQUFontChangeViewController.h"
 #import "SSQULocaleViewController.h"
 #import "SSQUIDViewController.h"
+#import "SSDQAllDeliveryCompanyListViewController.h"
+#import "SSDQDeliveryQueryViewController.h"
+#import "SSDQMyDeliveryViewController.h"
+
 @interface SSQUViewController()<SSMenuViewDelegate>
 @property (nonatomic,retain) IBOutlet SSMenuView * menuView;
 @property (nonatomic,retain) NSArray *menuTitle;
@@ -29,7 +33,7 @@
 
 -(NSArray *)menuTitle{
     if(nil==_menuTitle){
-        self.menuTitle = [[NSArray alloc] initWithObjects:@"汉译英",@"英译汉",@"简转繁",@"繁转简",@"手机归属地",@"ip归属地",@"天气",@"汇率",@"身份证", nil];
+        self.menuTitle = [[NSArray alloc] initWithObjects:@"快递追踪",@"我的快递",@"快递查询",@"常用快递",@"快递公司大全",@"寄快递", nil];
     }
         
     return _menuTitle;
@@ -46,74 +50,57 @@
 #pragma mark - SSMenuViewDelegate Methods
 -(void)menuView:(SSMenuView *)menuView didSelectItemAtIndex:(NSUInteger)index{
     NSString * menuTileForIndex = [self.menuTitle objectAtIndex:index];
-    if ([menuTileForIndex isEqualToString:@"汉译英"]) {
-        SSQUTranslateViewController * translateViewController = [[SSQUTranslateViewController alloc] init];
-        translateViewController.navigationItem.title = @"翻译";
-        translateViewController.selectIndex = 0;
+    if ([menuTileForIndex isEqualToString:@"快递追踪"]) {
+//        SSQUTranslateViewController * translateViewController = [[SSQUTranslateViewController alloc] init];
+//        translateViewController.navigationItem.title = @"翻译";
+//        translateViewController.selectIndex = 0;
+//        SET_GRAY_BG(translateViewController);
+//        [self.navigationController pushViewController:translateViewController animated:YES];
+//        [translateViewController release];
+
+        SSDQAllDeliveryCompanyListViewController * translateViewController = [[SSDQAllDeliveryCompanyListViewController alloc] init];
+        translateViewController.navigationItem.title = @"快递追踪";
+//        translateViewController.selectIndex = 0;
+        SET_GRAY_BG(translateViewController);
+        SET_AD_FRAME(translateViewController.view);
+        [self.navigationController pushViewController:translateViewController animated:YES];
+        [translateViewController release];
+    }else if ([menuTileForIndex isEqualToString:@"我的快递"]){
+        SSDQMyDeliveryViewController * translateViewController = [[SSDQMyDeliveryViewController alloc] init];
+        translateViewController.navigationItem.title = @"我的快递";
+//        translateViewController.selectIndex = 1;
         SET_GRAY_BG(translateViewController);
         [self.navigationController pushViewController:translateViewController animated:YES];
         [translateViewController release];
-    }else if ([menuTileForIndex isEqualToString:@"英译汉"]){
-        SSQUTranslateViewController * translateViewController = [[SSQUTranslateViewController alloc] init];
-        translateViewController.navigationItem.title = @"翻译";
-        translateViewController.selectIndex = 1;
+    }else if ([menuTileForIndex isEqualToString:@"快递查询"]){
+        SSDQDeliveryQueryViewController * fontChangeViewController = [[SSDQDeliveryQueryViewController alloc] initWithNibName:@"SSDQDeliveryQueryViewController" bundle:nil];
+        fontChangeViewController.navigationItem.title = @"快递查询";
+//        fontChangeViewController.selectIndex = 0;
+        SET_GRAY_BG(fontChangeViewController);
+        [self.navigationController pushViewController:fontChangeViewController animated:YES];
+        [fontChangeViewController release];
+    }else if ([menuTileForIndex isEqualToString:@"常用快递"]){
+        SSDQAllDeliveryCompanyListViewController * translateViewController = [[SSDQAllDeliveryCompanyListViewController alloc] init];
+        translateViewController.navigationItem.title = @"常用快递";
+        translateViewController.contentMode = DeliverCompanyListContentModeFavOnly;
+        //        translateViewController.selectIndex = 0;
+        SET_GRAY_BG(translateViewController);
+        [self.navigationController pushViewController:translateViewController animated:YES];
+
+    }else if ([menuTileForIndex isEqualToString:@"快递公司大全"]){
+        SSDQAllDeliveryCompanyListViewController * translateViewController = [[SSDQAllDeliveryCompanyListViewController alloc] init];
+        translateViewController.navigationItem.title = @"快递公司大全";
         SET_GRAY_BG(translateViewController);
         [self.navigationController pushViewController:translateViewController animated:YES];
         [translateViewController release];
-    }else if ([menuTileForIndex isEqualToString:@"简转繁"]){
-        SSQUFontChangeViewController * fontChangeViewController = [[SSQUFontChangeViewController alloc] init];
-        fontChangeViewController.navigationItem.title = @"字体转换";
-        fontChangeViewController.selectIndex = 0;
-        SET_GRAY_BG(fontChangeViewController);
-        [self.navigationController pushViewController:fontChangeViewController animated:YES];
-        [fontChangeViewController release];
-    }else if ([menuTileForIndex isEqualToString:@"繁转简"]){
-        SSQUFontChangeViewController * fontChangeViewController = [[SSQUFontChangeViewController alloc] init];
-        fontChangeViewController.navigationItem.title = @"字体转换";
-        fontChangeViewController.selectIndex = 1;
-        SET_GRAY_BG(fontChangeViewController);
-        [self.navigationController pushViewController:fontChangeViewController animated:YES];
-        [fontChangeViewController release];
-    }else if ([menuTileForIndex isEqualToString:@"手机归属地"]){
+    }else if ([menuTileForIndex isEqualToString:@"寄快递"]){
         SSQULocaleViewController * localeViewController = [[SSQULocaleViewController alloc] init];
-        localeViewController.navigationItem.title = @"归属地";
-        localeViewController.selectIndex = 0;
-        SET_GRAY_BG(localeViewController);
-        [self.navigationController pushViewController:localeViewController animated:YES];
-        [localeViewController release];
-    }else if ([menuTileForIndex isEqualToString:@"ip归属地"]){
-        SSQULocaleViewController * localeViewController = [[SSQULocaleViewController alloc] init];
-        localeViewController.navigationItem.title = @"归属地";
+        localeViewController.navigationItem.title = @"寄快递";
         localeViewController.selectIndex = 1;
         SET_GRAY_BG(localeViewController);
         [self.navigationController pushViewController:localeViewController animated:YES];
         [localeViewController release];
-    }else if ([menuTileForIndex isEqualToString:@"天气"]) {
-        SSQUWeatherViewController * weatherViewController = [[SSQUWeatherViewController alloc] init];
-        weatherViewController.navigationItem.title = @"天气";
-        SET_GRAY_BG(weatherViewController);
-        [self.navigationController pushViewController:weatherViewController animated:YES];
-        [weatherViewController release];
-    }else if ([menuTileForIndex isEqualToString:@"汇率"]){
-        SSQUExchangeRateViewController *exchangeRateViewController = [[SSQUExchangeRateViewController alloc] init];
-        exchangeRateViewController.navigationItem.title = @"汇率";
-        SET_GRAY_BG(exchangeRateViewController);
-        [self.navigationController pushViewController:exchangeRateViewController animated:YES];
-        [exchangeRateViewController release];
-    }else if([menuTileForIndex isEqualToString:@"身份证"]){
-        SSQUIDViewController *IDViewController = [[SSQUIDViewController alloc] init];
-        IDViewController.navigationItem.title = @"身份证";
-        SET_GRAY_BG(IDViewController);
-        [self.navigationController pushViewController:IDViewController animated:YES];
-        [IDViewController release];
     }
-//    }else if ([menuTileForIndex isEqualToString:@"更多"]){
-//        SSQUMoreViewController *moreViewController = [[SSQUMoreViewController alloc] initWithNibName:@"SSQUMoreViewController" bundle:nil];
-//        SET_GRAY_BG(moreViewController);
-//        moreViewController.navigationItem.title = @"更多";
-//        [self.navigationController pushViewController:moreViewController animated:YES];
-//        [moreViewController release];
-//    }
 }
 
 -(NSUInteger)menuViewNumberOfItems:(SSMenuView*)menuView{
@@ -150,8 +137,8 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.menuView.menuDelegate = self;
-    self.menuView.topPadding = 10;
-    self.menuView.yPadding = 10;
+    self.menuView.topPadding = 11;
+    self.menuView.yPadding = 22;
     self.menuView.columnCount = 3;
     SET_GRAY_BG(self);
     [self.menuView reloadData];
