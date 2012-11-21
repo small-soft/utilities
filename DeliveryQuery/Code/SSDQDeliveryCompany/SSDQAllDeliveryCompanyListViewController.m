@@ -42,6 +42,7 @@
     if (self) {
         // Custom initialization
     }
+    
     return self;
 }
 
@@ -49,6 +50,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"常用" style:UIBarButtonItemStylePlain target:self action:@selector(switchContent)];
     
     [self loadDB];
 }
@@ -58,6 +61,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 -(void)loadDB{
     self.data = [[NSMutableArray alloc]init];
@@ -133,5 +137,18 @@
         default:
             break;
     }
+}
+
+-(void)switchContent {
+    if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"常用"]) {
+        self.contentMode = DeliverCompanyListContentModeFavOnly;
+        self.navigationItem.rightBarButtonItem.title = @"全部";
+    }else{
+        self.contentMode = DeliverCompanyListContentModeAll;
+        self.navigationItem.rightBarButtonItem.title = @"常用";
+    }
+    
+    [self loadDB];
+    [self.contentTable reloadData];
 }
 @end

@@ -119,6 +119,16 @@
         self.resultText.text = @"抱歉！查无结果";
     }else{
 //        self.resultText.text = result.expSpellName;
+        if (result.status == SSDQDeliveryResultStatusFailed && result.errCode!=SSDQDeliveryResultErrorCodeNoError) {
+            NSString *msg = [NSString stringWithFormat:@"%@！要保存查询记录吗？",[result getErrorDescription]];
+            
+            UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"查询失败" message:msg delegate:self cancelButtonTitle:@"不保存" otherButtonTitles:@"保存", nil];
+            
+            [alert show];
+            [self.loadingView hideLoadingView];
+            return;
+        }
+        
         [self addDelivery:result];
         
         [self enterDetail];
@@ -169,13 +179,23 @@
 }
 
 -(IBAction)query:(id)sender {
-    if ([self isQueryed] > 0) {
-        [self enterDetail];
+    
+    if (self.company.code.length <=0 || self.deliveryNumber.text.length <=0) {
+        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"信息不完整" message:@"请完整输入快递公司和快递单号" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
         
+        [alert show];
         return;
     }
+    
+    // 如果已经签收了，就不查询了
+    if (![self isFinished]) {
+        [self loadObjectsFromRemote];
+    }else{
+        [self enterDetail];
+    }
+    
     [self.deliveryNumber resignFirstResponder];
-    [self loadObjectsFromRemote];
+    
 }
 
 -(void)addDelivery:(SSDQDeliveryResult *) result {
@@ -184,40 +204,75 @@
         return;
     }
     
+    result.id = [[self isQueryed] id];
+    
     FMDatabase *db = GETDB;
     
     if ([db open]) {
-        NSString *str = [NSString stringWithFormat:@"insert into DeliveryQueryHistoryMain (companyCode,companyName,deliveryNumber,status) values('%@','%@','%@',%d)",result.expSpellName,result.expTextName,result.mailNo,[result.status intValue]];
+        NSString *str;
+        NSString *sendTime = @"";
+        NSString *latestContext = @"";
+        NSString *signTime = @"";
+        
+        if (result.data && [result.data count] > 0) {
+            SSDQDeliveryItem *earliestItem = [result.data lastObject];
+            sendTime = earliestItem.time;
+            
+            SSDQDeliveryItem *latestItem = [result.data objectAtIndex:0];
+            latestContext = latestItem.context;
+            
+            if (result.status == SSDQDeliveryResultStatusSigned) {
+                signTime = latestItem.time;
+            }
+            
+        }
+        
+        if (result.id == 0) {
+            str = [NSString stringWithFormat:@"insert into DeliveryQueryHistoryMain (companyCode,companyName,deliveryNumber,status,sendTime,signTime,latestContext,companyPhone) values('%@','%@','%@',%d,'%@','%@','%@','%@')",result.expSpellName,result.expTextName,result.mailNo,result.status,sendTime,signTime,latestContext,self.company.phone];
+        } else {
+            str = [NSString stringWithFormat:@"update DeliveryQueryHistoryMain set status=%d,errCode=%d,sendTime='%@',signTime='%@',latestContext='%@' where id = %d",result.status,result.errCode,sendTime,signTime,latestContext, result.id];
+            
+            // 删除
+            NSString *delItemsSql = [NSString stringWithFormat:@"delete from  DeliveryQueryHistoryItems where mainId = %d",result.id];
+            [db executeUpdate:delItemsSql];
+        }
+        
         
         BOOL success = [db executeUpdate:str];
         NSLog(@"result is %d",success);
         
-        NSString *sql = [NSString stringWithFormat: @"SELECT * from DeliveryQueryHistoryMain where companyCode = '%@' and deliveryNumber = '%@'",result.expSpellName,result.mailNo];
         
-        NSLog(@"execute sql:%@",sql);
-        FMResultSet *rs = [db executeQuery:sql];
-        
-        if ([rs next]) {
-            result.id = [rs intForColumn:@"id"];
-         
-            for (int i=0; i < [result.data count]; i++) {
-                SSDQDeliveryItem *item = [result.data objectAtIndex:i];
-                
-                NSString *itemSql = [NSString stringWithFormat:@"insert into DeliveryQueryHistoryItems (time,context,mainId) values('%@','%@',%d)",item.time,item.context,result.id];
-                
-                [db executeUpdate:itemSql];
+        if (result.id == 0) {
+            NSString *sql = [NSString stringWithFormat: @"SELECT * from DeliveryQueryHistoryMain where companyCode = '%@' and deliveryNumber = '%@'",result.expSpellName,result.mailNo];
+            
+            NSLog(@"execute sql:%@",sql);
+            FMResultSet *rs = [db executeQuery:sql];
+            
+            if ([rs next]) {
+                result.id = [rs intForColumn:@"id"];
             }
+            
         }
+        
+        
+        for (int i=0; i < [result.data count]; i++) {
+            SSDQDeliveryItem *item = [result.data objectAtIndex:i];
+            
+            NSString *itemSql = [NSString stringWithFormat:@"insert into DeliveryQueryHistoryItems (time,context,mainId) values('%@','%@',%d)",item.time,item.context,result.id];
+            
+            [db executeUpdate:itemSql];
+        }
+        
     }
     
     [db close];
 }
 
--(int)isQueryed{
+-(SSDQDeliveryResult*)isQueryed{
     FMDatabase *db = GETDB;
     
     if (self.deliveryNumber.text.length <=0 && self.company.code.length <=0) {
-        return 0;
+        return nil;
     }
     
     if ([db open]) {
@@ -228,13 +283,23 @@
         
         if ([rs next]) {
             NSLog(@"isQueryed:%d",[rs intForColumn:@"id"]);
-            return [rs intForColumn:@"id"];
+            SSDQDeliveryResult *result = [[[SSDQDeliveryResult alloc]init]autorelease];
+            result.id = [rs intForColumn:@"id"];
+            result.status = [rs intForColumn:@"status"];
+            
+            return result;
         }
     }
     
     [db close];
     
-    return 0;
+    return nil;
+}
+
+-(BOOL)isFinished {
+    SSDQDeliveryResult *result = [self isQueryed];
+    
+    return result && result.id > 0 && result.status == SSDQDeliveryResultStatusSigned;
 }
 
 -(void)enterDetail {
@@ -245,5 +310,26 @@
     
     [self.navigationController pushViewController:dqr animated:YES];
     [dqr release];
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 1:{
+            SSDQDeliveryResult *result = [[SSDQDeliveryResult alloc]init];
+            result.mailNo = self.deliveryNumber.text;
+            result.expSpellName = self.company.code;
+            result.expTextName = self.company.name;
+            result.status = SSDQDeliveryResultStatusFailed;
+            result.errCode = SSDQDeliveryResultErrorCodeNumberNotExist;
+            
+            [self addDelivery:result];
+            [self enterDetail];
+        }
+            
+            break;
+            
+        default:
+            break;
+    }
 }
 @end

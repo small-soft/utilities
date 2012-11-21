@@ -43,11 +43,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQDeliveryCompany/SSDQAllDeliveryCompanyListViewController.m"
-         timestampString = "374901119.297179"
+         timestampString = "375083029.913281"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "72"
-         endingLineNumber = "72"
+         startingLineNumber = "76"
+         endingLineNumber = "76"
          landmarkName = "-loadDB"
          landmarkType = "5">
       </FileBreakpoint>
@@ -56,11 +56,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQMyDelivery/SSDQMyDeliveryViewController.m"
-         timestampString = "374916532.163273"
+         timestampString = "375089303.055822"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
+         startingLineNumber = "55"
+         endingLineNumber = "55"
          landmarkName = "-loadDB"
          landmarkType = "5">
       </FileBreakpoint>
@@ -69,11 +69,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQMyDelivery/SSDQMyDeliveryViewController.m"
-         timestampString = "374916842.470582"
+         timestampString = "375102147.260719"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "97"
-         endingLineNumber = "97"
+         startingLineNumber = "101"
+         endingLineNumber = "101"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -82,11 +82,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQDeliveryQuery/SSDQDeliveryQueryResultViewController.m"
-         timestampString = "374925317.082859"
+         timestampString = "375167016.236379"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "69"
-         endingLineNumber = "69"
+         startingLineNumber = "81"
+         endingLineNumber = "81"
          landmarkName = "-loadDB"
          landmarkType = "5">
       </FileBreakpoint>
@@ -95,11 +95,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQDeliveryQuery/SSDQDeliveryQueryResultViewController.m"
-         timestampString = "374925317.082859"
+         timestampString = "375167016.236379"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "56"
-         endingLineNumber = "56"
+         startingLineNumber = "64"
+         endingLineNumber = "64"
          landmarkName = "-viewWillAppear:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -108,11 +108,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQDeliveryQuery/SSDQDeliveryQueryViewController.m"
-         timestampString = "374940088.40159"
+         timestampString = "375086902.054791"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "189"
-         endingLineNumber = "189"
+         startingLineNumber = "232"
+         endingLineNumber = "232"
          landmarkName = "-addDelivery:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -121,11 +121,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQDeliveryQuery/SSDQDeliveryQueryViewController.m"
-         timestampString = "374940088.40159"
+         timestampString = "375086902.054791"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "191"
-         endingLineNumber = "191"
+         startingLineNumber = "240"
+         endingLineNumber = "240"
          landmarkName = "-addDelivery:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -134,11 +134,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQDeliveryQuery/SSDQDeliveryQueryResultViewController.m"
-         timestampString = "374925317.082859"
+         timestampString = "375167638.407055"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "112"
-         endingLineNumber = "112"
+         startingLineNumber = "158"
+         endingLineNumber = "158"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -147,11 +147,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQDeliveryQuery/SSDQDeliveryQueryViewController.m"
-         timestampString = "374940088.40159"
+         timestampString = "375015204.007978"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "183"
-         endingLineNumber = "183"
+         startingLineNumber = "203"
+         endingLineNumber = "203"
          landmarkName = "-addDelivery:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -160,11 +160,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQDeliveryQuery/SSDQDeliveryQueryResultViewController.m"
-         timestampString = "374925317.082859"
+         timestampString = "375167638.407055"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "127"
-         endingLineNumber = "127"
+         startingLineNumber = "171"
+         endingLineNumber = "171"
          landmarkName = "-tableView:numberOfRowsInSection:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -199,11 +199,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQDeliveryQuery/SSDQDeliveryQueryViewController.m"
-         timestampString = "374983173.65422"
+         timestampString = "375015204.007978"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "177"
-         endingLineNumber = "177"
+         startingLineNumber = "197"
+         endingLineNumber = "197"
          landmarkName = "-query:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -225,11 +225,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQDeliveryQuery/SSDQDeliveryQueryViewController.m"
-         timestampString = "374983773.29847"
+         timestampString = "375015204.007978"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "172"
-         endingLineNumber = "172"
+         startingLineNumber = "193"
+         endingLineNumber = "193"
          landmarkName = "-query:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -238,12 +238,38 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSDQDeliveryQuery/SSDQDeliveryQueryViewController.m"
-         timestampString = "374983791.878011"
+         timestampString = "375086902.054791"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "217"
-         endingLineNumber = "217"
+         startingLineNumber = "272"
+         endingLineNumber = "272"
          landmarkName = "-isQueryed"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Code/SSDQDeliveryQuery/SSDQDeliveryQueryViewController.m"
+         timestampString = "375102981.076393"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "122"
+         endingLineNumber = "122"
+         landmarkName = "-request:didLoadResponse:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Code/Model/SSDQDeliveryQueryResult.m"
+         timestampString = "375103510.596175"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "106"
+         endingLineNumber = "106"
+         landmarkName = "-getErrorDescription"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

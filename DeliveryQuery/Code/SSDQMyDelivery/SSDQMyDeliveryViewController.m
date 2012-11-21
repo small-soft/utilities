@@ -11,6 +11,7 @@
 #import "SSQUAppDelegate.h"
 #import "SSDQDeliveryQueryResultViewController.h"
 #import "SSDQDeliveryQueryResult.h"
+#import "SSDQMyDeliveryCell.h"
 
 @interface SSDQMyDeliveryViewController ()
 
@@ -62,11 +63,14 @@
 
             SSDQDeliveryResult *result = [[[SSDQDeliveryResult alloc]init]autorelease];
             result.id = [rs intForColumn:@"id"];
-            result.expTextName = [[rs stringForColumn:@"companyName"] copy];
-            result.expSpellName = [[rs stringForColumn:@"companyCode"] copy];
-            result.mailNo = [[rs stringForColumn:@"deliveryNumber"] copy];
-            result.status = [NSNumber numberWithInt:[rs intForColumn:@"status"]];
-
+            result.expTextName = [rs stringForColumn:@"companyName"];
+            result.expSpellName = [rs stringForColumn:@"companyCode"];
+            result.mailNo = [rs stringForColumn:@"deliveryNumber"];
+            result.status = [rs intForColumn:@"status"];
+            result.latestContext = [rs stringForColumn:@"latestContext"];
+            result.sendTime = [rs stringForColumn:@"sendTime"];
+            result.signTime = [rs stringForColumn:@"signTime"];
+            result.companyPhone = [rs stringForColumn:@"companyPhone"];
             
             [self.data addObject:result];
         }
@@ -77,14 +81,14 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"123"];
+    SSDQMyDeliveryCell *cell = [tableView dequeueReusableCellWithIdentifier:[SSDQMyDeliveryCell cellIdentifer]];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"123"];
+        cell = [SSDQMyDeliveryCell createCell:nil];
     }
     
-    cell.textLabel.text = [(SSDQDeliveryResult*)[self.data objectAtIndex:indexPath.row] mailNo] ;
-    
+    cell.result = [self.data objectAtIndex:indexPath.row];
+    [cell setupView];
     return cell;
 }
 
@@ -97,11 +101,17 @@
     SSDQDeliveryQueryResultViewController *dqr = [[[SSDQDeliveryQueryResultViewController alloc]init]autorelease];
     dqr.title = @"快递详情";
     
-    SSDQDeliveryResult *result = (SSDQDeliveryResult*)[self.data objectAtIndex:indexPath.row];
+    SSDQDeliveryResult *result = [self.data objectAtIndex:indexPath.row];
     
     dqr.companyCode = result.expSpellName;
     dqr.deliveryNumber = result.mailNo;
     
     [self.navigationController pushViewController:dqr animated:YES];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [SSDQMyDeliveryCell cellHeight];
 }
 @end

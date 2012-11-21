@@ -45,6 +45,11 @@
 		0FD541E0163D40B40092B559 /* MoneyUnit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541DE163D40B40092B559 /* MoneyUnit.plist */; };
 		9D0C86D4165879CE006AAC18 /* SSDQMyDeliveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C86D2165879CE006AAC18 /* SSDQMyDeliveryViewController.m */; };
 		9D0C86D5165879CE006AAC18 /* SSDQMyDeliveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D0C86D3165879CE006AAC18 /* SSDQMyDeliveryViewController.xib */; };
+		9D0C87A4165B6269006AAC18 /* SSDQMyDeliveryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C87A3165B6269006AAC18 /* SSDQMyDeliveryCell.m */; };
+		9D0C87A6165B62F5006AAC18 /* SSDQMyDeliverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D0C87A5165B62F5006AAC18 /* SSDQMyDeliverCell.xib */; };
+		9D0C87A9165B78BA006AAC18 /* SSSystemUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C87A8165B78BA006AAC18 /* SSSystemUtils.m */; };
+		9D0C87AC165B80A6006AAC18 /* icon_phone.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D0C87AA165B80A6006AAC18 /* icon_phone.png */; };
+		9D0C87AD165B80A6006AAC18 /* icon_phone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D0C87AB165B80A6006AAC18 /* icon_phone@2x.png */; };
 		9D88E9C5164E6D1A003C151D /* DeliveryQueryDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9D88E9C4164E6D1A003C151D /* DeliveryQueryDB.sqlite */; };
 		9D88E9CA164E6DF9003C151D /* SSDQAllDeliveryCompanyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D88E9C8164E6DF8003C151D /* SSDQAllDeliveryCompanyListViewController.m */; };
 		9D88E9CB164E6DF9003C151D /* SSDQAllDeliveryCompanyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D88E9C9164E6DF8003C151D /* SSDQAllDeliveryCompanyListViewController.xib */; };
@@ -414,6 +419,13 @@
 		9D0C86D1165879CE006AAC18 /* SSDQMyDeliveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDQMyDeliveryViewController.h; sourceTree = "<group>"; };
 		9D0C86D2165879CE006AAC18 /* SSDQMyDeliveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDQMyDeliveryViewController.m; sourceTree = "<group>"; };
 		9D0C86D3165879CE006AAC18 /* SSDQMyDeliveryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSDQMyDeliveryViewController.xib; sourceTree = "<group>"; };
+		9D0C87A2165B6268006AAC18 /* SSDQMyDeliveryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDQMyDeliveryCell.h; sourceTree = "<group>"; };
+		9D0C87A3165B6269006AAC18 /* SSDQMyDeliveryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDQMyDeliveryCell.m; sourceTree = "<group>"; };
+		9D0C87A5165B62F5006AAC18 /* SSDQMyDeliverCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSDQMyDeliverCell.xib; sourceTree = "<group>"; };
+		9D0C87A7165B78BA006AAC18 /* SSSystemUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSSystemUtils.h; sourceTree = "<group>"; };
+		9D0C87A8165B78BA006AAC18 /* SSSystemUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSystemUtils.m; sourceTree = "<group>"; };
+		9D0C87AA165B80A6006AAC18 /* icon_phone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_phone.png; sourceTree = "<group>"; };
+		9D0C87AB165B80A6006AAC18 /* icon_phone@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_phone@2x.png"; sourceTree = "<group>"; };
 		9D88E9C4164E6D1A003C151D /* DeliveryQueryDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeliveryQueryDB.sqlite; sourceTree = "<group>"; };
 		9D88E9C7164E6DF8003C151D /* SSDQAllDeliveryCompanyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDQAllDeliveryCompanyListViewController.h; sourceTree = "<group>"; };
 		9D88E9C8164E6DF8003C151D /* SSDQAllDeliveryCompanyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDQAllDeliveryCompanyListViewController.m; sourceTree = "<group>"; };
@@ -807,6 +819,8 @@
 			children = (
 				0F9810B71645764B008A6C04 /* SSMapping4RestKitUtils.h */,
 				0F9810B81645764B008A6C04 /* SSMapping4RestKitUtils.m */,
+				9D0C87A7165B78BA006AAC18 /* SSSystemUtils.h */,
+				9D0C87A8165B78BA006AAC18 /* SSSystemUtils.m */,
 			);
 			name = SSUtils;
 			sourceTree = "<group>";
@@ -929,6 +943,9 @@
 				9D0C86D1165879CE006AAC18 /* SSDQMyDeliveryViewController.h */,
 				9D0C86D2165879CE006AAC18 /* SSDQMyDeliveryViewController.m */,
 				9D0C86D3165879CE006AAC18 /* SSDQMyDeliveryViewController.xib */,
+				9D0C87A2165B6268006AAC18 /* SSDQMyDeliveryCell.h */,
+				9D0C87A3165B6269006AAC18 /* SSDQMyDeliveryCell.m */,
+				9D0C87A5165B62F5006AAC18 /* SSDQMyDeliverCell.xib */,
 			);
 			path = SSDQMyDelivery;
 			sourceTree = "<group>";
@@ -1394,6 +1411,8 @@
 		9DF2531016436E2C00869CFE /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				9D0C87AA165B80A6006AAC18 /* icon_phone.png */,
+				9D0C87AB165B80A6006AAC18 /* icon_phone@2x.png */,
 				9D8A0349164407A4005BA9C5 /* gray_mengban.png */,
 				9D8A034A164407A4005BA9C5 /* gray_mengban@2x.png */,
 				9D8A03011643A72B005BA9C5 /* en.png */,
@@ -1780,6 +1799,9 @@
 				9DBFEF911653EAEE008CFE2C /* zhaijisong.jpg in Resources */,
 				9DBFEF9616552778008CFE2C /* SSDQDeliveryQueryResultViewController.xib in Resources */,
 				9D0C86D5165879CE006AAC18 /* SSDQMyDeliveryViewController.xib in Resources */,
+				9D0C87A6165B62F5006AAC18 /* SSDQMyDeliverCell.xib in Resources */,
+				9D0C87AC165B80A6006AAC18 /* icon_phone.png in Resources */,
+				9D0C87AD165B80A6006AAC18 /* icon_phone@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1821,6 +1843,8 @@
 				9DBFEEA416524691008CFE2C /* SSDQDeliveryQueryResult.m in Sources */,
 				9DBFEF9516552778008CFE2C /* SSDQDeliveryQueryResultViewController.m in Sources */,
 				9D0C86D4165879CE006AAC18 /* SSDQMyDeliveryViewController.m in Sources */,
+				9D0C87A4165B6269006AAC18 /* SSDQMyDeliveryCell.m in Sources */,
+				9D0C87A9165B78BA006AAC18 /* SSSystemUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,10 +10,13 @@
 #import "FMDatabase.h"
 #import "SSDQDeliveryQueryResult.h"
 #import "SSQUAppDelegate.h"
+#import "SSDQMyDeliveryCell.h"
 
 @interface SSDQDeliveryQueryResultViewController ()
 
-@property(nonatomic,retain) IBOutlet UILabel *manInfo;
+@property(nonatomic,retain) IBOutlet UITableView *manInfo;
+@property(nonatomic,retain) IBOutlet UITableView *contentTable;
+@property(nonatomic,retain) IBOutlet UIImageView *companyLogo;
 @end
 
 @implementation SSDQDeliveryQueryResultViewController
@@ -21,6 +24,8 @@
 @synthesize result = _result;
 @synthesize companyCode = _companyCode;
 @synthesize deliveryNumber = _deliveryNumber;
+@synthesize contentTable = _contentTable;
+@synthesize companyLogo = _companyLogo;
 
 -(void)dealloc{
     self.manInfo = nil;
@@ -53,7 +58,13 @@
 -(void)viewWillAppear:(BOOL)animated {
     [self loadDB];
     
-    self.manInfo.text = self.result.expTextName;
+    self.companyLogo.image = [UIImage imageNamed:self.result.expSpellName];
+    self.manInfo.frame = CGRectMake(0, 0, SCREEN_WIDTH, 170);
+    self.contentTable.frame = CGRectMake(0, 170, SCREEN_WIDTH, SCREEN_HEIGHT - self.manInfo.frame.size.height - 200);
+//    self.manInfo.text = [NSString stringWithFormat:@"%@:%@ \n %@",self.result.expTextName,self.result.mailNo,[self.result getStatusDescription]];
+//    self.contentTable.hidden = YES;
+    
+    [super viewWillAppear:animated];
 }
 
 -(void)viewDidUnload {
@@ -61,6 +72,7 @@
     [_result release];
     [_companyCode release];
     [_deliveryNumber release];
+    [_contentTable release];
     
     [super viewDidUnload];
 }
@@ -86,7 +98,11 @@
             result.expTextName = [[rs stringForColumn:@"companyName"] copy];
             result.expSpellName = [[rs stringForColumn:@"companyCode"] copy];
             result.mailNo = [[rs stringForColumn:@"deliveryNumber"] copy];
-            result.status = [NSNumber numberWithInt:[rs intForColumn:@"status"]];
+            result.status = [rs intForColumn:@"status"];
+            result.latestContext = [rs stringForColumn:@"latestContext"];
+            result.sendTime = [rs stringForColumn:@"sendTime"];
+            result.signTime = [rs stringForColumn:@"signTime"];
+            result.companyPhone = [rs stringForColumn:@"companyPhone"];
             
             FMResultSet *items = [db executeQuery:[NSString stringWithFormat:@"SELECT * from DeliveryQueryHistoryItems where mainId = %d",result.id]];
             
@@ -109,30 +125,60 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"1234"];
-    
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"1234"]autorelease];
+    if (tableView == self.contentTable) {
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"1234"];
+        
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"1234"]autorelease];
+        }
+        
+        SSDQDeliveryItem *item = (SSDQDeliveryItem*)[self.result.data objectAtIndex:indexPath.row];
+        
+        cell.textLabel.text = item.time;
+        cell.detailTextLabel.text = item.context;
+        
+        return cell;
+
     }
     
-    SSDQDeliveryItem *item = (SSDQDeliveryItem*)[self.result.data objectAtIndex:indexPath.row];
+    if (tableView == self.manInfo) {
+        SSDQMyDeliveryCell *cell = [tableView dequeueReusableCellWithIdentifier:[SSDQMyDeliveryCell cellIdentifer]];
+        
+        if (cell == nil) {
+            cell = [SSDQMyDeliveryCell createCell:nil];
+        }
+        
+        cell.result = self.result;
+        [cell setupView];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        return cell;
+    }
     
-    cell.textLabel.text = item.time;
-    cell.detailTextLabel.text = item.context;
-    
-    return cell;
+    return nil;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (self.result == nil || self.result.data == nil) {
-        return 0;
+    if (tableView == self.contentTable) {
+        if (self.result == nil || self.result.data == nil) {
+            return 0;
+        }
+        
+        return [self.result.data count];
     }
     
-    return [self.result.data count];
+    if (tableView == self.manInfo) {
+        return 1;
+    }
+    
+    return 0;
 }
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self tableView:tableView didDeselectRowAtIndexPath:indexPath];
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (tableView == self.manInfo) {
+        return [SSDQMyDeliveryCell cellHeight];
+    }
+    
+    return 44.0;
 }
 
 @end
