@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
 @interface SSSystemUtils : NSObject
 
@@ -27,4 +29,8 @@
  */
 + (NSString *) getAppFilePath:(NSString *) fileName;
 
++ (void) setGrayBtn:(UIButton*)btn;
+
++ (void) sendShotMessage:(UIViewController<MFMessageComposeViewControllerDelegate>*)controller content:(NSString*)content;
++ (void) sendEmail:(UIViewController<MFMailComposeViewControllerDelegate>*)controller title:(NSString*)title content:(NSString*)content toRecipients:(NSArray *)toRecipients;
 @end

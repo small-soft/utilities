@@ -12,4 +12,6 @@
 @interface SSViewController : UIViewController
 @property (nonatomic, retain) SSLoadingView * loadingView;
 
+@property (nonatomic, retain) NSString *backTitle;
+
 @end

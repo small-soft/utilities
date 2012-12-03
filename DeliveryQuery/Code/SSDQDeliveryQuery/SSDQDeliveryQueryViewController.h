@@ -12,7 +12,7 @@
 #import <RestKit/RestKit.h>
 #import "SSViewController.h"
 
-@interface SSDQDeliveryQueryViewController : SSViewController <ZBarReaderDelegate,RKRequestDelegate,UIAlertViewDelegate>
+@interface SSDQDeliveryQueryViewController : SSViewController <ZBarReaderDelegate,RKRequestDelegate,UIAlertViewDelegate,UIWebViewDelegate,UITextFieldDelegate>
 
 @property(nonatomic,retain) SSDQDeliveryCompany *company;
 

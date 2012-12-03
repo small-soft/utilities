@@ -11,5 +11,6 @@
 
 @interface SSDQMyDeliveryViewController : SSViewController<UITableViewDataSource,UITableViewDelegate>
 
+@property(nonatomic,retain) NSArray *statusArray;
 
 @end

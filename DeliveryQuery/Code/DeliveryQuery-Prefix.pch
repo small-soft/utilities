@@ -23,3 +23,10 @@
 #define SET_AD_FRAME(srcView) (CGRectMake(srcView.frame.origin.x, srcView.frame.origin.y, srcView.frame.size.width, srcView.frame.size.height - 25))
 #define DBNAME @"DeliveryQueryDB"
 #define GETDB ([(SSQUAppDelegate *)[[UIApplication sharedApplication] delegate] db])
+
+//define NS_ENUM 如果未定义NS_ENUM则定义NS_ENUM，为了解决xcode4.3下的兼容问题
+#ifndef NS_ENUM
+#define NS_ENUM(_type, _name) enum _name : _type _name; enum _name : _type
+#endif
+
+#define HAS_AD ([(NSNumber *)[[[NSBundle mainBundle]infoDictionary]objectForKey:@"HasAd"] boolValue])

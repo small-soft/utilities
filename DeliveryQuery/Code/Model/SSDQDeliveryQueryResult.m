@@ -68,11 +68,11 @@
 //        if (!sharedObjectMapping) {
     sharedObjectMapping = [RKObjectMapping mappingForClass:[SSDQDeliveryResult class]] ;
     
-    [sharedObjectMapping mapKeyPath:@"errCode" toAttribute:@"errCode"];
-    [sharedObjectMapping mapKeyPath:@"expSpellName" toAttribute:@"expSpellName"];
-    [sharedObjectMapping mapKeyPath:@"expTextName" toAttribute:@"expTextName"];
-    [sharedObjectMapping mapKeyPath:@"status" toAttribute:@"status"];
-    [sharedObjectMapping mapKeyPath:@"mailNo" toAttribute:@"mailNo"];
+    [sharedObjectMapping mapKeyPath:@"status" toAttribute:@"errCode"];
+    [sharedObjectMapping mapKeyPath:@"com" toAttribute:@"expSpellName"];
+//    [sharedObjectMapping mapKeyPath:@"expTextName" toAttribute:@"expTextName"];
+    [sharedObjectMapping mapKeyPath:@"state" toAttribute:@"status"];
+    [sharedObjectMapping mapKeyPath:@"nu" toAttribute:@"mailNo"];
     [sharedObjectMapping mapKeyPath:@"message" toAttribute:@"message"];
     
     [sharedObjectMapping mapRelationship:@"data" withMapping:[SSDQDeliveryItem sharedObjectMapping]];
@@ -104,10 +104,9 @@
 -(NSString *)getErrorDescription {
     
     if (_errorDescriptions == nil) {
-        //错误代码，0无错误，1单号不存在，2验证码错误，3链接查询服务器失败，4程序内部错误，5程序执行错误，6快递单号格式错误，7快递公司错误，10未知错误
-//        self.errorDescriptions = [NSArray arrayWithObjects:@"成功",@"单号不存在",@"验证码错误",@"链接查询服务器失败",@"程序内部错误",@"程序执行错误",@"快递单号格式错误",@"快递公司错误",@"未知错误", nil];
+        //0：运单暂无结果，1：查询成功，2：接口出现异常
         
-        self.errorDescriptions = [NSArray arrayWithObjects:@"成功",@"快递单号不存在",COMMON_ERROR_DESCRIPTION,COMMON_ERROR_DESCRIPTION,COMMON_ERROR_DESCRIPTION,COMMON_ERROR_DESCRIPTION,@"快递单号不存在",@"快递公司错误",@"未知错误", nil];
+        self.errorDescriptions = [NSArray arrayWithObjects:@"快递单号不存在",@"成功",@"系统错误，请稍后再试", nil];
     }
     
     if (self.errCode >= [self.errorDescriptions count]) {
@@ -120,8 +119,12 @@
 
 -(NSString *)getStatusDescription {
     if (_statusDescriptions == nil) {
-        //0表示查询失败，1正常，2派送中，3已签收，4退回
-        self.statusDescriptions = [NSArray arrayWithObjects:@"查询失败",@"正常",@"派送中",@"已签收",@"退回", nil];
+        //0：在途中,1：已发货，2：疑难件，3： 已签收 ，4：已退货
+        self.statusDescriptions = [NSArray arrayWithObjects:@"在途中",@"已发货",@"疑难件",@"已签收",@"已退回", nil];
+    }
+    
+    if (self.status >= [self.statusDescriptions count]) {
+        return @"暂无结果";
     }
     
     return [self.statusDescriptions objectAtIndex:self.status];

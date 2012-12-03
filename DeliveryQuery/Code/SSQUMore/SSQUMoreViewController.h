@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SSViewController.h"
 
-@interface SSQUMoreViewController : UIViewController
+@interface SSQUMoreViewController : SSViewController
 
 @end

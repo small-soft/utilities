@@ -11,12 +11,16 @@
 #import "SSDQDeliveryQueryResult.h"
 #import "SSQUAppDelegate.h"
 #import "SSDQMyDeliveryCell.h"
+#import "UIView+UIViewUtil.h"
+#import "SSSystemUtils.h"
+#import "SSToastView.h"
 
 @interface SSDQDeliveryQueryResultViewController ()
 
 @property(nonatomic,retain) IBOutlet UITableView *manInfo;
 @property(nonatomic,retain) IBOutlet UITableView *contentTable;
 @property(nonatomic,retain) IBOutlet UIImageView *companyLogo;
+@property(nonatomic,retain) IBOutlet UILabel *supplier;
 @end
 
 @implementation SSDQDeliveryQueryResultViewController
@@ -26,12 +30,14 @@
 @synthesize deliveryNumber = _deliveryNumber;
 @synthesize contentTable = _contentTable;
 @synthesize companyLogo = _companyLogo;
+@synthesize supplier = _supplier;
 
 -(void)dealloc{
     self.manInfo = nil;
     self.result = nil;
     self.companyCode = nil;
     self.deliveryNumber = nil;
+    self.supplier = nil;
     [super dealloc];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -47,6 +53,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [self initRightBtn];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,10 +67,10 @@
     [self loadDB];
     
     self.companyLogo.image = [UIImage imageNamed:self.result.expSpellName];
-    self.manInfo.frame = CGRectMake(0, 0, SCREEN_WIDTH, 170);
-    self.contentTable.frame = CGRectMake(0, 170, SCREEN_WIDTH, SCREEN_HEIGHT - self.manInfo.frame.size.height - 200);
-//    self.manInfo.text = [NSString stringWithFormat:@"%@:%@ \n %@",self.result.expTextName,self.result.mailNo,[self.result getStatusDescription]];
-//    self.contentTable.hidden = YES;
+    self.manInfo.frame = CGRectMake(0, 0, SCREEN_WIDTH, [SSDQMyDeliveryCell cellHeight]);
+    self.contentTable.frame = CGRectMake(0, [SSDQMyDeliveryCell cellHeight], SCREEN_WIDTH, SCREEN_HEIGHT - self.manInfo.frame.size.height - 90 - 20);
+    self.supplier.frame = CGRectMake(0, [self.contentTable endY] + 5, 320, 21);
+    self.supplier.textAlignment = UITextAlignmentCenter;
     
     [super viewWillAppear:animated];
 }
@@ -103,8 +111,9 @@
             result.sendTime = [rs stringForColumn:@"sendTime"];
             result.signTime = [rs stringForColumn:@"signTime"];
             result.companyPhone = [rs stringForColumn:@"companyPhone"];
+            result.comment = [rs stringForColumn:@"comment"];
             
-            FMResultSet *items = [db executeQuery:[NSString stringWithFormat:@"SELECT * from DeliveryQueryHistoryItems where mainId = %d",result.id]];
+            FMResultSet *items = [db executeQuery:[NSString stringWithFormat:@"SELECT * from DeliveryQueryHistoryItems where mainId = %d order by id DESC",result.id]];
             
             result.data = [NSMutableArray arrayWithCapacity:[items columnCount]];
             while ([items next]) {
@@ -126,16 +135,33 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (tableView == self.contentTable) {
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"1234"];
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SSDQDQRC"];
         
         if (cell == nil) {
-            cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"1234"]autorelease];
+            cell = [[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"SSDQDQRC"]autorelease];
+            
+            if (cell.backgroundView == nil) {
+                cell.backgroundView = [[[UIView alloc]init]autorelease];
+            }
+        }
+        
+        cell.backgroundView.backgroundColor = [UIColor whiteColor];
+        cell.backgroundView.alpha = 1;
+        if (indexPath.row%2 == 0) {
+            
+            cell.backgroundView.backgroundColor = [UIColor grayColor];
+            cell.backgroundView.alpha = 0.1;
         }
         
         SSDQDeliveryItem *item = (SSDQDeliveryItem*)[self.result.data objectAtIndex:indexPath.row];
         
         cell.textLabel.text = item.time;
         cell.detailTextLabel.text = item.context;
+        
+        cell.detailTextLabel.numberOfLines = 2;
+        
+        cell.textLabel.backgroundColor = [UIColor clearColor];
+        cell.detailTextLabel.backgroundColor = [UIColor clearColor];
         
         return cell;
 
@@ -178,7 +204,136 @@
         return [SSDQMyDeliveryCell cellHeight];
     }
     
-    return 44.0;
+    return 44.0 + 15.0;
 }
 
+-(void)sendMessage {
+
+    [SSSystemUtils sendShotMessage:self content:[self getSendContent:NO]];
+}
+
+-(void) initRightBtn {
+
+    UIBarButtonItem * infoButtonItem = [[[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(sendDetailTo)]autorelease];
+    [infoButtonItem setTitle:@"发送"];
+    
+    self.navigationItem.rightBarButtonItem = infoButtonItem ;
+    [self.navigationItem.rightBarButtonItem setTitle:@"发送"];
+}
+
+-(void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result {
+    
+    switch (result) {
+        case MessageComposeResultSent:
+        {
+            [[SSToastView MakeToastWithType:TOAST_STYLE_SUCC info:@"发送成功^_^！"] show];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+    [self dismissModalViewControllerAnimated:YES];
+    [self setFrame4Ad];
+}
+
+-(void)sendMail {
+    [SSSystemUtils sendEmail:self title:[self getSendTitle] content:[self getSendContent:YES] toRecipients:nil];
+}
+
+-(void)sendDetailTo {
+    UIActionSheet *sheet = [[[UIActionSheet alloc]initWithTitle:@"选择发送方式" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"通过短信发送" otherButtonTitles:@"通过邮件发送", nil]autorelease];
+    [sheet showInView:self.view];
+    
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+        {
+            [self sendMessage];
+        }
+            break;
+        case 1:
+        {
+            [self sendMail];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+-(NSString*)getSendTitle{
+    if (self.result.comment.length > 0) {
+        return [NSString stringWithFormat:@"［%@的快递信息］",self.result.comment];
+    }else {
+        return [NSString stringWithFormat:@"［%@-%@的快递信息］",self.result.expTextName,self.result.mailNo];
+    }
+}
+
+-(NSString*)getSendContent:(BOOL)needDetail {
+    NSMutableString *content = [NSMutableString stringWithCapacity:100];
+    if (self.result.comment.length > 0) {
+        [content appendFormat:@"［%@的快递信息］",self.result.comment];
+    }else {
+        [content appendString:@"［快递信息］"];
+    }
+    
+    [content appendFormat:@"\n 快递公司：%@",self.result.expTextName];
+    [content appendFormat:@"\n 快递单号：%@",self.result.mailNo];
+    [content appendFormat:@"\n 当前状态：%@",[self.result getStatusDescription]];
+    [content appendFormat:@"\n 发货时间：%@",self.result.sendTime];
+    if (self.result.signTime) {
+        [content appendFormat:@"\n 签收时间：%@",self.result.signTime];
+    }
+    [content appendFormat:@"\n 当前情况：%@",self.result.latestContext];
+    [content appendFormat:@"\n 快递公司电话：%@",self.result.companyPhone];
+    
+    if (needDetail && self.result.data && [self.result.data count] > 0) {
+        [content appendFormat:@"\n\n ［详细追踪信息］"];
+        for (SSDQDeliveryItem *item in self.result.data) {
+            [content appendFormat:@"\n %@：%@",item.time,item.context];
+        }
+    }
+    
+    return content;
+}
+
+- (void)mailComposeController:(MFMailComposeViewController*)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError*)error
+{
+    
+	// Notifies users about errors associated with the interface
+	switch (result)
+	{
+		case MFMailComposeResultCancelled:
+			break;
+		case MFMailComposeResultSaved:
+        {
+            [[SSToastView MakeToastWithType:TOAST_STYLE_SUCC info:@"已经保存为草稿^_^!"]show];
+        }
+			break;
+		case MFMailComposeResultSent:
+        {
+            [[SSToastView MakeToastWithType:TOAST_STYLE_SUCC info:@"发送成功^_^!"]show];
+        }
+			break;
+		case MFMailComposeResultFailed:
+			break;
+		default:
+			break;
+	}
+    [self dismissModalViewControllerAnimated:YES];
+	[self setFrame4Ad];
+}
+
+-(void)setFrame4Ad {
+    if (HAS_AD) {
+        [self.navigationController.view setHeight:[self.navigationController.view height]-25];
+        [self.manInfo setHeight:[self.manInfo height]+25];
+        [self.contentTable setHeight:[self.contentTable height]+25];
+    }
+
+}
 @end

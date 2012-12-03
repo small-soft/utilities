@@ -108,5 +108,75 @@
 //    [phone release];
 }
 
++(void)setGrayBtn:(UIButton *)btn {
+    
+    UIImage *buttonImageNormal = [UIImage imageNamed:@"gray_btn_small"];
+    UIImage *stretchableButtonImageNormal = [buttonImageNormal stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [btn setBackgroundImage:stretchableButtonImageNormal forState:UIControlStateNormal];
+    
+    
+    UIImage *buttonImagePressed = [UIImage imageNamed:@"gray_btn_small_p"];
+    UIImage *stretchableButtonImagePressed = [buttonImagePressed stretchableImageWithLeftCapWidth:12 topCapHeight:0];
+    [btn setBackgroundImage:stretchableButtonImagePressed forState:UIControlStateHighlighted];
+    
+}
+
++(void)sendShotMessage:(UIViewController<MFMessageComposeViewControllerDelegate> *)controller content:(NSString *)content {
+    MFMessageComposeViewController *sendController = [[[MFMessageComposeViewController alloc] init] autorelease];
+    if ([MFMessageComposeViewController canSendText])        {
+        sendController.recipients =  [NSArray arrayWithObjects:@"", nil];
+        sendController.body = content;
+        sendController.messageComposeDelegate = controller;
+        
+        
+        [controller presentModalViewController:sendController animated:YES];
+    }
+}
+
++ (void)sendEmail:(UIViewController<MFMailComposeViewControllerDelegate>*)controller title:(NSString *)title content:(NSString *)content toRecipients:(NSArray *)toRecipients{
+        Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
+        if (mailClass != nil)
+        {
+            
+            if ([mailClass canSendMail])
+            {
+                [SSSystemUtils displayComposerSheet:controller title:title content:content toRecipients:toRecipients];
+            }
+            else
+            {
+                [SSSystemUtils launchMailAppOnDevice];
+            }
+        }
+        else
+        {
+            [SSSystemUtils launchMailAppOnDevice];
+        }
+}
+
++(void)displayComposerSheet:(UIViewController<MFMailComposeViewControllerDelegate>*)controller title:(NSString *)title content:(NSString *)content toRecipients:(NSArray *)toRecipients
+{
+	MFMailComposeViewController *picker = [[MFMailComposeViewController alloc] init];
+	picker.mailComposeDelegate = controller;
+	
+	[picker setSubject:title];
+    [picker setMessageBody:content isHTML:NO];
+    
+    if (toRecipients!=nil && [toRecipients count]>0) {
+        [picker setToRecipients:toRecipients];
+    }
+	
+	[controller presentModalViewController:picker animated:YES];
+    
+}
+
++(void)launchMailAppOnDevice
+{
+	NSString *recipients = @"mailto:small-soft@live.com&subject=意见反馈";
+	
+	NSString *email = [NSString stringWithFormat:@"%@", recipients];
+	email = [email stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	
+	[[UIApplication sharedApplication] openURL:[NSURL URLWithString:email]];
+}
 @end
 

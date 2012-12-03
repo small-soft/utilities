@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SSDQDeliveryQueryResult.h"
 
-@interface SSDQMyDeliveryCell : UITableViewCell<UIAlertViewDelegate>
+@interface SSDQMyDeliveryCell : UITableViewCell<UIAlertViewDelegate,UITextFieldDelegate>
 
 @property(nonatomic,retain) SSDQDeliveryResult *result;
 

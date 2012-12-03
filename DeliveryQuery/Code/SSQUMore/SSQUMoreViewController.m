@@ -9,18 +9,22 @@
 #import "SSQUMoreViewController.h"
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import "SSWebViewController.h"
 @interface SSQUMoreViewController ()<UITableViewDataSource,UITableViewDelegate,MFMailComposeViewControllerDelegate>
 @property (nonatomic, retain) IBOutlet UILabel * versionLabel;
 @property (nonatomic, retain) IBOutlet UITableView * contentTableView;
+@property (nonatomic, retain) IBOutlet UILabel * appName;
 @end
 
 @implementation SSQUMoreViewController
 @synthesize versionLabel = _versionLabel;
 @synthesize contentTableView = _contentTableView;
+@synthesize appName = _appName;
 - (void)dealloc
 {
     self.versionLabel = nil;
     self.contentTableView = nil;
+    self.appName = nil;
     [super dealloc];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -37,6 +41,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.versionLabel.text = [NSString stringWithFormat:@"V %@" ,[[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"]];
+    self.appName.text = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleDisplayName"];
     self.contentTableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:GRAY_BG]];
 }
 
@@ -66,7 +71,7 @@
     if (section==0) {
         return 2;
     }else{
-        return 2;
+        return 3;
     }
 }
 
@@ -93,6 +98,8 @@
             cell.textLabel.text = @"意见反馈";
         }else if([indexPath row]==1){
             cell.textLabel.text = @"给app评分";
+        }else if([indexPath row]==2){
+            cell.textLabel.text = @"精品推荐";
         }
     }
     return cell;
@@ -103,6 +110,8 @@
     if ([indexPath section]==0) {
         if ([indexPath row]==1) {
             [self sendEmailToSmallSoft];
+        }else if([indexPath row] == 0){
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/artist/jia-liu/id576287099"]];
         }
     }else if([indexPath section]==1){
         if ([indexPath row]==0) {
@@ -112,6 +121,8 @@
             NSString *appId = @"576287096";
             NSString *urlValue =[NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",appId];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlValue]];
+        }else if([indexPath row] == 2){
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/artist/jia-liu/id576287099"]];
         }
     }
 }

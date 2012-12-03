@@ -11,27 +11,22 @@
 
 typedef NS_ENUM(NSInteger, SSDQDeliveryResultStatus)
 {
-    //0表示查询失败，1正常，2派送中，3已签收，4退回
-    SSDQDeliveryResultStatusFailed = 0,
-    SSDQDeliveryResultStatusSuccess,
-    SSDQDeliveryResultStatusSending,
+    //0：在途中,1：已发货，2：疑难件，3： 已签收 ，4：已退货
+    SSDQDeliveryResultStatusSending = 0,
+    SSDQDeliveryResultStatusSended,
+    SSDQDeliveryResultStatusHard,
     SSDQDeliveryResultStatusSigned,
     SSDQDeliveryResultStatusSendBack,
-    
+    SSDQDeliveryResultStatusFailed = 99,
 };
 
 
-//错误代码，0无错误，1单号不存在，2验证码错误，3链接查询服务器失败，4程序内部错误，5程序执行错误，6快递单号格式错误，7快递公司错误，10未知错误
+//0：运单暂无结果，1：查询成功，2：接口出现异常
 typedef NS_ENUM(NSInteger, SSDQDeliveryResultErrorCode) {
-    SSDQDeliveryResultErrorCodeNoError = 0,
-    SSDQDeliveryResultErrorCodeNumberNotExist,
-    SSDQDeliveryResultErrorCodeCheckCodeError,
-    SSDQDeliveryResultErrorCodeConectServerError,
-    SSDQDeliveryResultErrorCodeSystemError,
-    SSDQDeliveryResultErrorCodeSystemExecuteError,
-    SSDQDeliveryResultErrorCodeNumberFormateError,
-    SSDQDeliveryResultErrorCodeCompanyError,
-    SSDQDeliveryResultErrorCodeUnknown,  // This separator style is only supported for grouped style table views currently
+    SSDQDeliveryResultErrorCodeNumberNotExist = 0,
+    SSDQDeliveryResultErrorCodeNoError,
+    SSDQDeliveryResultErrorCodeInterfaceError,
+    
 };
 
 @interface SSDQDeliveryItem : NSObject

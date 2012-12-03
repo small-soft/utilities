@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "SSViewController.h"
 #import "SSDQDeliveryQueryResult.h"
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 
-@interface SSDQDeliveryQueryResultViewController : SSViewController <UITableViewDataSource,UITableViewDelegate>
+@interface SSDQDeliveryQueryResultViewController : SSViewController <UITableViewDataSource,UITableViewDelegate,MFMessageComposeViewControllerDelegate,UIActionSheetDelegate,MFMailComposeViewControllerDelegate>
 
 @property(nonatomic,retain) SSDQDeliveryResult * result;
 @property(nonatomic,retain) NSString *companyCode;

@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SSViewController.h"
+#import <RestKit/RestKit.h>
 
-@interface SSQUViewController : UIViewController
+@interface SSQUViewController : SSViewController <RKRequestDelegate,UIWebViewDelegate>
 
 @end

@@ -12,6 +12,7 @@
 #import "SSDQDeliveryCompanyListCell.h"
 #import "SSDQDeliveryQueryViewController.h"
 #import "SSQUAppDelegate.h"
+#import "SSDQCompanyDetailViewController.h"
 
 @interface SSDQAllDeliveryCompanyListViewController ()
 
@@ -51,7 +52,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"常用" style:UIBarButtonItemStylePlain target:self action:@selector(switchContent)];
+    NSString *title = @"只显示常用";
+    self.title = @"全部快递";
+    if (self.contentMode == DeliverCompanyListContentModeFavOnly) {
+        title = @"显示全部";
+        self.title = @"常用快递";
+    }
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(switchContent)];
     
     [self loadDB];
 }
@@ -122,7 +130,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (self.displayMode) {
-        case 0:
+        case 0:{
+            SSDQCompanyDetailViewController *detail = [[[SSDQCompanyDetailViewController alloc]init]autorelease];
+            detail.company = [self.data objectAtIndex:indexPath.row];
+            [self.navigationController pushViewController:detail animated:YES];
+        }
             
             break;
         case 1:{
@@ -140,12 +152,14 @@
 }
 
 -(void)switchContent {
-    if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"常用"]) {
+    if ([self.navigationItem.rightBarButtonItem.title isEqualToString:@"只显示常用"]) {
         self.contentMode = DeliverCompanyListContentModeFavOnly;
-        self.navigationItem.rightBarButtonItem.title = @"全部";
+        self.navigationItem.rightBarButtonItem.title = @"显示全部";
+        self.title = @"常用快递";
     }else{
         self.contentMode = DeliverCompanyListContentModeAll;
-        self.navigationItem.rightBarButtonItem.title = @"常用";
+        self.navigationItem.rightBarButtonItem.title = @"只显示常用";
+        self.title = @"全部快递";
     }
     
     [self loadDB];

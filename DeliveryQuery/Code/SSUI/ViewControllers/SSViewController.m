@@ -56,7 +56,23 @@
 //	[self.view addSubview:self.advBannerView];
 //    self.advBannerView.adGpsMode = NO;
 //    [self.advBannerView startRequest];
-    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height - 25);
+//    self.view.frame = CGRectMake(self.view.frame.origin.x, self.view.frame.origin.y, self.view.frame.size.width, self.view.frame.size.height - 25);
+    
+    if (self.backTitle.length > 0) {
+        self.navigationItem.leftBarButtonItem.title = self.backTitle;
+    }
+    
+    [self setBg];
+}
+
+-(void)setBg {
+    UIImage *image =  [UIImage imageNamed:@"smallsoftlogo"];
+    UIImageView *imageView = [[UIImageView alloc]initWithImage:image];
+    
+    imageView.frame = CGRectMake((SCREEN_WIDTH - image.size.width)/2, SCREEN_HEIGHT - image.size.height - 20 -44 -2, image.size.width, image.size.height);
+    
+    [self.view addSubview:imageView];
+    [self.view sendSubviewToBack:imageView];
 }
 
 - (void)didReceiveMemoryWarning

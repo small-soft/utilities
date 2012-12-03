@@ -11,6 +11,9 @@
 #import "SSDQMyDeliveryCell.h"
 #import "SSDQDeliveryCompany.h"
 #import "SSSystemUtils.h"
+#import <QuartzCore/QuartzCore.h>
+#import "FMDatabase.h"
+#import "SSQUAppDelegate.h"
 
 @interface SSDQMyDeliveryCell ()
 
@@ -21,6 +24,11 @@
 @property(nonatomic,retain) IBOutlet UILabel *deliveryNumber;
 @property(nonatomic,retain) IBOutlet UILabel *companyPhone;
 @property(nonatomic,retain) IBOutlet UIControl *call;
+@property(nonatomic,retain) IBOutlet UIView *bg;
+@property(nonatomic,retain) IBOutlet UITextField *comment;
+@property(nonatomic,retain) IBOutlet UILabel *signedTime;
+
+-(IBAction)closeKeyBoard:(id)sender;
 
 @end
 
@@ -33,6 +41,9 @@
 @synthesize deliveryNumber = _deliveryNumber;
 @synthesize companyPhone = _companyPhone;
 @synthesize call = _call;
+@synthesize bg = _bg;
+@synthesize comment = _comment;
+@synthesize signedTime = _signedTime;
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -52,9 +63,22 @@
 
 -(void)setupView
 {
+    self.bg.layer.borderWidth = 1;
+    self.bg.layer.cornerRadius = 12;
+    self.bg.layer.borderColor = [[UIColor grayColor] CGColor];
+    
+    if (self.backgroundView == nil) {
+        self.backgroundView = [[[UIView alloc]init]autorelease];
+    }
+    
+    self.call.layer.cornerRadius = 12;
+    
+    self.comment.backgroundColor = [UIColor whiteColor];
+     
     _companyName.text = [NSString stringWithFormat:@"%@(%@)",self.result.expTextName,[self.result getStatusDescription]];
     _companyLogo.image = [UIImage imageNamed:self.result.expSpellName];
     _deliveryNumber.text = [NSString stringWithFormat:@"单号:%@", self.result.mailNo];
+    self.comment.text = self.result.comment;
     
     NSString *st = DEFAULT_CONTEXT;
     if (self.result.sendTime.length > 0) {
@@ -74,6 +98,12 @@
     }
     _companyPhone.text = [NSString stringWithFormat:@"%@：%@",self.result.expTextName ,cp];
     
+    NSString *sdt = DEFAULT_CONTEXT;
+    if (self.result.signTime) {
+        sdt = self.result.signTime;
+    }
+    _signedTime.text = [NSString stringWithFormat:@"签收时间：%@",sdt];
+    
     [self.call addTarget:self action:@selector(callTouchDown) forControlEvents:UIControlEventTouchDown];
     [self.call addTarget:self action:@selector(callTouchUp) forControlEvents:UIControlEventTouchUpOutside];
     [self.call addTarget:self action:@selector(callPhone) forControlEvents:UIControlEventTouchUpInside];
@@ -85,7 +115,7 @@
 }
 +(CGFloat)cellHeight
 {
-    return 170.0;
+    return 221.0;
 }
 +(CGFloat)cellWidth
 {
@@ -145,4 +175,34 @@
             break;
     }
 }
+
+-(void)textFieldDidEndEditing:(UITextField *)textField {
+    
+    [self saveComment];
+    self.result.comment = self.comment.text;
+}
+
+-(void)closeKeyBoard:(id)sender {
+    [sender resignFirstResponder];
+    [self saveComment]; 
+}
+
+-(void)saveComment {
+    if (self.comment.text.length <= 0) {
+        return;
+    }
+    
+    FMDatabase *db = GETDB;
+    
+    if ([db open]) {
+        NSString *str= [NSString stringWithFormat:@"update DeliveryQueryHistoryMain set comment='%@' where id = %d",self.comment.text, self.result.id];
+        
+        BOOL success = [db executeUpdate:str];
+        NSLog(@"result is %d",success);
+        
+    }
+    
+    [db close];
+}
+
 @end
