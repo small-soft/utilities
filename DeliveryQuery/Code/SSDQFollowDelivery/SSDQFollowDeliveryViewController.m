@@ -170,6 +170,9 @@
             updateSql = @"UPDATE DeliveryQueryHistoryItems set hasUpdate = 0";
             NSLog(@"execute sql:%@",updateSql);
             [db executeUpdate:updateSql];
+            
+            // 更新数清零
+            [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
         }else{
             [self.loadingView showNoDataView];
         }

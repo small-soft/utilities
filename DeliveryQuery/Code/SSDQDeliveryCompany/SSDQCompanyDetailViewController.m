@@ -13,6 +13,8 @@
 #import "SSWebViewController.h"
 #import "SSToastView.h"
 #import "UIView+UIViewUtil.h"
+#import "FMDatabase.h"
+#import "SSQUAppDelegate.h"
 
 @interface SSDQCompanyDetailViewController ()
 @property(nonatomic,retain) IBOutlet UIImageView *logo;
@@ -22,10 +24,12 @@
 @property(nonatomic,retain) IBOutlet UIButton *siteBtn;
 @property(nonatomic,retain) IBOutlet UIButton *sendBtn;
 @property(nonatomic,retain) IBOutlet UIButton *queryBtn;
+@property(nonatomic,retain) IBOutlet UIButton *favBtn;
 
 -(IBAction)phoneBtnClick:(id)sender;
 -(IBAction)siteBtnClick:(id)sender;
 -(IBAction)queryBtnClick:(id)sender;
+-(IBAction)favBtnClick:(id)sender;
 
 @end
 
@@ -38,6 +42,7 @@
 @synthesize bg = _bg;
 @synthesize phoneBtn = _phoneBtn;
 @synthesize sendBtn = _sendBtn;
+@synthesize favBtn = _favBtn;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -58,6 +63,7 @@
     [SSSystemUtils setGrayBtn:self.sendBtn];
     [SSSystemUtils setGrayBtn:self.queryBtn];
     [SSSystemUtils setGrayBtn:self.siteBtn];
+    [SSSystemUtils setGrayBtn:self.favBtn];
     
     self.title = self.company.name;
     
@@ -84,6 +90,13 @@
     self.name.text = self.company.name;
     [self.phoneBtn setTitle:[NSString stringWithFormat:@"联系电话：%@",self.company.phone] forState:UIControlStateNormal];
     [self.siteBtn setTitle:[NSString stringWithFormat:@"公司网站：%@",self.company.site] forState:UIControlStateNormal];
+    
+    
+    if (self.company.isFavorite) {
+        [self.favBtn setTitle:@"设置为非常用" forState:UIControlStateNormal];
+    }else{
+        [self.favBtn setTitle:@"设置为常用" forState:UIControlStateNormal];
+    }
 }
 
 -(void)initBg {
@@ -108,6 +121,18 @@
     controller.url = [NSURL URLWithString:self.company.site];
     controller.navigationItem.title = self.company.name;
     [self.navigationController pushViewController:controller animated:YES];
+}
+
+-(void)favBtnClick:(id)sender {
+    self.company.isFavorite = !self.company.isFavorite;
+    
+    if (self.company.isFavorite) {
+        [self.favBtn setTitle:@"设置为非常用" forState:UIControlStateNormal];
+    }else{
+        [self.favBtn setTitle:@"设置为常用" forState:UIControlStateNormal];
+    }
+    
+    [self updateFav:[self.company.id intValue] fav:self.company.isFavorite];
 }
 
 -(void)sendMessage {
@@ -213,5 +238,15 @@
         [self.navigationController.view setHeight:[self.navigationController.view height]-25];
     }
     
+}
+-(void)updateFav:(int)id fav:(int)fav{
+    FMDatabase *db = GETDB;
+    if ([db open]) {
+        NSString *sql = [NSString stringWithFormat: @"update DeliveryCompany set isFavorite = %d where id = %d",fav,id];
+        
+        [db executeUpdate:sql];
+    }
+    
+    [db close];
 }
 @end

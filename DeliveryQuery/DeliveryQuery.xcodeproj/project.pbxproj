@@ -169,6 +169,7 @@
 		9D4C6AE8166C4DE3003852DC /* progress-count@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C6AE4166C4DE2003852DC /* progress-count@2x.png */; };
 		9D4C6B0D166C707C003852DC /* progress-fill-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C6B0B166C707C003852DC /* progress-fill-blue.png */; };
 		9D4C6B0E166C707C003852DC /* progress-fill-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C6B0C166C707C003852DC /* progress-fill-blue@2x.png */; };
+		9D5E1E2F166DE32F00153B24 /* SSBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5E1E2E166DE32F00153B24 /* SSBadgeView.m */; };
 		9D88E9C5164E6D1A003C151D /* DeliveryQueryDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9D88E9C4164E6D1A003C151D /* DeliveryQueryDB.sqlite */; };
 		9D88E9CA164E6DF9003C151D /* SSDQAllDeliveryCompanyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D88E9C8164E6DF8003C151D /* SSDQAllDeliveryCompanyListViewController.m */; };
 		9D88E9CB164E6DF9003C151D /* SSDQAllDeliveryCompanyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D88E9C9164E6DF8003C151D /* SSDQAllDeliveryCompanyListViewController.xib */; };
@@ -228,7 +229,6 @@
 		9DEFDE3F166252920070187E /* SSDQSendDeliveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DEFDE3D166252920070187E /* SSDQSendDeliveryViewController.xib */; };
 		9DEFDE5016635A080070187E /* SSDQCompanyDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEFDE4E16635A080070187E /* SSDQCompanyDetailViewController.m */; };
 		9DEFDE5116635A080070187E /* SSDQCompanyDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DEFDE4F16635A080070187E /* SSDQCompanyDetailViewController.xib */; };
-		9DEFDE531666007B0070187E /* bg_water@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DEFDE521666007B0070187E /* bg_water@2x.png */; };
 		9DEFDE6B166635280070187E /* SSWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DEFDE69166635280070187E /* SSWebViewController.m */; };
 		9DEFDE6C166635280070187E /* SSWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DEFDE6A166635280070187E /* SSWebViewController.xib */; };
 		9DEFDE71166639D70070187E /* arrow_left@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9DEFDE6D166639D40070187E /* arrow_left@2x.png */; };
@@ -498,6 +498,8 @@
 		9D4C6AE4166C4DE2003852DC /* progress-count@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-count@2x.png"; sourceTree = "<group>"; };
 		9D4C6B0B166C707C003852DC /* progress-fill-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-fill-blue.png"; sourceTree = "<group>"; };
 		9D4C6B0C166C707C003852DC /* progress-fill-blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-fill-blue@2x.png"; sourceTree = "<group>"; };
+		9D5E1E2D166DE32F00153B24 /* SSBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBadgeView.h; sourceTree = "<group>"; };
+		9D5E1E2E166DE32F00153B24 /* SSBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBadgeView.m; sourceTree = "<group>"; };
 		9D88E9C4164E6D1A003C151D /* DeliveryQueryDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeliveryQueryDB.sqlite; sourceTree = "<group>"; };
 		9D88E9C7164E6DF8003C151D /* SSDQAllDeliveryCompanyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDQAllDeliveryCompanyListViewController.h; sourceTree = "<group>"; };
 		9D88E9C8164E6DF8003C151D /* SSDQAllDeliveryCompanyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDQAllDeliveryCompanyListViewController.m; sourceTree = "<group>"; };
@@ -599,7 +601,6 @@
 		9DEFDE4D16635A080070187E /* SSDQCompanyDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDQCompanyDetailViewController.h; sourceTree = "<group>"; };
 		9DEFDE4E16635A080070187E /* SSDQCompanyDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDQCompanyDetailViewController.m; sourceTree = "<group>"; };
 		9DEFDE4F16635A080070187E /* SSDQCompanyDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSDQCompanyDetailViewController.xib; sourceTree = "<group>"; };
-		9DEFDE521666007B0070187E /* bg_water@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_water@2x.png"; sourceTree = "<group>"; };
 		9DEFDE68166635280070187E /* SSWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSWebViewController.h; sourceTree = "<group>"; };
 		9DEFDE69166635280070187E /* SSWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSWebViewController.m; sourceTree = "<group>"; };
 		9DEFDE6A166635280070187E /* SSWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSWebViewController.xib; sourceTree = "<group>"; };
@@ -768,6 +769,7 @@
 		0F99B34A163993D60062597B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				9D5E1E2C166DE30F00153B24 /* SSBadgeView */,
 				0FD541D6163D303F0092B559 /* SSLoadingView */,
 				0F99B34B163993E40062597B /* SSMenuView */,
 			);
@@ -889,6 +891,15 @@
 				9D4C6AE0166C4273003852DC /* progress-track@2x.png */,
 			);
 			path = processbar;
+			sourceTree = "<group>";
+		};
+		9D5E1E2C166DE30F00153B24 /* SSBadgeView */ = {
+			isa = PBXGroup;
+			children = (
+				9D5E1E2D166DE32F00153B24 /* SSBadgeView.h */,
+				9D5E1E2E166DE32F00153B24 /* SSBadgeView.m */,
+			);
+			name = SSBadgeView;
 			sourceTree = "<group>";
 		};
 		9D88E9C3164E6D1A003C151D /* db */ = {
@@ -1344,7 +1355,6 @@
 			children = (
 				9DDD50DD166794A90071DF75 /* smallsoftlogo.png */,
 				9DDD50DE166794A90071DF75 /* smallsoftlogo@2x.png */,
-				9DEFDE521666007B0070187E /* bg_water@2x.png */,
 				9D8A034D16453E7B005BA9C5 /* c_first_bg@2x.png */,
 				9D8A03421643E4FC005BA9C5 /* c_first_bg.png */,
 			);
@@ -1616,7 +1626,6 @@
 				9D0C8891165D2DDC006AAC18 /* zhongtiewuliu@2x.png in Resources */,
 				9DEFDE3F166252920070187E /* SSDQSendDeliveryViewController.xib in Resources */,
 				9DEFDE5116635A080070187E /* SSDQCompanyDetailViewController.xib in Resources */,
-				9DEFDE531666007B0070187E /* bg_water@2x.png in Resources */,
 				9DEFDE6C166635280070187E /* SSWebViewController.xib in Resources */,
 				9DEFDE71166639D70070187E /* arrow_left@2x.png in Resources */,
 				9DEFDE72166639D70070187E /* arrow_right@2x.png in Resources */,
@@ -1697,6 +1706,7 @@
 				9DDD50E51668E9EF0071DF75 /* SSDQFollowDeliveryViewController.m in Sources */,
 				9D4C6AD5166C3FCD003852DC /* ADVPercentProgressBar.m in Sources */,
 				0F88AAF0166CF71A00EE7D64 /* SSUncaughtExceptionService.m in Sources */,
+				9D5E1E2F166DE32F00153B24 /* SSBadgeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

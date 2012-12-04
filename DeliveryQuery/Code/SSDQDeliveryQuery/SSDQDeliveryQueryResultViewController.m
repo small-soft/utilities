@@ -72,6 +72,8 @@
     self.supplier.frame = CGRectMake(0, [self.contentTable endY] + 5, 320, 21);
     self.supplier.textAlignment = UITextAlignmentCenter;
     
+    [self reSet4BellowIOS5];
+    
     [super viewWillAppear:animated];
 }
 
@@ -326,6 +328,7 @@
 	}
     [self dismissModalViewControllerAnimated:YES];
 	[self setFrame4Ad];
+    [self reSet4BellowIOS5OnCloseModal];
 }
 
 -(void)setFrame4Ad {
@@ -334,6 +337,19 @@
         [self.manInfo setHeight:[self.manInfo height]+25];
         [self.contentTable setHeight:[self.contentTable height]+25];
     }
+}
 
+-(void)reSet4BellowIOS5{
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    
+    if (version < 5.0) {
+        [self.manInfo setHeight:260];
+        [self.contentTable setHeight:200];
+    }
+}
+
+-(void)reSet4BellowIOS5OnCloseModal{
+    self.manInfo.frame = CGRectMake(0, 0, SCREEN_WIDTH, [SSDQMyDeliveryCell cellHeight]);
+    self.contentTable.frame = CGRectMake(0, [SSDQMyDeliveryCell cellHeight], SCREEN_WIDTH, SCREEN_HEIGHT - self.manInfo.frame.size.height - 90 - 20);
 }
 @end

@@ -63,6 +63,8 @@
     }
     
     [self setBg];
+    
+    [self iViewWillApplear];
 }
 
 -(void)setBg {
@@ -83,6 +85,14 @@
 //    [self.advBannerView stopRequest];
 //    [self.advBannerView removeFromSuperview];
 //    self.advBannerView = nil;
+}
+
+-(void)iViewWillApplear{
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    
+    if (version < 5.0) {
+        [self viewWillAppear:YES];
+    }
 }
 
 @end

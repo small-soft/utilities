@@ -119,7 +119,7 @@
     
     self.updateInfo = [[[UILabel alloc]init]autorelease];
     self.updateInfo.frame = self.processBar.frame;
-    [self.updateInfo verticalMove:-50];
+    [self.updateInfo verticalMove:-30];
     self.updateInfo.text = [NSString stringWithFormat:@"有0条最新快递信息"];
     self.updateInfo.textAlignment = UITextAlignmentCenter;
     [self addSubview:self.updateInfo];

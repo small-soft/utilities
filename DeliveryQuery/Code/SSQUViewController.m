@@ -26,12 +26,15 @@
 #import "SSDQDeliveryQueryResult.h"
 #import "SSMapping4RestKitUtils.h"
 #import "ADVPercentProgressBar.h"
+#import "SSBadgeView.h"
 
 @interface SSQUViewController()<SSMenuViewDelegate>
 @property (nonatomic,retain) IBOutlet SSMenuView * menuView;
 @property (nonatomic,retain) NSArray *menuTitle;
 @property (nonatomic,retain) NSArray *menuImage;
 @property (nonatomic,retain) NSMutableArray *data;
+@property (nonatomic,retain) SSBadgeView *badgeView;
+
 @property (nonatomic) int index;
 @property (nonatomic) CGFloat process;
 @property (nonatomic) CGFloat subProcess;
@@ -52,6 +55,7 @@
 @synthesize index = _index;
 @synthesize process = _process;
 @synthesize subProcess = _subProcess;
+@synthesize badgeView = _badgeView;
 
 //@synthesize request = _request;
 @synthesize tempWebView = _tempWebView;
@@ -181,6 +185,12 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [self initBadgeView];
+    
+    [super viewWillAppear:animated];
+}
+
 - (void)viewDidUnload
 {
     self.menuView = nil;
@@ -257,7 +267,9 @@
         [self.loadingView updateProcess:1.0];
         [self.loadingView performSelector:@selector(hideLoadingView) withObject:nil afterDelay:1.5];
         
-        [UIApplication sharedApplication].applicationIconBadgeNumber = self.updateCount;
+        [UIApplication sharedApplication].applicationIconBadgeNumber = [UIApplication sharedApplication].applicationIconBadgeNumber + self.updateCount;
+        
+        [self initBadgeView];
         return;
     }
     
@@ -458,6 +470,21 @@
         [self loadObjectsFromRemote];
         _isSend = YES;
     }
+}
+
+-(void)initBadgeView{
+    if (self.badgeView == nil) {
+        self.badgeView = [[SSBadgeView alloc] initWithFrame:CGRectMake(78, 25, 17, 17)];
+        self.badgeView.userInteractionEnabled = NO;
+    }
+    
+    
+    if ([UIApplication sharedApplication].applicationIconBadgeNumber > 99) {
+        self.badgeView.badgeText = @"N";
+    }else {
+        self.badgeView.badgeText = [NSString stringWithFormat:@"%d", [UIApplication sharedApplication].applicationIconBadgeNumber];
+    };
+    [self.view addSubview:self.badgeView];
 }
 
 @end

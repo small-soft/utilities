@@ -89,6 +89,7 @@
             company.isFavorite = [rs intForColumn:@"isFavorite"] > 0;
             company.site = [[rs stringForColumn:@"site"] copy];
             company.phone = [[rs stringForColumn:@"phone"] copy];
+            company.id = [NSNumber numberWithInt:[rs intForColumn:@"id"]];
             
             [self.data addObject:company];
         }
@@ -141,6 +142,12 @@
             NSInteger i = [[self.navigationController viewControllers] count] -2;
             SSDQDeliveryQueryViewController *qv = [[self.navigationController viewControllers] objectAtIndex:i];
             qv.company = [self.data objectAtIndex:indexPath.row];
+            
+            float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+            
+            if (version < 5.0) {
+                [qv viewWillAppear:YES];
+            }
             
             [self.navigationController popToViewController:qv animated:YES];
         }

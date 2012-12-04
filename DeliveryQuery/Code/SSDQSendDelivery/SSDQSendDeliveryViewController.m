@@ -51,76 +51,91 @@
     yuantong.code = @"yuantong";
     yuantong.name = @"圆通速递";
     yuantong.phone = @"021-69777888";
+    yuantong.site = @"http://www.yto.net.cn";
     
     SSDQDeliveryCompany *yunda = [[SSDQDeliveryCompany alloc]init];
     yunda.code = @"yunda";
     yunda.name = @"韵达快运";
     yunda.phone = @"400-821-6789";
+    yunda.site = @"http://www.yundaex.com";
     
     SSDQDeliveryCompany *shentong = [[SSDQDeliveryCompany alloc]init];
     shentong.code = @"shentong";
     shentong.name = @"申通快递";
     shentong.phone = @"400-889-5543";
+    shentong.site = @"http://www.sto.cn";
     
     SSDQDeliveryCompany *zhongtong = [[SSDQDeliveryCompany alloc]init];
     zhongtong.code = @"zhongtong";
     zhongtong.name = @"中通速递";
     zhongtong.phone = @"021-39777777";
+    zhongtong.site = @"http://www.zto.cn";
     
     SSDQDeliveryCompany *zhaijisong = [[SSDQDeliveryCompany alloc]init];
     zhaijisong.code = @"zhaijisong";
     zhaijisong.name = @"宅急送";
     zhaijisong.phone = @"400-6789-000";
+    zhaijisong.site = @"http://www.zjs.com.cn";
     
     SSDQDeliveryCompany *shunfeng = [[SSDQDeliveryCompany alloc]init];
     shunfeng.code = @"shunfeng";
     shunfeng.name = @"顺丰速递";
     shunfeng.phone = @"400-811-1111";
+    shunfeng.site = @"http://www.sf-express.com";
     
     SSDQDeliveryCompany *ems = [[SSDQDeliveryCompany alloc]init];
     ems.code = @"ems";
     ems.name = @"EMS";
     ems.phone = @"11183";
+    ems.site = @"http://www.ems.com.cn/";
     
     SSDQDeliveryCompany *youzhengguonei = [[SSDQDeliveryCompany alloc]init];
     youzhengguonei.code = @"youzhengguonei";
     youzhengguonei.name = @"中国邮政";
     youzhengguonei.phone = @"11185";
+    youzhengguonei.site = @"http://yjcx.chinapost.com.cn";
     
     SSDQDeliveryCompany *ztky = [[SSDQDeliveryCompany alloc]init];
     ztky.code = @"ztky";
     ztky.name = @"中铁快运(铁路)";
     ztky.phone = @"95572";
+    ztky.site = @"http://www.cre.cn ";
     
     SSDQDeliveryCompany *youzhengguoji = [[SSDQDeliveryCompany alloc]init];
     youzhengguoji.code = @"youzhengguoji";
     youzhengguoji.name = @"邮政国际";
     youzhengguoji.phone = @"11185";
+    youzhengguoji.site = @"http://intmail.183.com.cn/";
     
     SSDQDeliveryCompany *tiantian = [[SSDQDeliveryCompany alloc]init];
     tiantian.code = @"tiantian";
     tiantian.name = @"天天快递";
     tiantian.phone = @"400-820-8198";
+    tiantian.site = @"http://www.ttkdex.com";
     
     SSDQDeliveryCompany *fedex = [[SSDQDeliveryCompany alloc]init];
     fedex.code = @"fedex";
     fedex.name = @"Fedex";
     fedex.phone = @"400-886-1888";
+    fedex.site = @"http://fedex.com/cn";
     
     SSDQDeliveryCompany *emsen = [[SSDQDeliveryCompany alloc]init];
     emsen.code = @"emsen";
     emsen.name = @"EMS国际";
     emsen.phone = @"11183";
+    emsen.site = @"http://www.ems.com.cn/";
     
     SSDQDeliveryCompany *shunfengen = [[SSDQDeliveryCompany alloc]init];
     shunfengen.code = @"shunfengen";
     shunfengen.name = @"顺风国际";
     shunfengen.phone = @"400-811-1111";
+    shunfengen.site = @"http://www.sf-express.com";
     
     SSDQDeliveryCompany *ups = [[SSDQDeliveryCompany alloc]init];
     ups.code = @"ups";
     ups.name = @"UPS";
     ups.phone = @"800-275-8777";
+    ups.site = @"http://www.ups.com/cn";
     
     NSArray *cheaps = [NSArray arrayWithObjects: shentong,yuantong,yunda,zhongtong,tiantian,nil];
     

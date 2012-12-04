@@ -39,7 +39,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>HasAd</key>
-	<false/>
+	<true/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

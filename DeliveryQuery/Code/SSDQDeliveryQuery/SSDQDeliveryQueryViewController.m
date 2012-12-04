@@ -15,6 +15,7 @@
 #import "SSQUAppDelegate.h"
 #import <QuartzCore/QuartzCore.h>
 #import "SSSystemUtils.h"
+#import "UIView+UIViewUtil.h"
 
 @interface SSDQDeliveryQueryViewController ()
 @property (nonatomic,retain) IBOutlet UILabel *resultText;
@@ -83,6 +84,12 @@
     [self setBtn];
     [self initBg];
     SET_GRAY_BG(self);
+    
+    [self.keyBoardToolBar setOriginY:[self.view height] - 260];
+    if (HAS_AD) {
+        [self.keyBoardToolBar verticalMove:25];
+    }
+    
 }
 
 -(void)viewDidUnload {
