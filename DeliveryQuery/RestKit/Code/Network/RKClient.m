@@ -421,7 +421,9 @@ NSString *RKPathAppendQueryParams(NSString *resourcePath, NSDictionary *queryPar
 - (RKRequest *)sendRequestToResourcePath:(NSString *)resourcePath usingBlock:(void (^)(RKRequest *request))block {
     RKRequest *request = [self requestWithResourcePath:resourcePath];
     if (block) block(request);
+    NSLog(@"retaincount %d",[request retainCount]);
     [request send];
+    NSLog(@"retaincount %d",[request retainCount]);
     return request;
 }
 

@@ -36,7 +36,7 @@
 @property (nonatomic) CGFloat process;
 @property (nonatomic) CGFloat subProcess;
 
-@property (nonatomic,retain) RKRequest *request;
+//@property (nonatomic,retain) RKRequest *request;
 @property (nonatomic,retain) UIWebView *tempWebView;
 @property (nonatomic) BOOL isSend;
 @property (nonatomic,retain) NSArray *needPreRequestCodes;
@@ -53,7 +53,7 @@
 @synthesize process = _process;
 @synthesize subProcess = _subProcess;
 
-@synthesize request = _request;
+//@synthesize request = _request;
 @synthesize tempWebView = _tempWebView;
 @synthesize isSend = _isSend;
 @synthesize needPreRequestCodes = _needPreRequestCodes;
@@ -154,7 +154,7 @@
 }
 
 -(void)dealloc{
-    [self.request cancel];
+//    [self.request cancel];
     
     [self.menuView release];
     [self.menuTitle release];
@@ -295,20 +295,25 @@
 
 -(void)loadRealRequest {
     
-    [self.request cancel];
+//    [self.request cancel];
 //    [self.request release];
-    self.request = nil;
+//    self.request = nil;
     
     SSDQDeliveryResult *srcResult = [self.data objectAtIndex:self.index];
     
-    NSString *url = [NSString stringWithFormat:@"http://api.kuaidi100.com/api?id=7b732424c8c4a433&com=%@&nu=%@&show=0&muti=1&order=asc",srcResult.expSpellName, srcResult.mailNo];
+    NSString *url = [NSString stringWithFormat:@"api?id=7b732424c8c4a433&com=%@&nu=%@&show=0&muti=1&order=asc",srcResult.expSpellName, srcResult.mailNo];
     
-    self.request = [RKRequest requestWithURL:[NSURL URLWithString:url]];
-    if (self.request!=nil) {
-        self.request.delegate = self;
+    RKClient* sharedClient = [RKClient sharedClient];
+    [sharedClient get:url usingBlock:^(RKRequest * request){
+        request.delegate = self;
+    }];
+    
+//    RKRequest* request = [RKRequest requestWithURL:[NSURL URLWithString:url]delegate:self];
+//    if (request!=nil) {
+//        request.delegate = self;
         //        [self.loadingView showLoadingView];
-        [self.request send];
-    }
+//        [request send];
+//    }
 }
 
 -(void)initNeedPreRequestCodes {

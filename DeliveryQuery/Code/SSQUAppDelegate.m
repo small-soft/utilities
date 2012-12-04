@@ -12,7 +12,7 @@
 #import <RestKit/RestKit.h>
 #import "SSQUMoreViewController.h"
 #import "MobWinBannerView.h"
-
+#import "SSUncaughtExceptionService.h"
 @interface SSQUAppDelegate()
 @property (nonatomic, retain) MobWinBannerView *advBannerView;
 @end
@@ -40,6 +40,7 @@
 {
     [self initDB];
     
+    RKClient * client = [RKClient clientWithBaseURLString:@"http://api.kuaidi100.com/"];
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     SSQUViewController* mainViewController = [[SSQUViewController alloc] initWithNibName:@"SSQUViewController" bundle:nil] ;
@@ -69,7 +70,7 @@
     
     self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
-    
+    [SSUncaughtExceptionService setDefaultHandler];
     return YES;
 }
 

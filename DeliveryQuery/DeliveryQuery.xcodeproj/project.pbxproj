@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F028F7B16418F4C00BCE4C1 /* SSQUFontChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F028F7916418F4C00BCE4C1 /* SSQUFontChangeViewController.m */; };
 		0F028F80164195DD00BCE4C1 /* SSQULocaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F028F7E164195DD00BCE4C1 /* SSQULocaleViewController.m */; };
+		0F88AAF0166CF71A00EE7D64 /* SSUncaughtExceptionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F88AAEF166CF71A00EE7D64 /* SSUncaughtExceptionService.m */; };
 		0F8ECFEC163C290200E757D9 /* SSQUWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ECFEB163C290200E757D9 /* SSQUWeatherViewController.m */; };
 		0F8ECFF2163C296100E757D9 /* SSMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ECFEE163C296100E757D9 /* SSMenuItemView.m */; };
 		0F8ECFF3163C296100E757D9 /* SSMenuItemViewStyleImageAndText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ECFEF163C296100E757D9 /* SSMenuItemViewStyleImageAndText.xib */; };
@@ -316,6 +317,8 @@
 		0F028F7916418F4C00BCE4C1 /* SSQUFontChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUFontChangeViewController.m; path = SSQUFontChange/SSQUFontChangeViewController.m; sourceTree = "<group>"; };
 		0F028F7D164195DD00BCE4C1 /* SSQULocaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQULocaleViewController.h; path = SSQULocale/SSQULocaleViewController.h; sourceTree = "<group>"; };
 		0F028F7E164195DD00BCE4C1 /* SSQULocaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQULocaleViewController.m; path = SSQULocale/SSQULocaleViewController.m; sourceTree = "<group>"; };
+		0F88AAEE166CF71A00EE7D64 /* SSUncaughtExceptionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSUncaughtExceptionService.h; path = SSUtils/SSUncaughtExceptionService.h; sourceTree = "<group>"; };
+		0F88AAEF166CF71A00EE7D64 /* SSUncaughtExceptionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSUncaughtExceptionService.m; path = SSUtils/SSUncaughtExceptionService.m; sourceTree = "<group>"; };
 		0F8ECFEA163C290200E757D9 /* SSQUWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUWeatherViewController.h; path = SSQUWeather/SSQUWeatherViewController.h; sourceTree = "<group>"; };
 		0F8ECFEB163C290200E757D9 /* SSQUWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUWeatherViewController.m; path = SSQUWeather/SSQUWeatherViewController.m; sourceTree = "<group>"; };
 		0F8ECFED163C296100E757D9 /* SSMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMenuItemView.h; path = SSUI/Views/SSMenuView/SSMenuItemView.h; sourceTree = "<group>"; };
@@ -735,6 +738,8 @@
 				0F9810B81645764B008A6C04 /* SSMapping4RestKitUtils.m */,
 				9D0C87A7165B78BA006AAC18 /* SSSystemUtils.h */,
 				9D0C87A8165B78BA006AAC18 /* SSSystemUtils.m */,
+				0F88AAEE166CF71A00EE7D64 /* SSUncaughtExceptionService.h */,
+				0F88AAEF166CF71A00EE7D64 /* SSUncaughtExceptionService.m */,
 			);
 			name = SSUtils;
 			sourceTree = "<group>";
@@ -1691,6 +1696,7 @@
 				9DDD50AF16670FC00071DF75 /* SSToastView.m in Sources */,
 				9DDD50E51668E9EF0071DF75 /* SSDQFollowDeliveryViewController.m in Sources */,
 				9D4C6AD5166C3FCD003852DC /* ADVPercentProgressBar.m in Sources */,
+				0F88AAF0166CF71A00EE7D64 /* SSUncaughtExceptionService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
