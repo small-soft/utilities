@@ -33,13 +33,16 @@
     return self;
 }
 
+-(void)dealloc {
+    self.contentTable = nil;
+    self.data = nil;
+    
+    [super dealloc];
+}
+
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-//    [[SSToastView MakeToastWithType:TOAST_STYLE_COMMON info:@"你好号阿訇好讵非所料旅客机旅客机"] showAllTime];
-    
-//    [SSToastView MakeToastWithType:1 info:@""] showAllTime
-    // Do any additional setup after loading the view from its nib.
+    [super viewDidLoad]; 
     
     self.contentTable.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:GRAY_BG]];
     [self initRightBtn];
@@ -48,7 +51,8 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    
+    // 更新数清零
+    [UIApplication sharedApplication].applicationIconBadgeNumber = 0;
 }
 
 - (void)didReceiveMemoryWarning
@@ -152,8 +156,8 @@
             result.data = [NSMutableArray arrayWithCapacity:[items columnCount]];
             while ([items next]) {
                 SSDQDeliveryItem *item = [[[SSDQDeliveryItem alloc]init]autorelease];
-                item.time = [[items stringForColumn:@"time"] copy];
-                item.context = [[items stringForColumn:@"context"] copy];
+                item.time = [items stringForColumn:@"time"];
+                item.context = [items stringForColumn:@"context"];
                 
                 [result.data addObject:item];
             }

@@ -18,11 +18,9 @@
 #import "UIView+UIViewUtil.h"
 
 @interface SSDQDeliveryQueryViewController ()
-@property (nonatomic,retain) IBOutlet UILabel *resultText;
 @property (nonatomic,retain) IBOutlet UILabel *companyName;
 @property (nonatomic,retain) IBOutlet UITextField *deliveryNumber;
-@property (nonatomic,retain) IBOutlet UIImageView *resultImage;
-@property (nonatomic,retain) RKRequest *request;
+//@property (nonatomic,retain) RKRequest *request;
 @property (nonatomic,retain) IBOutlet UIWebView *tempWebView;
 @property (nonatomic) BOOL isSend;
 @property (nonatomic,retain) NSArray *needPreRequestCodes;
@@ -37,12 +35,10 @@
 @end
 
 @implementation SSDQDeliveryQueryViewController
-@synthesize resultText = _resultText;
-@synthesize resultImage = _resultImage;
 @synthesize company = _company;
 @synthesize companyName = _companyName;
 @synthesize deliveryNumber = _deliveryNumber;
-@synthesize request = _request;
+//@synthesize request = _request;
 @synthesize code = _code;
 @synthesize isSend = _isSend;
 @synthesize needPreRequestCodes = _needPreRequestCodes;
@@ -50,19 +46,17 @@
 @synthesize sendrequestButton = _sendrequestButton;
 @synthesize bg = _bg;
 @synthesize keyBoardToolBar = _keyBoardToolBar;
-
+@synthesize tempWebView = _tempWebView;
 -(void)dealloc{
-    [_resultImage release];
-    [_resultText release];
-    [_company release];
-    [_companyName release];
-    [_deliveryNumber release];
-    [_request cancel];
-    [_request release];
-    [_code release];
-    [_sendrequestButton release];
-    [_keyBoardToolBar release];
-    [_bg release];
+    self.company = nil;
+    self.companyName = nil;
+    self.tempWebView = nil;
+    self.deliveryNumber = nil;
+    self.needPreRequestCodes = nil;
+    self.code = nil;
+    self.keyBoardToolBar = nil;
+    self.bg = nil;
+    self.sendrequestButton = nil;
     [super dealloc];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -93,13 +87,15 @@
 }
 
 -(void)viewDidUnload {
-    [_resultImage release];
-    [_resultText release];
-    [_company release];
-    [_companyName release];
-    [_deliveryNumber release];
-    [_request release];
-    [_code release];
+    self.company = nil;
+    self.companyName = nil;
+    self.tempWebView = nil;
+    self.deliveryNumber = nil;
+    self.needPreRequestCodes = nil;
+    self.code = nil;
+    self.keyBoardToolBar = nil;
+    self.bg = nil;
+    self.sendrequestButton = nil;
     
     [super viewDidUnload];
 }
@@ -143,6 +139,8 @@
 }
 
 -(void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response{
+    [self.tempWebView stopLoading];
+    
     NSLog(@"success :%@",[response bodyAsString]);
     
     SSDQDeliveryResult * result = [SSMapping4RestKitUtils performMappingWithMapping:[SSDQDeliveryResult sharedObjectMapping] forJsonString:[response bodyAsString]] ;
@@ -150,7 +148,6 @@
     
     if (result==nil)
     {
-        self.resultText.text = @"抱歉！查无结果";
     }else{
 
         result.expTextName = self.company.name;
@@ -163,7 +160,7 @@
                     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"查询失败" message:msg delegate:self cancelButtonTitle:@"重新查询" otherButtonTitles:@"仍然保存", nil];
                     alert.tag = 0;
                     [alert show];
-                
+                    [alert release];
                 }
                     break;
                 case SSDQDeliveryResultErrorCodeInterfaceError:
@@ -174,7 +171,7 @@
                     UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"查询失败" message:msg delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"重试", nil];
                     alert.tag = 1;
                     [alert show];
-                    
+                    [alert release];
                 }
                     break;
                 default:
@@ -192,11 +189,6 @@
         
         [self enterDetail];
     }
-    self.resultText.numberOfLines = 0;
-    CGSize constraint = CGSizeMake(260, 20000.0f);
-    CGSize labelSize = [self.resultText.text sizeWithFont:[UIFont systemFontOfSize:14] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
-//
-    self.resultText.frame = CGRectMake(self.resultText.frame.origin.x, self.resultText.frame.origin.y, labelSize.width, labelSize.height);
     [self.loadingView hideLoadingView];
 }
 
@@ -224,8 +216,7 @@
         break;
     NSLog(@"===%@",symbol.data);
     self.deliveryNumber.text= symbol.data;
-    _resultImage.image =
-    [info objectForKey: UIImagePickerControllerOriginalImage];
+
     [reader dismissModalViewControllerAnimated: YES];
 }
 
@@ -244,6 +235,7 @@
         UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"信息不完整" message:@"请完整输入快递公司和快递单号" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
         
         [alert show];
+        [alert release];
         return;
     }
     
@@ -417,25 +409,30 @@
     if (!_isSend) {
         NSTimeInterval delay = 0;
         if ([self.needPreRequestCodes containsObject:self.company.code]) {
-            delay = 6;
+            delay = 4;
         }
-        
         
         [self performSelector:@selector(loadRealRequest) withObject:nil afterDelay:delay];
         _isSend = YES;
+        
     }
 
 }
 
 -(void)loadRealRequest {
-    NSString *url = [NSString stringWithFormat:@"http://api.kuaidi100.com/api?id=7b732424c8c4a433&com=%@&nu=%@&show=0&muti=1&order=asc",self.company.code, self.deliveryNumber.text];
+    NSString *url = [NSString stringWithFormat:@"api?id=%@&com=%@&nu=%@&show=0&muti=1&order=asc",API_KEY,self.company.code, self.deliveryNumber.text];
     
-    self.request = [RKRequest requestWithURL:[NSURL URLWithString:url]];
-    if (self.request!=nil) {
-        self.request.delegate = self;
-        //        [self.loadingView showLoadingView];
-        [self.request send];
-    }
+//    self.request = [RKRequest requestWithURL:[NSURL URLWithString:url]];
+    RKClient * client = [RKClient sharedClient];
+    [client get:url usingBlock:^(RKRequest *request){
+        request.delegate = self;
+    }];
+    
+//    if (self.request!=nil) {
+//        self.request.delegate = self;
+//        //        [self.loadingView showLoadingView];
+//        [self.request send];
+//    }
 }
 
 -(void)initNeedPreRequestCodes {
@@ -479,6 +476,7 @@
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField {
+    self.deliveryNumber.text = [self.deliveryNumber.text uppercaseString];
     self.keyBoardToolBar.hidden = YES;
 }
 @end

@@ -96,8 +96,8 @@
 }
 
 -(void)hasToolBar {
-    [self setHeight:(SCREEN_HEIGHT - (480 -378))];
-    [self.noDataView setHeight:(SCREEN_HEIGHT - (480 -378))];
+    [self setHeight:(SCREEN_HEIGHT - (480 -358))];
+    [self.noDataView setHeight:(SCREEN_HEIGHT - (480 -358))];
 }
 
 -(void)fullScreen {
@@ -105,6 +105,7 @@
 }
 
 -(void)initPrcessBar:(CGFloat)process {
+    self.processBar.hidden = NO;
     if (self.processBar != nil) {
         return;
     }

@@ -45,6 +45,21 @@
 @synthesize comment = _comment;
 @synthesize signedTime = _signedTime;
 
+- (void)dealloc {
+    self.companyLogo = nil;
+    self.companyName = nil;
+    self.sendTime = nil;
+    self.latestContext = nil;
+    self.deliveryNumber = nil;
+    self.companyPhone = nil;
+    self.call = nil;
+    self.bg = nil;
+    self.comment = nil;
+    self.signedTime = nil;
+    
+    [super dealloc];
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -143,10 +158,6 @@
         }
     }
     return nil;
-}
-- (void)dealloc {
-    
-    [super dealloc];
 }
 
 -(void)callPhone {

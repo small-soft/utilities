@@ -43,6 +43,21 @@
 @synthesize phoneBtn = _phoneBtn;
 @synthesize sendBtn = _sendBtn;
 @synthesize favBtn = _favBtn;
+@synthesize cannotFav = _cannotFav;
+
+-(void)dealloc {
+    self.company = nil;
+    self.logo = nil;
+    self.name = nil;
+    self.queryBtn = nil;
+    self.siteBtn = nil;
+    self.bg = nil;
+    self.phoneBtn = nil;
+    self.sendBtn = nil;
+    self.favBtn = nil;
+    
+    [super dealloc];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -71,14 +86,18 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    if (self.cannotFav) {
+        self.favBtn.hidden = YES;
+    }
+    
+    [super viewWillAppear:animated];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
 }
 
 -(void)initData {

@@ -19,7 +19,6 @@
 
 @property(nonatomic,retain) IBOutlet UITableView *manInfo;
 @property(nonatomic,retain) IBOutlet UITableView *contentTable;
-@property(nonatomic,retain) IBOutlet UIImageView *companyLogo;
 @property(nonatomic,retain) IBOutlet UILabel *supplier;
 @end
 
@@ -29,7 +28,6 @@
 @synthesize companyCode = _companyCode;
 @synthesize deliveryNumber = _deliveryNumber;
 @synthesize contentTable = _contentTable;
-@synthesize companyLogo = _companyLogo;
 @synthesize supplier = _supplier;
 
 -(void)dealloc{
@@ -38,6 +36,7 @@
     self.companyCode = nil;
     self.deliveryNumber = nil;
     self.supplier = nil;
+    self.contentTable = nil;
     [super dealloc];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -66,7 +65,6 @@
 -(void)viewWillAppear:(BOOL)animated {
     [self loadDB];
     
-    self.companyLogo.image = [UIImage imageNamed:self.result.expSpellName];
     self.manInfo.frame = CGRectMake(0, 0, SCREEN_WIDTH, [SSDQMyDeliveryCell cellHeight]);
     self.contentTable.frame = CGRectMake(0, [SSDQMyDeliveryCell cellHeight], SCREEN_WIDTH, SCREEN_HEIGHT - self.manInfo.frame.size.height - 90 - 20);
     self.supplier.frame = CGRectMake(0, [self.contentTable endY] + 5, 320, 21);
@@ -78,11 +76,12 @@
 }
 
 -(void)viewDidUnload {
-    [_manInfo release];
-    [_result release];
-    [_companyCode release];
-    [_deliveryNumber release];
-    [_contentTable release];
+    self.manInfo = nil;
+    self.result = nil;
+    self.companyCode = nil;
+    self.deliveryNumber = nil;
+    self.supplier = nil;
+    self.contentTable = nil;
     
     [super viewDidUnload];
 }
@@ -105,9 +104,9 @@
         if ([rs next]) {
             SSDQDeliveryResult *result = [[[SSDQDeliveryResult alloc]init]autorelease];
             result.id = [rs intForColumn:@"id"];
-            result.expTextName = [[rs stringForColumn:@"companyName"] copy];
-            result.expSpellName = [[rs stringForColumn:@"companyCode"] copy];
-            result.mailNo = [[rs stringForColumn:@"deliveryNumber"] copy];
+            result.expTextName = [rs stringForColumn:@"companyName"];
+            result.expSpellName = [rs stringForColumn:@"companyCode"];
+            result.mailNo = [rs stringForColumn:@"deliveryNumber"];
             result.status = [rs intForColumn:@"status"];
             result.latestContext = [rs stringForColumn:@"latestContext"];
             result.sendTime = [rs stringForColumn:@"sendTime"];
@@ -120,8 +119,8 @@
             result.data = [NSMutableArray arrayWithCapacity:[items columnCount]];
             while ([items next]) {
                 SSDQDeliveryItem *item = [[[SSDQDeliveryItem alloc]init]autorelease];
-                item.time = [[items stringForColumn:@"time"] copy];
-                item.context = [[items stringForColumn:@"context"] copy];
+                item.time = [items stringForColumn:@"time"];
+                item.context = [items stringForColumn:@"context"];
                 
                 [result.data addObject:item];
             }
@@ -343,8 +342,8 @@
     float version = [[[UIDevice currentDevice] systemVersion] floatValue];
     
     if (version < 5.0) {
-        [self.manInfo setHeight:260];
-        [self.contentTable setHeight:200];
+        [self.manInfo setHeight:295];
+        [self.contentTable setHeight:220];
     }
 }
 

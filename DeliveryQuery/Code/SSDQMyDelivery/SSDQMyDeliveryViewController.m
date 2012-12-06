@@ -38,6 +38,14 @@
     return self;
 }
 
+-(void)dealloc{
+    self.contentTable = nil;
+    self.data = nil;
+    self.statusArray = nil;
+    
+    [super dealloc];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

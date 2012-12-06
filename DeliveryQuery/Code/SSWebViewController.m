@@ -18,6 +18,20 @@
 @synthesize webView = _webView;
 @synthesize url = _url;
 
+-(void)viewDidUnload {
+    self.webView = nil;
+    self.url = nil;
+    
+    [super viewDidUnload];
+}
+
+-(void)dealloc {
+    [self.webView release];
+    [self.url release];
+    
+    [super dealloc];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

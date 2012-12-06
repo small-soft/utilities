@@ -14,5 +14,6 @@
 
 @interface SSDQCompanyDetailViewController : SSViewController<MFMessageComposeViewControllerDelegate,UIActionSheetDelegate,MFMailComposeViewControllerDelegate>
 @property(nonatomic,retain) SSDQDeliveryCompany *company;
+@property(nonatomic) BOOL cannotFav;
 
 @end

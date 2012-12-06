@@ -39,8 +39,13 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self initDB];
+    [self initApiKey];
     
     RKClient * client = [RKClient clientWithBaseURLString:@"http://api.kuaidi100.com/"];
+    //增加flag
+    
+    [client.reachabilityObserver getFlags];
+    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
     SSQUViewController* mainViewController = [[SSQUViewController alloc] initWithNibName:@"SSQUViewController" bundle:nil] ;
@@ -54,7 +59,7 @@
     UIBarButtonItem * infoButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
     [infoButton addTarget:self action:@selector(infoBtnPress) forControlEvents:UIControlEventTouchUpInside];
     
-    mainViewController.navigationItem.rightBarButtonItem = infoButtonItem ;
+    mainViewController.navigationItem.leftBarButtonItem = infoButtonItem ;
     
     [infoButtonItem release];
     [mainViewController release];
@@ -150,4 +155,24 @@
     self.db = [FMDatabase databaseWithPath:writableDBPath];
 }
 
+
+-(void)initApiKey{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *key = (NSString*)[defaults objectForKey:@"api_key"];
+    
+    if (key.length > 0 && ([key isEqualToString:@"0b02a4cce34395bd"] || [key isEqualToString:@"7b732424c8c4a433"])) {
+        return;
+    }
+    int i = arc4random() % 2;
+    
+    key = @"7b732424c8c4a433";
+    if (i == 1) {
+        key = @"0b02a4cce34395bd";
+    }
+    
+    NSLog(@"key is %@",key);
+    
+    [defaults setObject:key forKey:@"api_key"];
+}
 @end

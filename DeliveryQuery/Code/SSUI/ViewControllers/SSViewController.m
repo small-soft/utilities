@@ -9,6 +9,9 @@
 #import "SSViewController.h"
 #import "SSLoadingView.h"
 #import "MobWinBannerView.h"
+#import "UIView+UIViewUtil.h"
+#import "SSToastView.h"
+
 @interface SSViewController ()
 //@property (nonatomic, retain) MobWinBannerView *advBannerView;
 @end
@@ -16,11 +19,16 @@
 @implementation SSViewController
 @synthesize loadingView = _loadingView;
 //@synthesize advBannerView = _advBannerView;
+@synthesize isLoading = _isLoading;
+@synthesize backTitle = _backTitle;
 
 -(SSLoadingView *)loadingView{
     if (nil==_loadingView) {
         _loadingView = [[SSLoadingView alloc] init];
         _loadingView.frame = self.view.frame;
+        
+//        [_loadingView setHeight:SCREEN_HEIGHT];
+        
         [self.view addSubview:_loadingView];
         _loadingView.hidden = YES;
     }
@@ -37,6 +45,7 @@
 }
 -(void)dealloc{
     self.loadingView = nil;
+    self.backTitle = nil;
 //    [self.advBannerView stopRequest];
 //    [self.advBannerView removeFromSuperview];
 //    self.advBannerView = nil;

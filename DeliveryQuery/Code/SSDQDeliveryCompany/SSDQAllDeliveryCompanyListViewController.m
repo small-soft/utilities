@@ -22,19 +22,22 @@
 
 #pragma mark -
 #pragma mark attr
-@property(nonatomic,retain) NSMutableArray *data;
+@property(nonatomic,retain) NSArray *keys;
+@property(nonatomic,retain) NSMutableDictionary *sectionData;
 
 @end
 
 @implementation SSDQAllDeliveryCompanyListViewController
 @synthesize contentTable = _contentTable;
-@synthesize data = _data;
 @synthesize displayMode = _displayMode;
 @synthesize contentMode = _contentMode;
+@synthesize sectionData = _sectionData;
+@synthesize keys = _keys;
 
 -(void)dealloc{
     self.contentTable = nil;
-    self.data = nil;
+    self.keys = nil;
+    self.sectionData = nil;
     [super dealloc];
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -72,7 +75,12 @@
 
 
 -(void)loadDB{
-    self.data = [[NSMutableArray alloc]init];
+    self.sectionData = [NSMutableDictionary dictionaryWithCapacity:26];
+    NSString *firstLetter = @"a";
+    NSMutableArray *aLetter = [NSMutableArray arrayWithCapacity:10];
+    
+    [self.sectionData setObject:aLetter forKey:firstLetter];
+    
     FMDatabase *db = GETDB;
     if ([db open]) {
         NSMutableString *sql = [NSMutableString stringWithString: @"SELECT * from DeliveryCompany"];
@@ -90,9 +98,24 @@
             company.site = [[rs stringForColumn:@"site"] copy];
             company.phone = [[rs stringForColumn:@"phone"] copy];
             company.id = [NSNumber numberWithInt:[rs intForColumn:@"id"]];
+            company.firstLetter = [[rs stringForColumn:@"firstLetter"] copy];
             
-            [self.data addObject:company];
+            if ([company.firstLetter isEqualToString:firstLetter]) {
+                NSMutableArray *companyArray =  [self.sectionData objectForKey:firstLetter];
+                [companyArray addObject:company];
+            }else {
+                firstLetter = company.firstLetter;
+                
+                NSMutableArray *companyArray = [NSMutableArray arrayWithCapacity:10];
+                [companyArray addObject:company];
+                
+                [self.sectionData setObject:companyArray forKey:firstLetter];
+            }
+            
+//            [self.data addObject:company];
         }
+        
+        self.keys = [[self.sectionData allKeys]sortedArrayUsingSelector:@selector(compare:)];
     }
     
     
@@ -120,20 +143,30 @@
         cell.backgroundView.alpha = 0.1;
     }
     
-    cell.company = [self.data objectAtIndex:indexPath.row];
+    NSString *key =  [self.keys objectAtIndex:indexPath.section];
+    NSArray *companys =  [self.sectionData objectForKey:key];
+    
+    cell.company = [companys objectAtIndex:indexPath.row];
     [cell setupView];
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.data count];
+    NSString *key =  [self.keys objectAtIndex:section];
+    NSArray *companys =  [self.sectionData objectForKey:key];
+    
+    return companys!=nil?[companys count]:0;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     switch (self.displayMode) {
         case 0:{
             SSDQCompanyDetailViewController *detail = [[[SSDQCompanyDetailViewController alloc]init]autorelease];
-            detail.company = [self.data objectAtIndex:indexPath.row];
+            
+            NSString *key =  [self.keys objectAtIndex:indexPath.section];
+            NSArray *companys =  [self.sectionData objectForKey:key];
+            
+            detail.company = [companys objectAtIndex:indexPath.row];
             [self.navigationController pushViewController:detail animated:YES];
         }
             
@@ -141,7 +174,10 @@
         case 1:{
             NSInteger i = [[self.navigationController viewControllers] count] -2;
             SSDQDeliveryQueryViewController *qv = [[self.navigationController viewControllers] objectAtIndex:i];
-            qv.company = [self.data objectAtIndex:indexPath.row];
+            
+            NSString *key =  [self.keys objectAtIndex:indexPath.section];
+            NSArray *companys =  [self.sectionData objectForKey:key];
+            qv.company = [companys objectAtIndex:indexPath.row];
             
             float version = [[[UIDevice currentDevice] systemVersion] floatValue];
             
@@ -171,5 +207,26 @@
     
     [self loadDB];
     [self.contentTable reloadData];
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.sectionData.count;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (self.contentMode == DeliverCompanyListContentModeFavOnly) {
+        return nil;
+    }
+    
+    NSString *key =  [self.keys objectAtIndex:section];
+    return key;
+}
+
+-(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    if (self.contentMode == DeliverCompanyListContentModeFavOnly) {
+        return nil;
+    }
+    
+    return self.keys;
 }
 @end

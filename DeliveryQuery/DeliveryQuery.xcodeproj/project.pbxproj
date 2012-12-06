@@ -7,29 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F028F7B16418F4C00BCE4C1 /* SSQUFontChangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F028F7916418F4C00BCE4C1 /* SSQUFontChangeViewController.m */; };
-		0F028F80164195DD00BCE4C1 /* SSQULocaleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F028F7E164195DD00BCE4C1 /* SSQULocaleViewController.m */; };
 		0F88AAF0166CF71A00EE7D64 /* SSUncaughtExceptionService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F88AAEF166CF71A00EE7D64 /* SSUncaughtExceptionService.m */; };
-		0F8ECFEC163C290200E757D9 /* SSQUWeatherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ECFEB163C290200E757D9 /* SSQUWeatherViewController.m */; };
 		0F8ECFF2163C296100E757D9 /* SSMenuItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ECFEE163C296100E757D9 /* SSMenuItemView.m */; };
 		0F8ECFF3163C296100E757D9 /* SSMenuItemViewStyleImageAndText.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ECFEF163C296100E757D9 /* SSMenuItemViewStyleImageAndText.xib */; };
 		0F8ECFF4163C296100E757D9 /* SSMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ECFF1163C296100E757D9 /* SSMenuView.m */; };
-		0F8ED012163D113F00E757D9 /* ProvincesAndCities.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0F8ED010163D113E00E757D9 /* ProvincesAndCities.plist */; };
-		0F8ED015163D131500E757D9 /* SSQULocation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F8ED014163D131400E757D9 /* SSQULocation.m */; };
-		0F98109616454439008A6C04 /* SSQUSegmentedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F98109416454439008A6C04 /* SSQUSegmentedViewController.m */; };
-		0F98109716454439008A6C04 /* SSQUSegmentedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F98109516454439008A6C04 /* SSQUSegmentedViewController.xib */; };
 		0F9810B91645764B008A6C04 /* SSMapping4RestKitUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9810B81645764B008A6C04 /* SSMapping4RestKitUtils.m */; };
 		0F99B3261639870F0062597B /* libRestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F99B31B163986330062597B /* libRestKit.a */; };
-		0F9C25C816460F220076694B /* SSQUSmartResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9C25C716460F220076694B /* SSQUSmartResult.m */; };
-		0F9C25CC1646122A0076694B /* SSQUIDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9C25CB1646122A0076694B /* SSQUIDViewController.m */; };
-		0F9C26111646829C0076694B /* SSQUPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9C260F1646829C0076694B /* SSQUPickerViewController.m */; };
-		0F9C26121646829C0076694B /* SSQUPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9C26101646829C0076694B /* SSQUPickerViewController.xib */; };
 		0F9C26461646C1300076694B /* MobWin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9C26431646C1300076694B /* MobWin.a */; };
 		0F9C26481646C39E0076694B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9C26471646C39E0076694B /* CoreLocation.framework */; };
 		0F9C264A1646C3E00076694B /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9C26491646C3E00076694B /* libz.dylib */; };
 		0F9C264C1646C56C0076694B /* LBSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F9C264B1646C56C0076694B /* LBSSDK.framework */; };
 		0F9F2196163EB1F60051822D /* SSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F2195163EB1F60051822D /* SSViewController.m */; };
-		0F9F219A163EB52B0051822D /* SSQUTranslateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F2199163EB52B0051822D /* SSQUTranslateViewController.m */; };
 		0F9F21BD163EE1DA0051822D /* SSQUMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F9F21BC163EE1DA0051822D /* SSQUMoreViewController.m */; };
 		0F9F21BF163EE1FF0051822D /* SSQUMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0F9F21BE163EE1FF0051822D /* SSQUMoreViewController.xib */; };
 		0FA708EA16397B14009824D5 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708E916397B14009824D5 /* CFNetwork.framework */; };
@@ -40,10 +28,8 @@
 		0FA708F416397B85009824D5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708F316397B85009824D5 /* QuartzCore.framework */; };
 		0FA708F616397B91009824D5 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FA708F516397B91009824D5 /* libxml2.dylib */; };
 		0FCD0BCA1640384F00847D3F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FCD0BC91640384F00847D3F /* MessageUI.framework */; };
-		0FD541D3163D2CF90092B559 /* SSQUExchangeRateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541D2163D2CF90092B559 /* SSQUExchangeRateViewController.m */; };
 		0FD541D9163D307C0092B559 /* SSLoadingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD541D8163D307C0092B559 /* SSLoadingView.m */; };
 		0FD541DD163D30E00092B559 /* SSLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541DC163D30E00092B559 /* SSLoadingView.xib */; };
-		0FD541E0163D40B40092B559 /* MoneyUnit.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541DE163D40B40092B559 /* MoneyUnit.plist */; };
 		9D0C86D4165879CE006AAC18 /* SSDQMyDeliveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C86D2165879CE006AAC18 /* SSDQMyDeliveryViewController.m */; };
 		9D0C86D5165879CE006AAC18 /* SSDQMyDeliveryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D0C86D3165879CE006AAC18 /* SSDQMyDeliveryViewController.xib */; };
 		9D0C87A4165B6269006AAC18 /* SSDQMyDeliveryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C87A3165B6269006AAC18 /* SSDQMyDeliveryCell.m */; };
@@ -169,7 +155,10 @@
 		9D4C6AE8166C4DE3003852DC /* progress-count@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C6AE4166C4DE2003852DC /* progress-count@2x.png */; };
 		9D4C6B0D166C707C003852DC /* progress-fill-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C6B0B166C707C003852DC /* progress-fill-blue.png */; };
 		9D4C6B0E166C707C003852DC /* progress-fill-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C6B0C166C707C003852DC /* progress-fill-blue@2x.png */; };
+		9D534E20166F932500D8482B /* zhongxinda@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D534E1F166F932500D8482B /* zhongxinda@2x.png */; };
 		9D5E1E2F166DE32F00153B24 /* SSBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D5E1E2E166DE32F00153B24 /* SSBadgeView.m */; };
+		9D5E1EAA166E11E700153B24 /* cces@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5E1EA8166E11E700153B24 /* cces@2x.png */; };
+		9D5E1EAB166E11E700153B24 /* ocs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D5E1EA9166E11E700153B24 /* ocs@2x.png */; };
 		9D88E9C5164E6D1A003C151D /* DeliveryQueryDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 9D88E9C4164E6D1A003C151D /* DeliveryQueryDB.sqlite */; };
 		9D88E9CA164E6DF9003C151D /* SSDQAllDeliveryCompanyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D88E9C8164E6DF8003C151D /* SSDQAllDeliveryCompanyListViewController.m */; };
 		9D88E9CB164E6DF9003C151D /* SSDQAllDeliveryCompanyListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9D88E9C9164E6DF8003C151D /* SSDQAllDeliveryCompanyListViewController.xib */; };
@@ -313,35 +302,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0F028F7816418F4C00BCE4C1 /* SSQUFontChangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUFontChangeViewController.h; path = SSQUFontChange/SSQUFontChangeViewController.h; sourceTree = "<group>"; };
-		0F028F7916418F4C00BCE4C1 /* SSQUFontChangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUFontChangeViewController.m; path = SSQUFontChange/SSQUFontChangeViewController.m; sourceTree = "<group>"; };
-		0F028F7D164195DD00BCE4C1 /* SSQULocaleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQULocaleViewController.h; path = SSQULocale/SSQULocaleViewController.h; sourceTree = "<group>"; };
-		0F028F7E164195DD00BCE4C1 /* SSQULocaleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQULocaleViewController.m; path = SSQULocale/SSQULocaleViewController.m; sourceTree = "<group>"; };
 		0F88AAEE166CF71A00EE7D64 /* SSUncaughtExceptionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSUncaughtExceptionService.h; path = SSUtils/SSUncaughtExceptionService.h; sourceTree = "<group>"; };
 		0F88AAEF166CF71A00EE7D64 /* SSUncaughtExceptionService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSUncaughtExceptionService.m; path = SSUtils/SSUncaughtExceptionService.m; sourceTree = "<group>"; };
-		0F8ECFEA163C290200E757D9 /* SSQUWeatherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUWeatherViewController.h; path = SSQUWeather/SSQUWeatherViewController.h; sourceTree = "<group>"; };
-		0F8ECFEB163C290200E757D9 /* SSQUWeatherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUWeatherViewController.m; path = SSQUWeather/SSQUWeatherViewController.m; sourceTree = "<group>"; };
 		0F8ECFED163C296100E757D9 /* SSMenuItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMenuItemView.h; path = SSUI/Views/SSMenuView/SSMenuItemView.h; sourceTree = "<group>"; };
 		0F8ECFEE163C296100E757D9 /* SSMenuItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMenuItemView.m; path = SSUI/Views/SSMenuView/SSMenuItemView.m; sourceTree = "<group>"; };
 		0F8ECFEF163C296100E757D9 /* SSMenuItemViewStyleImageAndText.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSMenuItemViewStyleImageAndText.xib; path = SSUI/Views/SSMenuView/SSMenuItemViewStyleImageAndText.xib; sourceTree = "<group>"; };
 		0F8ECFF0163C296100E757D9 /* SSMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMenuView.h; path = SSUI/Views/SSMenuView/SSMenuView.h; sourceTree = "<group>"; };
 		0F8ECFF1163C296100E757D9 /* SSMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMenuView.m; path = SSUI/Views/SSMenuView/SSMenuView.m; sourceTree = "<group>"; };
-		0F8ED011163D113F00E757D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/ProvincesAndCities.plist; sourceTree = "<group>"; };
-		0F8ED013163D131400E757D9 /* SSQULocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQULocation.h; path = SSQUWeather/SSQULocation.h; sourceTree = "<group>"; };
-		0F8ED014163D131400E757D9 /* SSQULocation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQULocation.m; path = SSQUWeather/SSQULocation.m; sourceTree = "<group>"; };
-		0F98109316454439008A6C04 /* SSQUSegmentedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUSegmentedViewController.h; path = SSQUSegmentedViewController/SSQUSegmentedViewController.h; sourceTree = "<group>"; };
-		0F98109416454439008A6C04 /* SSQUSegmentedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUSegmentedViewController.m; path = SSQUSegmentedViewController/SSQUSegmentedViewController.m; sourceTree = "<group>"; };
-		0F98109516454439008A6C04 /* SSQUSegmentedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSQUSegmentedViewController.xib; path = SSQUSegmentedViewController/SSQUSegmentedViewController.xib; sourceTree = "<group>"; };
 		0F9810B71645764B008A6C04 /* SSMapping4RestKitUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSMapping4RestKitUtils.h; path = SSUtils/SSMapping4RestKitUtils.h; sourceTree = "<group>"; };
 		0F9810B81645764B008A6C04 /* SSMapping4RestKitUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSMapping4RestKitUtils.m; path = SSUtils/SSMapping4RestKitUtils.m; sourceTree = "<group>"; };
 		0F99B30F163986330062597B /* RestKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RestKit.xcodeproj; path = RestKit/RestKit.xcodeproj; sourceTree = "<group>"; };
-		0F9C25C616460F220076694B /* SSQUSmartResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUSmartResult.h; path = SSQUModel/SSQUSmartResult.h; sourceTree = "<group>"; };
-		0F9C25C716460F220076694B /* SSQUSmartResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUSmartResult.m; path = SSQUModel/SSQUSmartResult.m; sourceTree = "<group>"; };
-		0F9C25CA1646122A0076694B /* SSQUIDViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUIDViewController.h; path = SSQUID/SSQUIDViewController.h; sourceTree = "<group>"; };
-		0F9C25CB1646122A0076694B /* SSQUIDViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUIDViewController.m; path = SSQUID/SSQUIDViewController.m; sourceTree = "<group>"; };
-		0F9C260E1646829C0076694B /* SSQUPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUPickerViewController.h; path = SSQUPickerViewController/SSQUPickerViewController.h; sourceTree = "<group>"; };
-		0F9C260F1646829C0076694B /* SSQUPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUPickerViewController.m; path = SSQUPickerViewController/SSQUPickerViewController.m; sourceTree = "<group>"; };
-		0F9C26101646829C0076694B /* SSQUPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSQUPickerViewController.xib; path = SSQUPickerViewController/SSQUPickerViewController.xib; sourceTree = "<group>"; };
 		0F9C26431646C1300076694B /* MobWin.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = MobWin.a; path = Lib/MobWin.a; sourceTree = "<group>"; };
 		0F9C26441646C1300076694B /* MobWinBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobWinBannerView.h; path = Lib/MobWinBannerView.h; sourceTree = "<group>"; };
 		0F9C26451646C1300076694B /* MobWinBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobWinBannerViewDelegate.h; path = Lib/MobWinBannerViewDelegate.h; sourceTree = "<group>"; };
@@ -350,8 +320,6 @@
 		0F9C264B1646C56C0076694B /* LBSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LBSSDK.framework; path = Code/Lib/build/Framework/LBSSDK.framework; sourceTree = "<group>"; };
 		0F9F2194163EB1F60051822D /* SSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSViewController.h; path = SSUI/ViewControllers/SSViewController.h; sourceTree = "<group>"; };
 		0F9F2195163EB1F60051822D /* SSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSViewController.m; path = SSUI/ViewControllers/SSViewController.m; sourceTree = "<group>"; };
-		0F9F2198163EB52B0051822D /* SSQUTranslateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUTranslateViewController.h; path = SSQUTranslate/SSQUTranslateViewController.h; sourceTree = "<group>"; };
-		0F9F2199163EB52B0051822D /* SSQUTranslateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUTranslateViewController.m; path = SSQUTranslate/SSQUTranslateViewController.m; sourceTree = "<group>"; };
 		0F9F21BB163EE1DA0051822D /* SSQUMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUMoreViewController.h; path = SSQUMore/SSQUMoreViewController.h; sourceTree = "<group>"; };
 		0F9F21BC163EE1DA0051822D /* SSQUMoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUMoreViewController.m; path = SSQUMore/SSQUMoreViewController.m; sourceTree = "<group>"; };
 		0F9F21BE163EE1FF0051822D /* SSQUMoreViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSQUMoreViewController.xib; path = SSQUMore/SSQUMoreViewController.xib; sourceTree = "<group>"; };
@@ -363,12 +331,9 @@
 		0FA708F316397B85009824D5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		0FA708F516397B91009824D5 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		0FCD0BC91640384F00847D3F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		0FD541D1163D2CF90092B559 /* SSQUExchangeRateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUExchangeRateViewController.h; path = SSQUExchangeRate/SSQUExchangeRateViewController.h; sourceTree = "<group>"; };
-		0FD541D2163D2CF90092B559 /* SSQUExchangeRateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSQUExchangeRateViewController.m; path = SSQUExchangeRate/SSQUExchangeRateViewController.m; sourceTree = "<group>"; };
 		0FD541D7163D307C0092B559 /* SSLoadingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSLoadingView.h; path = SSUI/Views/SSLoadingView/SSLoadingView.h; sourceTree = "<group>"; };
 		0FD541D8163D307C0092B559 /* SSLoadingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSLoadingView.m; path = SSUI/Views/SSLoadingView/SSLoadingView.m; sourceTree = "<group>"; };
 		0FD541DC163D30E00092B559 /* SSLoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSLoadingView.xib; path = SSUI/Views/SSLoadingView/SSLoadingView.xib; sourceTree = "<group>"; };
-		0FD541DF163D40B40092B559 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/MoneyUnit.plist; sourceTree = "<group>"; };
 		9D0C86D1165879CE006AAC18 /* SSDQMyDeliveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDQMyDeliveryViewController.h; sourceTree = "<group>"; };
 		9D0C86D2165879CE006AAC18 /* SSDQMyDeliveryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDQMyDeliveryViewController.m; sourceTree = "<group>"; };
 		9D0C86D3165879CE006AAC18 /* SSDQMyDeliveryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSDQMyDeliveryViewController.xib; sourceTree = "<group>"; };
@@ -498,8 +463,11 @@
 		9D4C6AE4166C4DE2003852DC /* progress-count@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-count@2x.png"; sourceTree = "<group>"; };
 		9D4C6B0B166C707C003852DC /* progress-fill-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-fill-blue.png"; sourceTree = "<group>"; };
 		9D4C6B0C166C707C003852DC /* progress-fill-blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "progress-fill-blue@2x.png"; sourceTree = "<group>"; };
+		9D534E1F166F932500D8482B /* zhongxinda@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhongxinda@2x.png"; sourceTree = "<group>"; };
 		9D5E1E2D166DE32F00153B24 /* SSBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBadgeView.h; sourceTree = "<group>"; };
 		9D5E1E2E166DE32F00153B24 /* SSBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBadgeView.m; sourceTree = "<group>"; };
+		9D5E1EA8166E11E700153B24 /* cces@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cces@2x.png"; sourceTree = "<group>"; };
+		9D5E1EA9166E11E700153B24 /* ocs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ocs@2x.png"; sourceTree = "<group>"; };
 		9D88E9C4164E6D1A003C151D /* DeliveryQueryDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DeliveryQueryDB.sqlite; sourceTree = "<group>"; };
 		9D88E9C7164E6DF8003C151D /* SSDQAllDeliveryCompanyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSDQAllDeliveryCompanyListViewController.h; sourceTree = "<group>"; };
 		9D88E9C8164E6DF8003C151D /* SSDQAllDeliveryCompanyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSDQAllDeliveryCompanyListViewController.m; sourceTree = "<group>"; };
@@ -660,15 +628,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0F028F771641820100BCE4C1 /* SSQUFontChange */ = {
-			isa = PBXGroup;
-			children = (
-				0F028F7816418F4C00BCE4C1 /* SSQUFontChangeViewController.h */,
-				0F028F7916418F4C00BCE4C1 /* SSQUFontChangeViewController.m */,
-			);
-			name = SSQUFontChange;
-			sourceTree = "<group>";
-		};
 		0F8ECFE4163C265A00E757D9 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -687,45 +646,6 @@
 				9DEFDE6A166635280070187E /* SSWebViewController.xib */,
 			);
 			name = SSViewController;
-			sourceTree = "<group>";
-		};
-		0F8ECFE6163C272900E757D9 /* SSQUWeather */ = {
-			isa = PBXGroup;
-			children = (
-				0F8ECFEA163C290200E757D9 /* SSQUWeatherViewController.h */,
-				0F8ECFEB163C290200E757D9 /* SSQUWeatherViewController.m */,
-				0F8ED013163D131400E757D9 /* SSQULocation.h */,
-				0F8ED014163D131400E757D9 /* SSQULocation.m */,
-			);
-			name = SSQUWeather;
-			sourceTree = "<group>";
-		};
-		0F8ECFE7163C276800E757D9 /* SSQUExchangeRate */ = {
-			isa = PBXGroup;
-			children = (
-				0FD541D1163D2CF90092B559 /* SSQUExchangeRateViewController.h */,
-				0FD541D2163D2CF90092B559 /* SSQUExchangeRateViewController.m */,
-			);
-			name = SSQUExchangeRate;
-			sourceTree = "<group>";
-		};
-		0F8ECFE8163C286E00E757D9 /* SSQULocale */ = {
-			isa = PBXGroup;
-			children = (
-				0F028F7D164195DD00BCE4C1 /* SSQULocaleViewController.h */,
-				0F028F7E164195DD00BCE4C1 /* SSQULocaleViewController.m */,
-			);
-			name = SSQULocale;
-			sourceTree = "<group>";
-		};
-		0F981092164543BF008A6C04 /* SSQUSegmentedViewController */ = {
-			isa = PBXGroup;
-			children = (
-				0F98109316454439008A6C04 /* SSQUSegmentedViewController.h */,
-				0F98109416454439008A6C04 /* SSQUSegmentedViewController.m */,
-				0F98109516454439008A6C04 /* SSQUSegmentedViewController.xib */,
-			);
-			name = SSQUSegmentedViewController;
 			sourceTree = "<group>";
 		};
 		0F9810B6164575CD008A6C04 /* SSUtils */ = {
@@ -788,34 +708,6 @@
 			name = SSMenuView;
 			sourceTree = "<group>";
 		};
-		0F9C25C416460EC10076694B /* SSQUModel */ = {
-			isa = PBXGroup;
-			children = (
-				0F9C25C616460F220076694B /* SSQUSmartResult.h */,
-				0F9C25C716460F220076694B /* SSQUSmartResult.m */,
-			);
-			name = SSQUModel;
-			sourceTree = "<group>";
-		};
-		0F9C25C9164611E80076694B /* SSQUID */ = {
-			isa = PBXGroup;
-			children = (
-				0F9C25CA1646122A0076694B /* SSQUIDViewController.h */,
-				0F9C25CB1646122A0076694B /* SSQUIDViewController.m */,
-			);
-			name = SSQUID;
-			sourceTree = "<group>";
-		};
-		0F9C260C1646823B0076694B /* SSQUPickerViewController */ = {
-			isa = PBXGroup;
-			children = (
-				0F9C260E1646829C0076694B /* SSQUPickerViewController.h */,
-				0F9C260F1646829C0076694B /* SSQUPickerViewController.m */,
-				0F9C26101646829C0076694B /* SSQUPickerViewController.xib */,
-			);
-			name = SSQUPickerViewController;
-			sourceTree = "<group>";
-		};
 		0F9C26421646C0CA0076694B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -827,15 +719,6 @@
 			);
 			name = Lib;
 			path = Code;
-			sourceTree = "<group>";
-		};
-		0F9F2197163EB4D20051822D /* SSQUTranslate */ = {
-			isa = PBXGroup;
-			children = (
-				0F9F2198163EB52B0051822D /* SSQUTranslateViewController.h */,
-				0F9F2199163EB52B0051822D /* SSQUTranslateViewController.m */,
-			);
-			name = SSQUTranslate;
 			sourceTree = "<group>";
 		};
 		0F9F21BA163EE1B10051822D /* SSQUMore */ = {
@@ -1038,17 +921,8 @@
 				9DBFEE9C16524474008CFE2C /* SSDQDeliveryQuery */,
 				9DBFED3A165219BB008CFE2C /* Model */,
 				9D88E9C6164E6D93003C151D /* SSDQDeliveryCompany */,
-				0F9C260C1646823B0076694B /* SSQUPickerViewController */,
-				0F9C25C9164611E80076694B /* SSQUID */,
-				0F9C25C416460EC10076694B /* SSQUModel */,
 				0F9810B6164575CD008A6C04 /* SSUtils */,
-				0F981092164543BF008A6C04 /* SSQUSegmentedViewController */,
-				0F028F771641820100BCE4C1 /* SSQUFontChange */,
 				0F9F21BA163EE1B10051822D /* SSQUMore */,
-				0F9F2197163EB4D20051822D /* SSQUTranslate */,
-				0F8ECFE8163C286E00E757D9 /* SSQULocale */,
-				0F8ECFE7163C276800E757D9 /* SSQUExchangeRate */,
-				0F8ECFE6163C272900E757D9 /* SSQUWeather */,
 				0F99B349163993C00062597B /* SSUI */,
 				9DB9861716390E2600B46470 /* SSQUAppDelegate.h */,
 				9DB9861816390E2600B46470 /* SSQUAppDelegate.m */,
@@ -1063,12 +937,10 @@
 		9DB9860F16390E2600B46470 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0F8ED010163D113E00E757D9 /* ProvincesAndCities.plist */,
 				9DB9861016390E2600B46470 /* DeliveryQuery-Info.plist */,
 				9DB9861116390E2600B46470 /* InfoPlist.strings */,
 				9DB9861416390E2600B46470 /* main.m */,
 				9DB9861616390E2600B46470 /* DeliveryQuery-Prefix.pch */,
-				0FD541DE163D40B40092B559 /* MoneyUnit.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1087,6 +959,9 @@
 		9DBFEDED165221F5008CFE2C /* companylogo */ = {
 			isa = PBXGroup;
 			children = (
+				9D534E1F166F932500D8482B /* zhongxinda@2x.png */,
+				9D5E1EA8166E11E700153B24 /* cces@2x.png */,
+				9D5E1EA9166E11E700153B24 /* ocs@2x.png */,
 				9D0C8888165D2DDC006AAC18 /* anxindakuaixi@2x.png */,
 				9D0C8889165D2DDC006AAC18 /* quanchenkuaidi@2x.png */,
 				9D0C888A165D2DDC006AAC18 /* shunfengen@2x.png */,
@@ -1478,9 +1353,7 @@
 				9DB9861316390E2600B46470 /* InfoPlist.strings in Resources */,
 				9DB9861F16390E2600B46470 /* SSQUViewController.xib in Resources */,
 				0F8ECFF3163C296100E757D9 /* SSMenuItemViewStyleImageAndText.xib in Resources */,
-				0F8ED012163D113F00E757D9 /* ProvincesAndCities.plist in Resources */,
 				0FD541DD163D30E00092B559 /* SSLoadingView.xib in Resources */,
-				0FD541E0163D40B40092B559 /* MoneyUnit.plist in Resources */,
 				0F9F21BF163EE1FF0051822D /* SSQUMoreViewController.xib in Resources */,
 				9DF2530616435D6E00869CFE /* icon.png in Resources */,
 				9DF2530716435D6E00869CFE /* Icon@2x.png in Resources */,
@@ -1491,10 +1364,8 @@
 				9D8A034B164407A4005BA9C5 /* gray_mengban.png in Resources */,
 				9D8A034C164407A4005BA9C5 /* gray_mengban@2x.png in Resources */,
 				9D8A034E16453E7B005BA9C5 /* c_first_bg@2x.png in Resources */,
-				0F98109716454439008A6C04 /* SSQUSegmentedViewController.xib in Resources */,
 				9D8A0465164626BF005BA9C5 /* gray_btn_small.png in Resources */,
 				9D8A04671646288D005BA9C5 /* gray_btn_small_p.png in Resources */,
-				0F9C26121646829C0076694B /* SSQUPickerViewController.xib in Resources */,
 				9D88E9C5164E6D1A003C151D /* DeliveryQueryDB.sqlite in Resources */,
 				9D88E9CB164E6DF9003C151D /* SSDQAllDeliveryCompanyListViewController.xib in Resources */,
 				9D88EA231650D4CF003C151D /* .gitignore in Resources */,
@@ -1655,6 +1526,9 @@
 				9D4C6AE8166C4DE3003852DC /* progress-count@2x.png in Resources */,
 				9D4C6B0D166C707C003852DC /* progress-fill-blue.png in Resources */,
 				9D4C6B0E166C707C003852DC /* progress-fill-blue@2x.png in Resources */,
+				9D5E1EAA166E11E700153B24 /* cces@2x.png in Resources */,
+				9D5E1EAB166E11E700153B24 /* ocs@2x.png in Resources */,
+				9D534E20166F932500D8482B /* zhongxinda@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1668,23 +1542,13 @@
 				9DEFDE8B1666FBCC0070187E /* UIView+UIViewUtil.m in Sources */,
 				9DB9861516390E2600B46470 /* main.m in Sources */,
 				9DB9861916390E2600B46470 /* SSQUAppDelegate.m in Sources */,
-				0F8ECFEC163C290200E757D9 /* SSQUWeatherViewController.m in Sources */,
 				0F8ECFF2163C296100E757D9 /* SSMenuItemView.m in Sources */,
 				0F8ECFF4163C296100E757D9 /* SSMenuView.m in Sources */,
-				0F8ED015163D131500E757D9 /* SSQULocation.m in Sources */,
-				0FD541D3163D2CF90092B559 /* SSQUExchangeRateViewController.m in Sources */,
 				0FD541D9163D307C0092B559 /* SSLoadingView.m in Sources */,
 				0F9F2196163EB1F60051822D /* SSViewController.m in Sources */,
-				0F9F219A163EB52B0051822D /* SSQUTranslateViewController.m in Sources */,
 				0F9F21BD163EE1DA0051822D /* SSQUMoreViewController.m in Sources */,
-				0F028F7B16418F4C00BCE4C1 /* SSQUFontChangeViewController.m in Sources */,
-				0F028F80164195DD00BCE4C1 /* SSQULocaleViewController.m in Sources */,
 				9D8A02F6164394F1005BA9C5 /* SSQUViewController.m in Sources */,
-				0F98109616454439008A6C04 /* SSQUSegmentedViewController.m in Sources */,
 				0F9810B91645764B008A6C04 /* SSMapping4RestKitUtils.m in Sources */,
-				0F9C25C816460F220076694B /* SSQUSmartResult.m in Sources */,
-				0F9C25CC1646122A0076694B /* SSQUIDViewController.m in Sources */,
-				0F9C26111646829C0076694B /* SSQUPickerViewController.m in Sources */,
 				9D88E9CA164E6DF9003C151D /* SSDQAllDeliveryCompanyListViewController.m in Sources */,
 				9D88EA291650D4CF003C151D /* FMDatabase.m in Sources */,
 				9D88EA2A1650D4CF003C151D /* FMDatabaseAdditions.m in Sources */,
@@ -1721,22 +1585,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0F8ED010163D113E00E757D9 /* ProvincesAndCities.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0F8ED011163D113F00E757D9 /* en */,
-			);
-			name = ProvincesAndCities.plist;
-			sourceTree = "<group>";
-		};
-		0FD541DE163D40B40092B559 /* MoneyUnit.plist */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0FD541DF163D40B40092B559 /* en */,
-			);
-			name = MoneyUnit.plist;
-			sourceTree = "<group>";
-		};
 		9DB9861116390E2600B46470 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

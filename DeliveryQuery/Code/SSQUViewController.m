@@ -9,13 +9,7 @@
 #import "SSQUViewController.h"
 #import "SSMenuItemView.h"
 #import "SSMenuView.h"
-#import "SSQUWeatherViewController.h"
-#import "SSQUExchangeRateViewController.h"
-#import "SSQUTranslateViewController.h"
 #import "SSQUMoreViewController.h"
-#import "SSQUFontChangeViewController.h"
-#import "SSQULocaleViewController.h"
-#import "SSQUIDViewController.h"
 #import "SSDQAllDeliveryCompanyListViewController.h"
 #import "SSDQDeliveryQueryViewController.h"
 #import "SSDQMyDeliveryViewController.h"
@@ -27,6 +21,7 @@
 #import "SSMapping4RestKitUtils.h"
 #import "ADVPercentProgressBar.h"
 #import "SSBadgeView.h"
+#import "SSToastView.h"
 
 @interface SSQUViewController()<SSMenuViewDelegate>
 @property (nonatomic,retain) IBOutlet SSMenuView * menuView;
@@ -158,11 +153,14 @@
 }
 
 -(void)dealloc{
-//    [self.request cancel];
-    
-    [self.menuView release];
-    [self.menuTitle release];
-    [self.menuImage release];
+    self.badgeView = nil;
+    self.tempWebView = nil;
+    self.needPreRequestCodes = nil;
+    self.data = nil;
+    self.menuView = nil;
+    self.menuTitle = nil;
+    self.menuImage = nil;
+
     [super dealloc];
 }
 
@@ -177,8 +175,7 @@
     SET_GRAY_BG(self);
     [self.menuView reloadData];
     
-    self.process = 0.0;
-    [self.loadingView hasProcessBar:0.0];
+    [self initRightBtn];
     
     [self initNeedPreRequestCodes];
     [self updateDelivery];
@@ -193,6 +190,10 @@
 
 - (void)viewDidUnload
 {
+    self.badgeView = nil;
+    self.tempWebView = nil;
+    self.needPreRequestCodes = nil;
+    self.data = nil;
     self.menuView = nil;
     self.menuTitle = nil;
     self.menuImage = nil;
@@ -201,9 +202,27 @@
 }
 
 -(void)updateDelivery {
+    self.isLoading = !self.isLoading;
+    
+    if (self.isLoading) {
+        [self.loadingView showLoadingView];
+        self.navigationItem.rightBarButtonItem.title = @"停止更新";
+    }else{
+        [self stopUpdating];
+        return;
+    }
+    
+    if (![self isNetworkOK]) {
+        [[SSToastView MakeToastWithType:TOAST_STYLE_FAV info:@"网络无法连接，请稍后手动更新"]show];
+        return;
+    }
+    
     self.index = 0;
     self.retryTimes = 0;
     self.updateCount = 0;
+    self.isLoading = YES;
+    self.process = 0.0;
+    [self.loadingView hasProcessBar:0.0];
     
     self.data = [[[NSMutableArray alloc]init]autorelease];
     FMDatabase *db = GETDB;
@@ -234,8 +253,8 @@
             result.data = [NSMutableArray arrayWithCapacity:[items columnCount]];
             while ([items next]) {
                 SSDQDeliveryItem *item = [[[SSDQDeliveryItem alloc]init]autorelease];
-                item.time = [[items stringForColumn:@"time"] copy];
-                item.context = [[items stringForColumn:@"context"] copy];
+                item.time = [items stringForColumn:@"time"];
+                item.context = [items stringForColumn:@"context"];
                 
                 [result.data addObject:item];
             }
@@ -251,6 +270,8 @@
     [db close];
 
     if (self.data.count <= 0) {
+        self.isLoading = NO;
+        [self stopUpdating];
         return;
     }
     
@@ -263,17 +284,15 @@
 
 -(void)loadObjectsFromRemote{
     
-    if (self.index >= self.data.count) {
-        [self.loadingView updateProcess:1.0];
-        [self.loadingView performSelector:@selector(hideLoadingView) withObject:nil afterDelay:1.5];
-        
-        [UIApplication sharedApplication].applicationIconBadgeNumber = [UIApplication sharedApplication].applicationIconBadgeNumber + self.updateCount;
-        
-        [self initBadgeView];
+    if (!self.isLoading) {
         return;
     }
     
-    [self.loadingView showLoadingView];
+    if (self.index >= self.data.count) {
+        self.isLoading = NO;
+        [self stopUpdating];
+        return;
+    }
     
     SSDQDeliveryResult *srcResult = [self.data objectAtIndex:self.index];
     
@@ -307,13 +326,17 @@
 
 -(void)loadRealRequest {
     
+    if (!self.isLoading) {
+        return;
+    }
+    
 //    [self.request cancel];
 //    [self.request release];
 //    self.request = nil;
     
     SSDQDeliveryResult *srcResult = [self.data objectAtIndex:self.index];
     
-    NSString *url = [NSString stringWithFormat:@"api?id=7b732424c8c4a433&com=%@&nu=%@&show=0&muti=1&order=asc",srcResult.expSpellName, srcResult.mailNo];
+    NSString *url = [NSString stringWithFormat:@"api?id=%@&com=%@&nu=%@&show=0&muti=1&order=asc",API_KEY,srcResult.expSpellName, srcResult.mailNo];
     
     RKClient* sharedClient = [RKClient sharedClient];
     [sharedClient get:url usingBlock:^(RKRequest * request){
@@ -335,6 +358,12 @@
 }
 
 -(void)request:(RKRequest *)request didLoadResponse:(RKResponse *)response{
+    [self.tempWebView stopLoading];
+    
+    if (!self.isLoading) {
+        return;
+    }
+    
     NSLog(@"success :%@",[response bodyAsString]);
     
     SSDQDeliveryResult * result = [SSMapping4RestKitUtils performMappingWithMapping:[SSDQDeliveryResult sharedObjectMapping] forJsonString:[response bodyAsString]] ;
@@ -392,6 +421,10 @@
 
 
 -(void)request:(RKRequest *)request didFailLoadWithError:(NSError *)error {
+    if (!self.isLoading) {
+        return;
+    }
+    
     self.process = self.process + self.subProcess*0.6;
     [self.loadingView updateProcess:self.process];
     self.index = self.index + 1;
@@ -399,6 +432,10 @@
 }
 
 -(void)updateSingleDelivery:(SSDQDeliveryResult *)result {
+    if (!self.isLoading) {
+        return;
+    }
+    
     SSDQDeliveryResult *srcResult = [self.data objectAtIndex:self.index];
     
     if (srcResult.status == result.status && srcResult.data.count >= result.data.count) {
@@ -451,18 +488,26 @@
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView {
+    if (!self.isLoading) {
+        return;
+    }
     
     if (!_isSend) {
         self.process = self.process + self.subProcess*0.2;
         [self.loadingView updateProcess:self.process];
         
-        [self performSelector:@selector(loadRealRequest) withObject:nil afterDelay:5];
+        [self performSelector:@selector(loadRealRequest) withObject:nil afterDelay:4];
         _isSend = YES;
+        
     }
     
 }
 
 -(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    if (!self.isLoading) {
+        return;
+    }
+    
     if (!_isSend) {
         self.process = self.process + self.subProcess*0.2;
         [self.loadingView updateProcess:self.process];
@@ -487,4 +532,31 @@
     [self.view addSubview:self.badgeView];
 }
 
+-(BOOL)isNetworkOK{
+    return [[RKClient sharedClient] isNetworkReachable];
+}
+
+-(void) initRightBtn {
+    
+    UIBarButtonItem * infoButtonItem = [[[UIBarButtonItem alloc] initWithTitle:@"停止更新" style:UIBarButtonItemStylePlain target:self action:@selector(updateDelivery)]autorelease];
+    
+    self.navigationItem.rightBarButtonItem = infoButtonItem ;
+}
+
+-(void)stopUpdating {
+    self.navigationItem.rightBarButtonItem.enabled = NO;
+    [self.loadingView updateProcess:1.0];
+    [self.loadingView performSelector:@selector(hideLoadingView) withObject:nil afterDelay:1.5];
+    [self performSelector:@selector(enableRightBtn) withObject:nil afterDelay:1.5];
+    
+    [UIApplication sharedApplication].applicationIconBadgeNumber = [UIApplication sharedApplication].applicationIconBadgeNumber + self.updateCount;
+    
+    self.navigationItem.rightBarButtonItem.title = @"更新快递";
+    
+    [self initBadgeView];
+}
+
+-(void)enableRightBtn{
+    self.navigationItem.rightBarButtonItem.enabled = YES;
+}
 @end

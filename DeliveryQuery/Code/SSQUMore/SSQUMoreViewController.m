@@ -106,23 +106,29 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    //appId为
+    NSString *appId = @"584393528";
+    if (HAS_AD) {
+        appId =@"584755872";
+    }
+    
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     if ([indexPath section]==0) {
         if ([indexPath row]==1) {
             [self sendEmailToSmallSoft];
         }else if([indexPath row] == 0){
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/artist/jia-liu/id576287099"]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/cn/artist/jia-liu/id%@",appId]]];
         }
     }else if([indexPath section]==1){
         if ([indexPath row]==0) {
             [self sendEmailToSmallSoft];
         }else if([indexPath row]==1){
-            //appId为
-            NSString *appId = @"576287096";
+            
             NSString *urlValue =[NSString stringWithFormat:@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@",appId];
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlValue]];
         }else if([indexPath row] == 2){
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/cn/artist/jia-liu/id576287099"]];
+            
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/cn/artist/jia-liu/id%@",appId]]];
         }
     }
 }

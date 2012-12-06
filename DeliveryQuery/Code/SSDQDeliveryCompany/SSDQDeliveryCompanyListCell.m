@@ -21,6 +21,15 @@
 @synthesize logo = _logo;
 @synthesize company = _company;
 
+- (void)dealloc {
+    self.site = nil;
+    self.phone = nil;
+    self.name = nil;
+    self.logo = nil;
+    self.company = nil;
+    [super dealloc];
+}
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
@@ -81,10 +90,5 @@
     }
     return nil;
 }
-- (void)dealloc {
-
-    [super dealloc];
-}
-
 
 @end
