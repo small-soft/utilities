@@ -767,6 +767,14 @@
 			</dict>
 			<dict>
 				<key>city</key>
+				<string>廊坊</string>
+				<key>lat</key>
+				<real>38.85</real>
+				<key>lon</key>
+				<real>115.48</real>
+			</dict>
+			<dict>
+				<key>city</key>
 				<string>沧州</string>
 				<key>lat</key>
 				<real>38.33</real>
@@ -1070,6 +1078,14 @@
 			<dict>
 				<key>city</key>
 				<string>绥化</string>
+				<key>lat</key>
+				<real>46.63</real>
+				<key>lon</key>
+				<real>127</real>
+			</dict>
+			<dict>
+				<key>city</key>
+				<string>伊春</string>
 				<key>lat</key>
 				<real>46.63</real>
 				<key>lon</key>

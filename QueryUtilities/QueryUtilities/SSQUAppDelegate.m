@@ -96,7 +96,7 @@
 - (void)infoBtnPress{
     SSQUMoreViewController *moreViewController = [[SSQUMoreViewController alloc] initWithNibName:@"SSQUMoreViewController" bundle:nil];
     SET_GRAY_BG(moreViewController);
-    moreViewController.navigationItem.title = @"更多";
+    moreViewController.navigationItem.title = @"关于";
     [self.viewController pushViewController:moreViewController animated:YES];
     [moreViewController release];
 }

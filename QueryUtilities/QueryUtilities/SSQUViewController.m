@@ -29,7 +29,7 @@
 
 -(NSArray *)menuTitle{
     if(nil==_menuTitle){
-        self.menuTitle = [[NSArray alloc] initWithObjects:@"汉译英",@"英译汉",@"简转繁",@"繁转简",@"手机归属地",@"ip归属地",@"天气",@"汇率",@"身份证", nil];
+        self.menuTitle = [[NSArray alloc] initWithObjects:@"汉译英",@"英译汉",@"简转繁",@"繁转简",@"手机归属地",@"ip归属地",@"天气",@"汇率",@"身份证信息", nil];
     }
         
     return _menuTitle;
@@ -100,9 +100,9 @@
         SET_GRAY_BG(exchangeRateViewController);
         [self.navigationController pushViewController:exchangeRateViewController animated:YES];
         [exchangeRateViewController release];
-    }else if([menuTileForIndex isEqualToString:@"身份证"]){
+    }else if([menuTileForIndex isEqualToString:@"身份证信息"]){
         SSQUIDViewController *IDViewController = [[SSQUIDViewController alloc] init];
-        IDViewController.navigationItem.title = @"身份证";
+        IDViewController.navigationItem.title = @"身份证信息";
         SET_GRAY_BG(IDViewController);
         [self.navigationController pushViewController:IDViewController animated:YES];
         [IDViewController release];
