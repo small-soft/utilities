@@ -32,3 +32,15 @@
 #define HAS_AD ([(NSNumber *)[[[NSBundle mainBundle]infoDictionary]objectForKey:@"HasAd"] boolValue])
 
 #define API_KEY ((NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"api_key"])
+
+// 发布时不打log
+#define DEBUG
+#ifdef DEBUG
+#define MYLOG(...) NSLog(__VA_ARGS__)
+#define NSLog(...) NSLog(__VA_ARGS__)
+#define RKLogTrace(...) RKLogTrace(__VA_ARGS__)
+#else
+#define MYLOG(...) do {} while (0)
+#define NSLog(...) {}
+#define RKLogTrace(...) {}
+#endif

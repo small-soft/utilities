@@ -51,6 +51,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self initRightBtn];
+    
+    self.hasUpdate = NO;
+    self.statusArray = nil;
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,8 +63,6 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    self.hasUpdate = NO;
-    self.statusArray = nil;
     
     [self loadDB];
     [self.contentTable reloadData];
