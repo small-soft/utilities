@@ -767,11 +767,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSSNHotSites/SSSNHotSitesViewController.m"
-         timestampString = "377161539.382921"
+         timestampString = "377415100.795271"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "99"
-         endingLineNumber = "99"
+         startingLineNumber = "100"
+         endingLineNumber = "100"
          landmarkName = "-searchBarSearchButtonClicked:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -780,11 +780,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSSNHotSites/SSSNHotSitesViewController.m"
-         timestampString = "377161539.382921"
+         timestampString = "377415100.795271"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
+         startingLineNumber = "112"
+         endingLineNumber = "112"
          landmarkName = "-textFieldShouldReturn:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -884,11 +884,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSSNHotSites/SSSNHotSitesViewController.m"
-         timestampString = "377162096.977752"
+         timestampString = "377415100.795271"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "176"
-         endingLineNumber = "176"
+         startingLineNumber = "177"
+         endingLineNumber = "177"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -962,11 +962,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSSNHotSites/SSSNHotSitesViewController.m"
-         timestampString = "377162096.977752"
+         timestampString = "377415100.795271"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "223"
-         endingLineNumber = "223"
+         startingLineNumber = "224"
+         endingLineNumber = "224"
          landmarkName = "-loadDB"
          landmarkType = "5">
       </FileBreakpoint>
@@ -975,11 +975,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSSNHotSites/SSSNHotSitesViewController.m"
-         timestampString = "377162096.977752"
+         timestampString = "377415100.795271"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "251"
-         endingLineNumber = "251"
+         startingLineNumber = "252"
+         endingLineNumber = "252"
          landmarkName = "-loadDB"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1027,11 +1027,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSSNFavorites/SSSNHistory/SSSNHistoryViewController.m"
-         timestampString = "377344900.962929"
+         timestampString = "377415100.795271"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "278"
-         endingLineNumber = "278"
+         startingLineNumber = "283"
+         endingLineNumber = "283"
          landmarkName = "-changeDisplady:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1079,11 +1079,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSSNFavorites/SSSNHistory/SSSNHistoryViewController.m"
-         timestampString = "377344900.962929"
+         timestampString = "377415100.795271"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "302"
-         endingLineNumber = "302"
+         startingLineNumber = "307"
+         endingLineNumber = "307"
          landmarkName = "-tableView:accessoryButtonTappedForRowWithIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1092,11 +1092,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSSNFavorites/SSSNHistory/SSSNHistoryViewController.m"
-         timestampString = "377344900.962929"
+         timestampString = "377415100.795271"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "343"
-         endingLineNumber = "343"
+         startingLineNumber = "348"
+         endingLineNumber = "348"
          landmarkName = "-searchBarSearchButtonClicked:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1105,11 +1105,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/SSSNFavorites/SSSNHistory/SSSNHistoryViewController.m"
-         timestampString = "377344900.962929"
+         timestampString = "377415100.795271"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "359"
-         endingLineNumber = "359"
+         startingLineNumber = "364"
+         endingLineNumber = "364"
          landmarkName = "-searchBarCancelButtonClicked:"
          landmarkType = "5">
       </FileBreakpoint>

@@ -30,6 +30,8 @@
 #define NS_ENUM(_type, _name) enum _name : _type _name; enum _name : _type
 #endif
 
+#define IOS_VERSION ([[[UIDevice currentDevice] systemVersion] floatValue]) 
+
 #define HAS_AD ([(NSNumber *)[[[NSBundle mainBundle]infoDictionary]objectForKey:@"HasAd"] boolValue])
 
 #define API_KEY ((NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"api_key"])

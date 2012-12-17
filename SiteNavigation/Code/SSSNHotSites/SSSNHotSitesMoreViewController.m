@@ -39,6 +39,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     SET_GRAY_BG(self);
+    self.contentTable.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:GRAY_BG]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,7 +80,11 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-        
+    
+    if (IOS_VERSION <5.0) {
+        return [tableView tableHeaderView];
+    }
+    
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 34)];
     
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(20 + 33, 9, 320, 17)];

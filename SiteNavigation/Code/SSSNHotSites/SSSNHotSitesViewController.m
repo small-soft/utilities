@@ -66,6 +66,7 @@
     // Do any additional setup after loading the view from its nib.
     [self initKeyboardTool];
     SET_GRAY_BG(self);
+    self.contentTable.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:GRAY_BG]];
     [self loadDB];
     [self initChangeIndexArray];
 }
@@ -307,6 +308,10 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if (IOS_VERSION <5.0) {
+        return [tableView tableHeaderView];
+    }
     
     UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, 320, 34)];
     

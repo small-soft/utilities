@@ -109,9 +109,9 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     //appId为
-    NSString *appId = @"584393528";
+    NSString *appId = @"588272361";
     if (HAS_AD) {
-        appId =@"584755872";
+        appId =@"588272361";
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
@@ -130,7 +130,7 @@
             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:urlValue]];
         }else if([indexPath row] == 2){
             
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/cn/artist/jia-liu/id%@",appId]]];
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"https://itunes.apple.com/cn/artist/jia-liu/id576287099%@",@""]]];
         }
     }
 }

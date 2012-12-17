@@ -63,6 +63,7 @@
     // Do any additional setup after loading the view from its nib.
     [self initGroupData];
     SET_GRAY_BG(self);
+    self.contentTable.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:GRAY_BG]];
     
     self.sectionArray = [NSArray arrayWithObjects:@"今天",@"昨天",@"一周内",@"一个月内",@"早些时候", nil];
     self.changeIndexArray = [NSMutableArray arrayWithObjects:[NSNumber numberWithBool:YES],[NSNumber numberWithBool:YES],[NSNumber numberWithBool:YES],[NSNumber numberWithBool:YES],[NSNumber numberWithBool:YES], nil];
@@ -251,6 +252,10 @@
 //}
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if (IOS_VERSION <5.0) {
+        return [tableView tableHeaderView];
+    }
     
     NSArray *array = [self dataAtSection:section];
     
