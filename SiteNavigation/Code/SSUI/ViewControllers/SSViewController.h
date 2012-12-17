@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "SSLoadingView.h"
 #import <RestKit/RestKit.h>
+#import "SSKeyboardToolBar.h"
 
 @interface SSViewController : UIViewController
 
 @property (nonatomic, retain) SSLoadingView * loadingView;
+@property(nonatomic,retain) SSKeyboardToolBar *keyboardToolBar;
 
 @property (nonatomic, retain) NSString *backTitle;
 @property (nonatomic) BOOL isLoading;

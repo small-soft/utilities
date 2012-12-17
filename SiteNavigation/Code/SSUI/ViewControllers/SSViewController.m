@@ -14,13 +14,14 @@
 
 @interface SSViewController ()
 //@property (nonatomic, retain) MobWinBannerView *advBannerView;
+
 @end
 
 @implementation SSViewController
 @synthesize loadingView = _loadingView;
-//@synthesize advBannerView = _advBannerView;
 @synthesize isLoading = _isLoading;
 @synthesize backTitle = _backTitle;
+@synthesize keyboardToolBar = _keyboardToolBar;
 
 -(SSLoadingView *)loadingView{
     if (nil==_loadingView) {
@@ -46,6 +47,7 @@
 -(void)dealloc{
     self.loadingView = nil;
     self.backTitle = nil;
+    self.keyboardToolBar = nil;
 //    [self.advBannerView stopRequest];
 //    [self.advBannerView removeFromSuperview];
 //    self.advBannerView = nil;
@@ -72,7 +74,7 @@
     }
     
     [self setBg];
-    
+    [self initKeyboardToolBar];
     [self iViewWillApplear];
 }
 
@@ -104,4 +106,23 @@
     }
 }
 
+
+-(void)initKeyboardToolBar {
+    SSKeyboardToolBar *keyboardbar = [[[SSKeyboardToolBar alloc]init]autorelease];
+    
+    
+    [keyboardbar  setAllowShowPreAndNext:NO];
+    
+    
+    [keyboardbar setIsInNavigationController:NO];
+    
+    
+    //    [keyboardbar setTextFieldsArray:editFieldArray];
+    self.keyboardToolBar = keyboardbar;
+    [self.keyboardToolBar.mask setHeight:SCREEN_HEIGHT-44];
+    [self.keyboardToolBar.mask setOriginY:44];
+    
+    [self.view addSubview:self.keyboardToolBar.mask];
+    [self.view addSubview:self.keyboardToolBar.view];
+}
 @end

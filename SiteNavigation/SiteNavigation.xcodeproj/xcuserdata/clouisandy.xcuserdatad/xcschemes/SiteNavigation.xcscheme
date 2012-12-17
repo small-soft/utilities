@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9DB9860316390E2600B46470"
-               BuildableName = "DeliveryQuery.app"
+               BuildableName = "SiteNavigation.app"
                BlueprintName = "SiteNavigation"
                ReferencedContainer = "container:SiteNavigation.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9DB9860316390E2600B46470"
-            BuildableName = "DeliveryQuery.app"
+            BuildableName = "SiteNavigation.app"
             BlueprintName = "SiteNavigation"
             ReferencedContainer = "container:SiteNavigation.xcodeproj">
          </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9DB9860316390E2600B46470"
-            BuildableName = "DeliveryQuery.app"
+            BuildableName = "SiteNavigation.app"
             BlueprintName = "SiteNavigation"
             ReferencedContainer = "container:SiteNavigation.xcodeproj">
          </BuildableReference>
@@ -69,7 +69,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9DB9860316390E2600B46470"
-            BuildableName = "DeliveryQuery.app"
+            BuildableName = "SiteNavigation.app"
             BlueprintName = "SiteNavigation"
             ReferencedContainer = "container:SiteNavigation.xcodeproj">
          </BuildableReference>

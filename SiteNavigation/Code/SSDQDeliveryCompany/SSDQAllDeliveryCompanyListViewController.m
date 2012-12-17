@@ -45,10 +45,13 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.title = @"热站导航";
+        self.tabBarItem.image = [UIImage imageNamed:@"fire_02"];
     }
     
     return self;
 }
+
 
 - (void)viewDidLoad
 {
@@ -64,7 +67,10 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(switchContent)];
     
+    self.navigationController.navigationBarHidden = YES;
+    
     [self loadDB];
+    
 }
 
 - (void)didReceiveMemoryWarning

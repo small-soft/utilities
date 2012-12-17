@@ -10,14 +10,8 @@
 #import "SSMenuItemView.h"
 #import "SSMenuView.h"
 #import "SSQUMoreViewController.h"
-#import "SSDQAllDeliveryCompanyListViewController.h"
-#import "SSDQDeliveryQueryViewController.h"
-#import "SSDQMyDeliveryViewController.h"
-#import "SSDQSendDeliveryViewController.h"
-#import "SSDQFollowDeliveryViewController.h"
 #import "FMDatabase.h"
 #import "SSQUAppDelegate.h"
-#import "SSDQDeliveryQueryResult.h"
 #import "SSMapping4RestKitUtils.h"
 #import "ADVPercentProgressBar.h"
 #import "SSBadgeView.h"
@@ -77,8 +71,8 @@
 
 #pragma mark - SSMenuViewDelegate Methods
 -(void)menuView:(SSMenuView *)menuView didSelectItemAtIndex:(NSUInteger)index{
-    NSString * menuTileForIndex = [self.menuTitle objectAtIndex:index];
-    if ([menuTileForIndex isEqualToString:@"快递追踪"]) {
+//    NSString * menuTileForIndex = [self.menuTitle objectAtIndex:index];
+//    if ([menuTileForIndex isEqualToString:@"快递追踪"]) {
 //        SSQUTranslateViewController * translateViewController = [[SSQUTranslateViewController alloc] init];
 //        translateViewController.navigationItem.title = @"翻译";
 //        translateViewController.selectIndex = 0;
@@ -86,48 +80,48 @@
 //        [self.navigationController pushViewController:translateViewController animated:YES];
 //        [translateViewController release];
 
-        SSDQFollowDeliveryViewController * translateViewController = [[SSDQFollowDeliveryViewController alloc] init];
-        translateViewController.navigationItem.title = @"快递追踪";
-        //        translateViewController.selectIndex = 1;
-        SET_GRAY_BG(translateViewController);
-        [self.navigationController pushViewController:translateViewController animated:YES];
-        [translateViewController release];
-    }else if ([menuTileForIndex isEqualToString:@"我的快递"]){
-        SSDQMyDeliveryViewController * translateViewController = [[SSDQMyDeliveryViewController alloc] init];
-        translateViewController.navigationItem.title = @"我的快递";
-//        translateViewController.selectIndex = 1;
-        SET_GRAY_BG(translateViewController);
-        [self.navigationController pushViewController:translateViewController animated:YES];
-        [translateViewController release];
-    }else if ([menuTileForIndex isEqualToString:@"快递查询"]){
-        SSDQDeliveryQueryViewController * fontChangeViewController = [[SSDQDeliveryQueryViewController alloc] initWithNibName:@"SSDQDeliveryQueryViewController" bundle:nil];
-        fontChangeViewController.navigationItem.title = @"快递查询";
-//        fontChangeViewController.selectIndex = 0;
-        SET_GRAY_BG(fontChangeViewController);
-        [self.navigationController pushViewController:fontChangeViewController animated:YES];
-        [fontChangeViewController release];
-    }else if ([menuTileForIndex isEqualToString:@"常用快递"]){
-        SSDQAllDeliveryCompanyListViewController * translateViewController = [[SSDQAllDeliveryCompanyListViewController alloc] init];
-        translateViewController.navigationItem.title = @"常用快递";
-        translateViewController.contentMode = DeliverCompanyListContentModeFavOnly;
-        //        translateViewController.selectIndex = 0;
-        SET_GRAY_BG(translateViewController);
-        [self.navigationController pushViewController:translateViewController animated:YES];
-
-    }else if ([menuTileForIndex isEqualToString:@"快递公司大全"]){
-        SSDQAllDeliveryCompanyListViewController * translateViewController = [[SSDQAllDeliveryCompanyListViewController alloc] init];
-        translateViewController.navigationItem.title = @"快递公司大全";
-        SET_GRAY_BG(translateViewController);
-        [self.navigationController pushViewController:translateViewController animated:YES];
-        [translateViewController release];
-    }else if ([menuTileForIndex isEqualToString:@"寄快递"]){
-        SSDQSendDeliveryViewController * localeViewController = [[SSDQSendDeliveryViewController alloc] init];
-        localeViewController.navigationItem.title = @"寄快递";
-//        localeViewController.selectIndex = 1;
-        SET_GRAY_BG(localeViewController);
-        [self.navigationController pushViewController:localeViewController animated:YES];
-        [localeViewController release];
-    }
+//        SSDQFollowDeliveryViewController * translateViewController = [[SSDQFollowDeliveryViewController alloc] init];
+//        translateViewController.navigationItem.title = @"快递追踪";
+//        //        translateViewController.selectIndex = 1;
+//        SET_GRAY_BG(translateViewController);
+//        [self.navigationController pushViewController:translateViewController animated:YES];
+//        [translateViewController release];
+//    }else if ([menuTileForIndex isEqualToString:@"我的快递"]){
+//        SSDQMyDeliveryViewController * translateViewController = [[SSDQMyDeliveryViewController alloc] init];
+//        translateViewController.navigationItem.title = @"我的快递";
+////        translateViewController.selectIndex = 1;
+//        SET_GRAY_BG(translateViewController);
+//        [self.navigationController pushViewController:translateViewController animated:YES];
+//        [translateViewController release];
+//    }else if ([menuTileForIndex isEqualToString:@"快递查询"]){
+//        SSDQDeliveryQueryViewController * fontChangeViewController = [[SSDQDeliveryQueryViewController alloc] initWithNibName:@"SSDQDeliveryQueryViewController" bundle:nil];
+//        fontChangeViewController.navigationItem.title = @"快递查询";
+////        fontChangeViewController.selectIndex = 0;
+//        SET_GRAY_BG(fontChangeViewController);
+//        [self.navigationController pushViewController:fontChangeViewController animated:YES];
+//        [fontChangeViewController release];
+//    }else if ([menuTileForIndex isEqualToString:@"常用快递"]){
+//        SSDQAllDeliveryCompanyListViewController * translateViewController = [[SSDQAllDeliveryCompanyListViewController alloc] init];
+//        translateViewController.navigationItem.title = @"常用快递";
+//        translateViewController.contentMode = DeliverCompanyListContentModeFavOnly;
+//        //        translateViewController.selectIndex = 0;
+//        SET_GRAY_BG(translateViewController);
+//        [self.navigationController pushViewController:translateViewController animated:YES];
+//
+//    }else if ([menuTileForIndex isEqualToString:@"快递公司大全"]){
+//        SSDQAllDeliveryCompanyListViewController * translateViewController = [[SSDQAllDeliveryCompanyListViewController alloc] init];
+//        translateViewController.navigationItem.title = @"快递公司大全";
+//        SET_GRAY_BG(translateViewController);
+//        [self.navigationController pushViewController:translateViewController animated:YES];
+//        [translateViewController release];
+//    }else if ([menuTileForIndex isEqualToString:@"寄快递"]){
+//        SSDQSendDeliveryViewController * localeViewController = [[SSDQSendDeliveryViewController alloc] init];
+//        localeViewController.navigationItem.title = @"寄快递";
+////        localeViewController.selectIndex = 1;
+//        SET_GRAY_BG(localeViewController);
+//        [self.navigationController pushViewController:localeViewController animated:YES];
+//        [localeViewController release];
+//    }
 }
 
 -(NSUInteger)menuViewNumberOfItems:(SSMenuView*)menuView{
@@ -200,87 +194,6 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
-
--(void)updateDelivery {
-    self.isLoading = !self.isLoading;
-    
-    if (self.isLoading) {
-        [self.loadingView showLoadingView];
-        self.navigationItem.rightBarButtonItem.title = @"停止更新";
-    }else{
-        [self stopUpdating];
-        return;
-    }
-    
-    if (![self isNetworkOK]) {
-        [[SSToastView MakeToastWithType:TOAST_STYLE_FAV info:@"网络无法连接，请稍后手动更新"]show];
-        return;
-    }
-    
-    self.index = 0;
-    self.retryTimes = 0;
-    self.updateCount = 0;
-    self.isLoading = YES;
-    self.process = 0.0;
-    [self.loadingView hasProcessBar:0.0];
-    
-    self.data = [[[NSMutableArray alloc]init]autorelease];
-    FMDatabase *db = GETDB;
-    if ([db open]) {
-        NSMutableString *sql = [NSMutableString stringWithString: @"SELECT * from DeliveryQueryHistoryMain where status = 0 or status = 1 or status = 2"];
-        
-        [sql appendString:@" order by id desc"];
-        NSLog(@"execute sql:%@",sql);
-        
-        FMResultSet *rs = [db executeQuery:sql];
-        
-        while ([rs next]) {
-            
-            SSDQDeliveryResult *result = [[[SSDQDeliveryResult alloc]init]autorelease];
-            result.id = [rs intForColumn:@"id"];
-            result.expTextName = [rs stringForColumn:@"companyName"];
-            result.expSpellName = [rs stringForColumn:@"companyCode"];
-            result.mailNo = [rs stringForColumn:@"deliveryNumber"];
-            result.status = [rs intForColumn:@"status"];
-            result.latestContext = [rs stringForColumn:@"latestContext"];
-            result.sendTime = [rs stringForColumn:@"sendTime"];
-            result.signTime = [rs stringForColumn:@"signTime"];
-            result.companyPhone = [rs stringForColumn:@"companyPhone"];
-            result.comment = [rs stringForColumn:@"comment"];
-            
-            FMResultSet *items = [db executeQuery:[NSString stringWithFormat:@"SELECT * from DeliveryQueryHistoryItems where mainId = %d",result.id]];
-            
-            result.data = [NSMutableArray arrayWithCapacity:[items columnCount]];
-            while ([items next]) {
-                SSDQDeliveryItem *item = [[[SSDQDeliveryItem alloc]init]autorelease];
-                item.time = [items stringForColumn:@"time"];
-                item.context = [items stringForColumn:@"context"];
-                
-                [result.data addObject:item];
-            }
-
-            
-            [self.data addObject:result];
-            
-        }
-        
-    }
-
-
-    [db close];
-
-    if (self.data.count <= 0) {
-        self.isLoading = NO;
-        [self stopUpdating];
-        return;
-    }
-    
-    self.subProcess = (CGFloat)(1.0/self.data.count);
-    
-    [self loadObjectsFromRemote];
-
-}
-
 
 -(void)loadObjectsFromRemote{
     
