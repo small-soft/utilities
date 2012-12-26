@@ -18,4 +18,9 @@
     return [NSString stringWithFormat:@"%@%@",str,self];
 }
 
++(NSString *)escapeURL:(NSString *)str{
+    NSString *encodedValue = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    
+    return encodedValue;
+}
 @end

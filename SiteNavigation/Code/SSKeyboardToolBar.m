@@ -7,6 +7,7 @@
 //
 
 #import "SSKeyboardToolBar.h"
+#import "NSString+NSStringUtil.h"
 
 @interface SSKeyboardToolBar()
 
@@ -421,16 +422,16 @@
 -(NSString *)getSearchString{
 //    return @"http://m.baidu.com";
     
-    if (!self.baiduItem.isEnabled) {
-        return [NSString stringWithFormat:@"http://m.baidu.com/s?word=%@&tn=iphone",self.searchBar.text];
-    }else if (!self.googleItem.isEnabled){
-        return [NSString stringWithFormat:@"http://www.google.com.hk/search?q=%@",self.searchBar.text];
+    NSString *url = [NSString stringWithFormat:@"http://m.baidu.com/s?word=%@&tn=iphone",self.searchBar.text];
+    
+    if (!self.googleItem.isEnabled){
+        url = [NSString stringWithFormat:@"http://www.google.com.hk/search?q=%@",self.searchBar.text];
     }else if (!self.bingItem.isEnabled){
-        return [NSString stringWithFormat:@"http://m.cn.bing.com/search?q=%@",self.searchBar.text];
+        url = [NSString stringWithFormat:@"http://m.cn.bing.com/search?q=%@",self.searchBar.text];
     }else if(!self.sosoItem.isEnabled){
-        return [NSString stringWithFormat:@"http://wap.soso.com/sweb/search.jsp?key=%@",self.searchBar.text];
+        url = [NSString stringWithFormat:@"http://wap.soso.com/sweb/search.jsp?key=%@",self.searchBar.text];
     }
     
-    return  [NSString stringWithFormat:@"http://m.baidu.com/s?word=%@&tn=iphone",self.searchBar.text];
+    return  [NSString escapeURL:url];
 }
 @end

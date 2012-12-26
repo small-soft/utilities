@@ -12,5 +12,6 @@
 
 -(NSString*)append:(NSString*)str;
 -(NSString*)preFix:(NSString*)str;
++(NSString*)escapeURL:(NSString*)str;
 
 @end
