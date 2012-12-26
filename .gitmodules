@@ -1,0 +1,6 @@
+[submodule "SiteNavigation/Code/Lib/Pivot/SSSDK"]
+	path = SiteNavigation/Code/Lib/Pivot/SSSDK
+	url = https://github.com/small-soft/SSSDK.git
+[submodule "DeliveryQuery/Code/Lib/Pivot/SSSDK"]
+	path = DeliveryQuery/Code/Lib/Pivot/SSSDK
+	url = https://github.com/small-soft/SSSDK.git

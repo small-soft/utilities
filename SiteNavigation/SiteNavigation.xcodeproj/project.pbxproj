@@ -32,6 +32,9 @@
 		0FD541DD163D30E00092B559 /* SSLoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0FD541DC163D30E00092B559 /* SSLoadingView.xib */; };
 		9D0C87A9165B78BA006AAC18 /* SSSystemUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D0C87A8165B78BA006AAC18 /* SSSystemUtils.m */; };
 		9D2B795D16708EA60093BE0C /* SSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D2B795C16708EA60093BE0C /* SSLabel.m */; };
+		9D44EED7168AEB64003AAC29 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9D44EEBF168AEB64003AAC29 /* README.md */; };
+		9D44EEDB168AEB64003AAC29 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D44EEC5168AEB64003AAC29 /* InfoPlist.strings */; };
+		9D44EEDF168AEB64003AAC29 /* SSSDK-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9D44EECC168AEB64003AAC29 /* SSSDK-Info.plist */; };
 		9D4C6ACD166B9FA0003852DC /* maidou.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C6ACC166B9FA0003852DC /* maidou.gif */; };
 		9D4C6AD5166C3FCD003852DC /* ADVPercentProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D4C6AD4166C3FCD003852DC /* ADVPercentProgressBar.m */; };
 		9D4C6AE1166C4273003852DC /* progress-track.png in Resources */ = {isa = PBXBuildFile; fileRef = 9D4C6ADF166C4273003852DC /* progress-track.png */; };
@@ -194,6 +197,13 @@
 			remoteGlobalIDString = 25160D1514564E810060A5C5;
 			remoteInfo = RestKit;
 		};
+		9D44EEE2168AEB65003AAC29 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D44EED0168AEB64003AAC29 /* SSSDK.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 9D44EE81168AD813003AAC29;
+			remoteInfo = SSSDK;
+		};
 		9D88EA311650D4D0003C151D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9D88EA0D1650D4CF003C151D /* fmdb.xcodeproj */;
@@ -226,7 +236,7 @@
 		0F9C26451646C1300076694B /* MobWinBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobWinBannerViewDelegate.h; path = Lib/MobWinBannerViewDelegate.h; sourceTree = "<group>"; };
 		0F9C26471646C39E0076694B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		0F9C26491646C3E00076694B /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		0F9C264B1646C56C0076694B /* LBSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LBSSDK.framework; path = Code/Lib/build/Framework/LBSSDK.framework; sourceTree = "<group>"; };
+		0F9C264B1646C56C0076694B /* LBSSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LBSSDK.framework; path = Lib/build/Framework/LBSSDK.framework; sourceTree = "<group>"; };
 		0F9F2194163EB1F60051822D /* SSViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSViewController.h; path = SSUI/ViewControllers/SSViewController.h; sourceTree = "<group>"; };
 		0F9F2195163EB1F60051822D /* SSViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSViewController.m; path = SSUI/ViewControllers/SSViewController.m; sourceTree = "<group>"; };
 		0F9F21BB163EE1DA0051822D /* SSQUMoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSQUMoreViewController.h; path = SSQUMore/SSQUMoreViewController.h; sourceTree = "<group>"; };
@@ -247,6 +257,11 @@
 		9D0C87A8165B78BA006AAC18 /* SSSystemUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSSystemUtils.m; sourceTree = "<group>"; };
 		9D2B795B16708EA60093BE0C /* SSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSLabel.h; sourceTree = "<group>"; };
 		9D2B795C16708EA60093BE0C /* SSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSLabel.m; sourceTree = "<group>"; };
+		9D44EEBF168AEB64003AAC29 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		9D44EEC6168AEB64003AAC29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9D44EECC168AEB64003AAC29 /* SSSDK-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SSSDK-Info.plist"; sourceTree = "<group>"; };
+		9D44EECD168AEB64003AAC29 /* SSSDK-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SSSDK-Prefix.pch"; sourceTree = "<group>"; };
+		9D44EED0168AEB64003AAC29 /* SSSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SSSDK.xcodeproj; sourceTree = "<group>"; };
 		9D4C6ACC166B9FA0003852DC /* maidou.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = maidou.gif; sourceTree = "<group>"; };
 		9D4C6AD3166C3FCD003852DC /* ADVPercentProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADVPercentProgressBar.h; sourceTree = "<group>"; };
 		9D4C6AD4166C3FCD003852DC /* ADVPercentProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADVPercentProgressBar.m; sourceTree = "<group>"; };
@@ -519,10 +534,8 @@
 		0F9C26421646C0CA0076694B /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				9D88EA081650D4CF003C151D /* ccgus-fmdb-450d8b1 */,
-				0F9C26431646C1300076694B /* MobWin.a */,
-				0F9C26441646C1300076694B /* MobWinBannerView.h */,
-				0F9C26451646C1300076694B /* MobWinBannerViewDelegate.h */,
+				9D44EEE4168AEB6C003AAC29 /* OpenSource */,
+				9D44EEBD168AEB64003AAC29 /* Pivot */,
 			);
 			name = Lib;
 			path = Code;
@@ -555,6 +568,75 @@
 				9D2B795C16708EA60093BE0C /* SSLabel.m */,
 			);
 			name = SSLabel;
+			sourceTree = "<group>";
+		};
+		9D44EEBD168AEB64003AAC29 /* Pivot */ = {
+			isa = PBXGroup;
+			children = (
+				9D44EEBE168AEB64003AAC29 /* SSSDK */,
+			);
+			name = Pivot;
+			path = Lib/Pivot;
+			sourceTree = "<group>";
+		};
+		9D44EEBE168AEB64003AAC29 /* SSSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9D44EEBF168AEB64003AAC29 /* README.md */,
+				9D44EEC0168AEB64003AAC29 /* SSSDK */,
+			);
+			path = SSSDK;
+			sourceTree = "<group>";
+		};
+		9D44EEC0168AEB64003AAC29 /* SSSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9D44EEC1168AEB64003AAC29 /* SSSDK */,
+				9D44EED0168AEB64003AAC29 /* SSSDK.xcodeproj */,
+			);
+			path = SSSDK;
+			sourceTree = "<group>";
+		};
+		9D44EEC1168AEB64003AAC29 /* SSSDK */ = {
+			isa = PBXGroup;
+			children = (
+				9D44EEC5168AEB64003AAC29 /* InfoPlist.strings */,
+				9D44EECC168AEB64003AAC29 /* SSSDK-Info.plist */,
+				9D44EECD168AEB64003AAC29 /* SSSDK-Prefix.pch */,
+			);
+			path = SSSDK;
+			sourceTree = "<group>";
+		};
+		9D44EED1168AEB64003AAC29 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9D44EEE3168AEB65003AAC29 /* SSSDK.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9D44EEE4168AEB6C003AAC29 /* OpenSource */ = {
+			isa = PBXGroup;
+			children = (
+				9D88EA061650D405003C151D /* libsqlite3.dylib */,
+				0F9C26491646C3E00076694B /* libz.dylib */,
+				9D44EEE9168AEBBD003AAC29 /* MobWin */,
+				0F9C26471646C39E0076694B /* CoreLocation.framework */,
+				9D88EA081650D4CF003C151D /* ccgus-fmdb-450d8b1 */,
+				0F9C264B1646C56C0076694B /* LBSSDK.framework */,
+				9DBFEED2165271C6008CFE2C /* AVFoundation.framework */,
+			);
+			name = OpenSource;
+			sourceTree = "<group>";
+		};
+		9D44EEE9168AEBBD003AAC29 /* MobWin */ = {
+			isa = PBXGroup;
+			children = (
+				0F9C26431646C1300076694B /* MobWin.a */,
+				0F9C26441646C1300076694B /* MobWinBannerView.h */,
+				0F9C26451646C1300076694B /* MobWinBannerViewDelegate.h */,
+			);
+			name = MobWin;
 			sourceTree = "<group>";
 		};
 		9D4C6AD2166C3FCD003852DC /* processbar */ = {
@@ -651,12 +733,7 @@
 			isa = PBXGroup;
 			children = (
 				9DBFEED81652728C008CFE2C /* libiconv.dylib */,
-				9DBFEED2165271C6008CFE2C /* AVFoundation.framework */,
 				0F9C26421646C0CA0076694B /* Lib */,
-				9D88EA061650D405003C151D /* libsqlite3.dylib */,
-				0F9C264B1646C56C0076694B /* LBSSDK.framework */,
-				0F9C26491646C3E00076694B /* libz.dylib */,
-				0F9C26471646C39E0076694B /* CoreLocation.framework */,
 				9DF2530416435D6E00869CFE /* icon.png */,
 				9DF2530516435D6E00869CFE /* Icon@2x.png */,
 				9DF2530816435D9A00869CFE /* Default-568h@2x.png */,
@@ -942,6 +1019,10 @@
 					ProductGroup = 0F99B310163986330062597B /* Products */;
 					ProjectRef = 0F99B30F163986330062597B /* RestKit.xcodeproj */;
 				},
+				{
+					ProductGroup = 9D44EED1168AEB64003AAC29 /* Products */;
+					ProjectRef = 9D44EED0168AEB64003AAC29 /* SSSDK.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -984,6 +1065,13 @@
 			fileType = wrapper.cfbundle;
 			path = RestKitResources.bundle;
 			remoteRef = 0F99B322163986330062597B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		9D44EEE3168AEB65003AAC29 /* SSSDK.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SSSDK.app;
+			remoteRef = 9D44EEE2168AEB65003AAC29 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		9D88EA321650D4D0003C151D /* fmdb */ = {
@@ -1096,6 +1184,9 @@
 				9DE07D2E167EBD79001AD829 /* siteCat7@2x.png in Resources */,
 				9DE07D2F167EBD79001AD829 /* siteCat8@2x.png in Resources */,
 				9DE07D30167EBD79001AD829 /* siteCat9@2x.png in Resources */,
+				9D44EED7168AEB64003AAC29 /* README.md in Resources */,
+				9D44EEDB168AEB64003AAC29 /* InfoPlist.strings in Resources */,
+				9D44EEDF168AEB64003AAC29 /* SSSDK-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1154,6 +1245,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		9D44EEC5168AEB64003AAC29 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9D44EEC6168AEB64003AAC29 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		9DB9861116390E2600B46470 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
