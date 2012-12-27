@@ -14,7 +14,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9DB9860316390E2600B46470"
-               BuildableName = "SiteNavigation.app"
+               BuildableName = "NetTicket.app"
                BlueprintName = "NetTicket"
                ReferencedContainer = "container:NetTicket.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9DB9860316390E2600B46470"
-            BuildableName = "SiteNavigation.app"
+            BuildableName = "NetTicket.app"
             BlueprintName = "NetTicket"
             ReferencedContainer = "container:NetTicket.xcodeproj">
          </BuildableReference>
@@ -51,7 +51,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9DB9860316390E2600B46470"
-            BuildableName = "SiteNavigation.app"
+            BuildableName = "NetTicket.app"
             BlueprintName = "NetTicket"
             ReferencedContainer = "container:NetTicket.xcodeproj">
          </BuildableReference>
@@ -69,7 +69,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9DB9860316390E2600B46470"
-            BuildableName = "SiteNavigation.app"
+            BuildableName = "NetTicket.app"
             BlueprintName = "NetTicket"
             ReferencedContainer = "container:NetTicket.xcodeproj">
          </BuildableReference>
