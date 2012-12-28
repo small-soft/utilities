@@ -10,7 +10,7 @@
 
 #import "SSQUViewController.h"
 #import <RestKit/RestKit.h>
-#import "SSQUMoreViewController.h"
+#import "SSMoreViewController.h"
 #import "MobWinBannerView.h"
 #import "SSUncaughtExceptionService.h"
 #import "SSSNHotSitesViewController.h"
@@ -61,7 +61,7 @@
     controller1.tabBarItem.image = [UIImage imageNamed:@"heart"];
     
     SSSNHistoryViewController *controller3= [[[SSSNHistoryViewController alloc]init]autorelease];
-    SSQUMoreViewController *controller4= [[[SSQUMoreViewController alloc]init]autorelease];
+    SSMoreViewController *controller4= [[[SSMoreViewController alloc]init]autorelease];
     controller4.title = @"设置";
     controller4.tabBarItem.image = [UIImage imageNamed:@"cog_02"];
     SET_GRAY_BG(controller4);
@@ -145,7 +145,7 @@
 }
 
 - (void)infoBtnPress{
-    SSQUMoreViewController *moreViewController = [[SSQUMoreViewController alloc] initWithNibName:@"SSQUMoreViewController" bundle:nil];
+    SSMoreViewController *moreViewController = [[SSMoreViewController alloc] initWithNibName:@"SSQUMoreViewController" bundle:nil];
     SET_GRAY_BG(moreViewController);
     moreViewController.navigationItem.title = @"关于";
     [self.navigationController pushViewController:moreViewController animated:YES];
