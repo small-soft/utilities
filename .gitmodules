@@ -1,1 +1,4 @@
 
+[submodule "NetTicket/Lib/Pivot/SSSDK"]
+	path = NetTicket/Lib/Pivot/SSSDK
+	url = https://github.com/small-soft/SSSDK.git
