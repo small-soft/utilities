@@ -8,7 +8,7 @@
 
 #import "SSQUAppDelegate.h"
 
-#import "SSQUViewController.h"
+#import "SSNTViewController.h"
 #import <RestKit/RestKit.h>
 #import "SSMoreViewController.h"
 #import "MobWinBannerView.h"
@@ -51,41 +51,30 @@
     
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    UITabBarController* mainViewController = [[UITabBarController alloc]init] ;
-    mainViewController.navigationItem.title = @"主菜单";
-    
-    SSSNHotSitesViewController *controller0 = [[[SSSNHotSitesViewController alloc]init]autorelease];
-    SSSNHistoryViewController *controller1= [[[SSSNHistoryViewController alloc]init]autorelease];
-    controller1.mainTableName = @"SNFav";
-    controller1.title = @"我的收藏";
-    controller1.tabBarItem.image = [UIImage imageNamed:@"heart"];
-    
-    SSSNHistoryViewController *controller3= [[[SSSNHistoryViewController alloc]init]autorelease];
-    SSMoreViewController *controller4= [[[SSMoreViewController alloc]init]autorelease];
-    controller4.title = @"设置";
-    controller4.tabBarItem.image = [UIImage imageNamed:@"cog_02"];
-    SET_GRAY_BG(controller4);
-    [mainViewController setViewControllers:[NSArray arrayWithObjects:controller0,controller1,controller3,controller4,nil]];
+    SSNTViewController* mainViewController = [[SSNTViewController alloc] initWithNibName:@"SSNTViewController" bundle:nil] ;
+    mainViewController.navigationItem.title = @"网票管家";
     
     _navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     
-//    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
-//    UIButton * infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
-    self.navigationController.navigationBarHidden = YES;
-
-//    UIBarButtonItem * infoButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
-//    [infoButton addTarget:self action:@selector(infoBtnPress) forControlEvents:UIControlEventTouchUpInside];
-//    
-//    mainViewController.navigationItem.leftBarButtonItem = infoButtonItem ;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    UIButton * infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
     
-//    [infoButtonItem release];
+    UIBarButtonItem * infoButtonItem = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+    [infoButton addTarget:self action:@selector(infoBtnPress) forControlEvents:UIControlEventTouchUpInside];
+    
+    mainViewController.navigationItem.leftBarButtonItem = infoButtonItem ;
+    
+    [infoButtonItem release];
     [mainViewController release];
     
-    _rootViewController = self.navigationController;
-    
+    _rootViewController = [[UIViewController alloc] init];
+    UIView * rootView = [[UIView alloc] initWithFrame:self.window.frame];
+    _rootViewController.view = rootView;
+    [rootView release];
+
     [self setFrame4Ad];
     
-//    [self.rootViewController.view addSubview:self.navigationController.view];
+    [self.rootViewController.view addSubview:self.navigationController.view];
     
     self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
@@ -145,7 +134,7 @@
 }
 
 - (void)infoBtnPress{
-    SSMoreViewController *moreViewController = [[SSMoreViewController alloc] initWithNibName:@"SSQUMoreViewController" bundle:nil];
+    SSMoreViewController *moreViewController = [[SSMoreViewController alloc] initWithNibName:@"SSMoreViewController" bundle:nil];
     SET_GRAY_BG(moreViewController);
     moreViewController.navigationItem.title = @"关于";
     [self.navigationController pushViewController:moreViewController animated:YES];

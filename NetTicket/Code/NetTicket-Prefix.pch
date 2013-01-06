@@ -22,7 +22,7 @@
 #define RESIZE_VIEW(srcView) (srcView.frame = CGRectMake(srcView.frame.origin.x, srcView.frame.origin.y, srcView.frame.size.width, SCREEN_HEIGHT - srcView.frame.origin.y))
 #define RGB(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
 #define SET_AD_FRAME(srcView) (CGRectMake(srcView.frame.origin.x, srcView.frame.origin.y, srcView.frame.size.width, srcView.frame.size.height - 25))
-#define DBNAME @"SiteNavigationDB"
+#define DBNAME @"NetTicketDB"
 #define GETDB ([(SSQUAppDelegate *)[[UIApplication sharedApplication] delegate] db])
 
 //define NS_ENUM 如果未定义NS_ENUM则定义NS_ENUM，为了解决xcode4.3下的兼容问题
