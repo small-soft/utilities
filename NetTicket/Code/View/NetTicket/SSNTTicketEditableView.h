@@ -18,4 +18,5 @@
 - (id)initWithFrame:(CGRect)frame ticket:(SSNTTicket*)ticket;
 
 - (void)setData:(SSNTTicket*)ticket;
+- (void)saveUpdate;
 @end

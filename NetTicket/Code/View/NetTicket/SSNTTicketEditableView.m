@@ -156,6 +156,8 @@
     self.code.text = ticket.code;
     [self.code reloadInputViews];
     
+    self.datePicker.hidden = YES;
+    
     [self.contentTable reloadData];
 }
 
@@ -383,11 +385,23 @@
 
 -(void)showDatePicker {
     if (self.dateEditRowNo == 0) {
+        if (self.ticket.validEnd) {
+            self.datePicker.maximumDate = self.ticket.validEnd;
+        }
+        
+        self.datePicker.minimumDate = nil;
+        
         if (self.ticket.validStart) {
             self.datePicker.date = self.ticket.validStart;
         }
         
     }else {
+        if (self.ticket.validStart) {
+            self.datePicker.minimumDate = self.ticket.validStart;
+        }
+        
+        self.datePicker.maximumDate = nil;
+        
         if (self.ticket.validEnd) {
             self.datePicker.date = self.ticket.validEnd;
         }

@@ -22,6 +22,8 @@
 @property(nonatomic,retain) NSArray *data;
 @property(nonatomic,retain) NSMutableArray *dataView;
 
+@property(nonatomic) int pageNo;
+
 @property(nonatomic,retain) SSNTTicketEditableView *ticketEditableView;
 @end
 
@@ -31,6 +33,7 @@
 @synthesize ticketEditableView = _ticketEditableView;
 @synthesize data = _data;
 @synthesize dataView = _dataView;
+@synthesize pageNo = _pageNo;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -83,7 +86,7 @@
     [_pageControl setOriginY:[_scrollView height] - 10];
     
     _pageControl.numberOfPages = self.data.count;
-    _pageControl.currentPage = 0;
+    _pageControl.currentPage = self.pageNo;
 }
 
 -(void)initRightBarButton {
@@ -167,10 +170,13 @@
 
 -(void)showTicketEditableView {
     self.ticketEditableView.hidden = NO;
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc]initWithTitle:@"确定"style:UIBarButtonItemStylePlain target:self action:@selector(endEdit:)]autorelease];
+
 }
 
 -(void)hideTicketEditableView {
     self.ticketEditableView.hidden = YES;
+    [self initRightBarButton];
 }
 
 -(void)reload {
@@ -188,7 +194,13 @@
 
 -(void)editTicket:(UIControl*)sender {    
     [self.ticketEditableView setData:[self.data objectAtIndex:sender.tag]];
-    
+    self.pageNo = sender.tag;
     [self showTicketEditableView];
+}
+
+-(void)endEdit:(id)sender {
+    [self.ticketEditableView saveUpdate];
+    [self hideTicketEditableView];
+    [self reload];
 }
 @end
