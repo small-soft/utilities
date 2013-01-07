@@ -225,13 +225,6 @@
 			remoteGlobalIDString = EE4290EF12B42F870088BD94;
 			remoteInfo = FMDB;
 		};
-		9DA95985168E9AAE007675F3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 9DA95948168E9AAD007675F3 /* SSSDK.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 9D1F492E168C445F0038AEBF;
-			remoteInfo = SSSDK;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -322,7 +315,6 @@
 		9DA95945168E9AAD007675F3 /* SSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSAppDelegate.m; sourceTree = "<group>"; };
 		9DA95946168E9AAD007675F3 /* SSSDK-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SSSDK-Info.plist"; sourceTree = "<group>"; };
 		9DA95947168E9AAD007675F3 /* SSSDK-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SSSDK-Prefix.pch"; sourceTree = "<group>"; };
-		9DA95948168E9AAD007675F3 /* SSSDK.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = SSSDK.xcodeproj; sourceTree = "<group>"; };
 		9DA959E116967E4C007675F3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9DA959E216967E4C007675F3 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		9DA959E316967E4C007675F3 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
@@ -589,7 +581,6 @@
 				9DA958E8168E9AAD007675F3 /* Code */,
 				9DA95927168E9AAD007675F3 /* Lib */,
 				9DA9593E168E9AAD007675F3 /* SSSDK */,
-				9DA95948168E9AAD007675F3 /* SSSDK.xcodeproj */,
 			);
 			path = SSSDK;
 			sourceTree = "<group>";
@@ -852,14 +843,6 @@
 				9DA95947168E9AAD007675F3 /* SSSDK-Prefix.pch */,
 			);
 			path = SSSDK;
-			sourceTree = "<group>";
-		};
-		9DA95949168E9AAD007675F3 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				9DA95986168E9AAE007675F3 /* SSSDK.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		9DA959F316967FA4007675F3 /* Resources */ = {
@@ -1229,10 +1212,6 @@
 					ProductGroup = 0F99B310163986330062597B /* Products */;
 					ProjectRef = 0F99B30F163986330062597B /* RestKit.xcodeproj */;
 				},
-				{
-					ProductGroup = 9DA95949168E9AAD007675F3 /* Products */;
-					ProjectRef = 9DA95948168E9AAD007675F3 /* SSSDK.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1289,13 +1268,6 @@
 			fileType = archive.ar;
 			path = libFMDB.a;
 			remoteRef = 9DA95982168E9AAE007675F3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		9DA95986168E9AAE007675F3 /* SSSDK.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = SSSDK.app;
-			remoteRef = 9DA95985168E9AAE007675F3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
