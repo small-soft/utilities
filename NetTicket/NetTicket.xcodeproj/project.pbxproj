@@ -21,8 +21,6 @@
 		9D1F48FD168C3DF90038AEBF /* LBSSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1F48FC168C3DF90038AEBF /* LBSSDK.framework */; };
 		9D1F5083168D3D6B0038AEBF /* MobWin.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D1F5080168D3D6B0038AEBF /* MobWin.a */; };
 		9D88EA071650D405003C151D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D88EA061650D405003C151D /* libsqlite3.dylib */; };
-		9DA95718168E90AC007675F3 /* SSNTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA95716168E90AC007675F3 /* SSNTViewController.m */; };
-		9DA95719168E90AC007675F3 /* SSNTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DA95717168E90AC007675F3 /* SSNTViewController.xib */; };
 		9DA95954168E9AAE007675F3 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9DA958E6168E9AAD007675F3 /* README.md */; };
 		9DA95955168E9AAE007675F3 /* SSBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA958ED168E9AAD007675F3 /* SSBadgeView.m */; };
 		9DA95956168E9AAE007675F3 /* SSButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DA958F0168E9AAD007675F3 /* SSButton.m */; };
@@ -166,6 +164,8 @@
 		9DE16CEF167196D600C56312 /* SSSNFavoritesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE16CED167196D600C56312 /* SSSNFavoritesViewController.xib */; };
 		9DE16CF71671B1D700C56312 /* SSFullWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9DE16CF51671B1D700C56312 /* SSFullWebViewController.m */; };
 		9DE16CF81671B1D700C56312 /* SSFullWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9DE16CF61671B1D700C56312 /* SSFullWebViewController.xib */; };
+		F5673569169A97590027A2CF /* SSNTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F5673567169A97590027A2CF /* SSNTViewController.m */; };
+		F567356A169A97590027A2CF /* SSNTViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F5673568169A97590027A2CF /* SSNTViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,9 +251,6 @@
 		9D1F5081168D3D6B0038AEBF /* MobWinBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinBannerView.h; sourceTree = "<group>"; };
 		9D1F5082168D3D6B0038AEBF /* MobWinBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobWinBannerViewDelegate.h; sourceTree = "<group>"; };
 		9D88EA061650D405003C151D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		9DA95715168E90AC007675F3 /* SSNTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSNTViewController.h; path = ../../SSNTViewController.h; sourceTree = "<group>"; };
-		9DA95716168E90AC007675F3 /* SSNTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSNTViewController.m; path = ../../SSNTViewController.m; sourceTree = "<group>"; };
-		9DA95717168E90AC007675F3 /* SSNTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SSNTViewController.xib; path = ../../SSNTViewController.xib; sourceTree = "<group>"; };
 		9DA958E6168E9AAD007675F3 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		9DA958EC168E9AAD007675F3 /* SSBadgeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSBadgeView.h; sourceTree = "<group>"; };
 		9DA958ED168E9AAD007675F3 /* SSBadgeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSBadgeView.m; sourceTree = "<group>"; };
@@ -445,6 +442,9 @@
 		9DE16CF41671B1D700C56312 /* SSFullWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSFullWebViewController.h; sourceTree = "<group>"; };
 		9DE16CF51671B1D700C56312 /* SSFullWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSFullWebViewController.m; sourceTree = "<group>"; };
 		9DE16CF61671B1D700C56312 /* SSFullWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSFullWebViewController.xib; sourceTree = "<group>"; };
+		F5673566169A97590027A2CF /* SSNTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSNTViewController.h; sourceTree = "<group>"; };
+		F5673567169A97590027A2CF /* SSNTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSNTViewController.m; sourceTree = "<group>"; };
+		F5673568169A97590027A2CF /* SSNTViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SSNTViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1005,20 +1005,10 @@
 		9DA95A9E1696A756007675F3 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				9DA95A9F1696A822007675F3 /* Main */,
+				F5673565169A97590027A2CF /* Main */,
 				9DA95AA01696A822007675F3 /* NetTicket */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		9DA95A9F1696A822007675F3 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				9DA95715168E90AC007675F3 /* SSNTViewController.h */,
-				9DA95716168E90AC007675F3 /* SSNTViewController.m */,
-				9DA95717168E90AC007675F3 /* SSNTViewController.xib */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		9DA95AA01696A822007675F3 /* NetTicket */ = {
@@ -1179,6 +1169,16 @@
 			path = SSSNFavorites;
 			sourceTree = "<group>";
 		};
+		F5673565169A97590027A2CF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				F5673566169A97590027A2CF /* SSNTViewController.h */,
+				F5673567169A97590027A2CF /* SSNTViewController.m */,
+				F5673568169A97590027A2CF /* SSNTViewController.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1313,7 +1313,6 @@
 				9DE07C731679CDC6001AD829 /* SSSNHistoryViewController.xib in Resources */,
 				9DE07C78167B42AA001AD829 /* SSSNHistoryCell.xib in Resources */,
 				9DE07CC7167DCD59001AD829 /* SSSNHotSitesMoreViewController.xib in Resources */,
-				9DA95719168E90AC007675F3 /* SSNTViewController.xib in Resources */,
 				9DA95954168E9AAE007675F3 /* README.md in Resources */,
 				9DA9595B168E9AAE007675F3 /* SSLoadingView.xib in Resources */,
 				9DA9595D168E9AAE007675F3 /* SSMenuItemViewStyleImageAndText.xib in Resources */,
@@ -1403,6 +1402,7 @@
 				9DA95A8716967FA5007675F3 /* progress-track@2x.png in Resources */,
 				9DA95AA81696AC33007675F3 /* ecodeExample.png in Resources */,
 				9DA95AAA1696D348007675F3 /* NetTicketDB.sqlite in Resources */,
+				F567356A169A97590027A2CF /* SSNTViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1423,7 +1423,6 @@
 				9DE07C721679CDC6001AD829 /* SSSNHistoryViewController.m in Sources */,
 				9DE07C76167B428E001AD829 /* SSSNHistoryCell.m in Sources */,
 				9DE07CC6167DCD59001AD829 /* SSSNHotSitesMoreViewController.m in Sources */,
-				9DA95718168E90AC007675F3 /* SSNTViewController.m in Sources */,
 				9DA95955168E9AAE007675F3 /* SSBadgeView.m in Sources */,
 				9DA95956168E9AAE007675F3 /* SSButton.m in Sources */,
 				9DA95957168E9AAE007675F3 /* SSKeyboardToolBar.m in Sources */,
@@ -1455,6 +1454,7 @@
 				9DA95AB01696D497007675F3 /* SSNTTicketService.m in Sources */,
 				9DA95AEB1697D1B0007675F3 /* SSNTTicketView.m in Sources */,
 				9DA95AEE1697D7A8007675F3 /* SSNTTicketEditableView.m in Sources */,
+				F5673569169A97590027A2CF /* SSNTViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
