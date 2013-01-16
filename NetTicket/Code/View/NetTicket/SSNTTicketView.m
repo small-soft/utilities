@@ -10,8 +10,11 @@
 #import <QuartzCore/QuartzCore.h>
 #import "UIView+UIViewUtil.h"
 #import "NSDate+DateUtil.h"
+#import "SSNTTicketService.h"
+#import "SSSystemUtils.h"
+#import "SSToastView.h"
 
-@interface SSNTTicketView()
+@interface SSNTTicketView()<UIActionSheetDelegate>
 
 @property(nonatomic,retain) UIView *bg;
 @property(nonatomic,retain) UIControl *mask;
@@ -24,6 +27,7 @@
 @property(nonatomic,retain) UILabel *code;
 @property(nonatomic,retain) UILabel *desDes;
 @property(nonatomic,retain) UILabel *des;
+@property(nonatomic,retain) UILabel *type;
 @end
 
 @implementation SSNTTicketView
@@ -41,6 +45,7 @@
 @synthesize ticket = _ticket;
 @synthesize delegate = _delegate;
 @synthesize editCallBack = _editCallBack;
+@synthesize type = _type;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -57,6 +62,7 @@
     self.code = nil;
     self.desDes = nil;
     self.des = nil;
+    self.type = nil;
     
     self.delegate = nil;
     self.editCallBack = nil;
@@ -82,11 +88,13 @@
     
     [self initBg];
     [self initImage];
+    [self initType];
     [self initValid];
     [self initCode];
     [self initDes];
     
     [self initMask];
+    [self initSendButton];
 }
 
 -(void)initBg {
@@ -103,13 +111,50 @@
 
 -(void)initImage {
     UIImageView *image = [[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ecodeExample"]]autorelease];
-    image.backgroundColor = [UIColor clearColor];
+    image.backgroundColor = [UIColor whiteColor];
     image.frame = CGRectMake(48, 20, 215, 215);
     image.layer.borderWidth = 1;
     //        image.layer.cornerRadius = 12;
     image.layer.borderColor = [[UIColor grayColor] CGColor];
     self.image = image;
     [self addSubview:self.image];
+}
+
+-(void)initType {
+    UILabel *type = [[[UILabel alloc]initWithFrame:CGRectMake([self.image x] - 2, [self.image endY] - 15 - 8, 80, 20)]autorelease];
+    type.text = @"其他";
+    
+    type.backgroundColor = [UIColor redColor];
+    type.alpha = 0.7;
+    type.textColor = [UIColor whiteColor];
+    type.textAlignment = UITextAlignmentCenter;
+    
+    self.type = type;
+    [self addSubview:type];
+}
+
+-(void)initSendButton {
+//    UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+//    btn.frame = CGRectMake([self.type endX] + 100, [self.type y], 66, 44);
+//    btn.titleLabel.text = @"发送给好友";
+//    btn.titleLabel.textColor = [UIColor blackColor];
+//    
+//    [self addSubview:btn];
+    
+    UIControl *send = [[[UIControl alloc]initWithFrame:CGRectMake([self.type endX] + 5, [self.type y], [self.image width] - [self.type width], [self.type height])]autorelease];
+    send.backgroundColor = [UIColor clearColor];
+    UILabel *sendLabel = [[[UILabel alloc]initWithFrame:CGRectMake(0, 0, [send width], [send height])]autorelease];
+    sendLabel.backgroundColor = [UIColor blueColor];
+    sendLabel.text = @"发送给好友";
+    sendLabel.textColor = self.type.textColor;
+    sendLabel.textAlignment = self.type.textAlignment;
+    sendLabel.alpha = self.type.alpha;
+    
+    [send addSubview:sendLabel];
+    
+    [send addTarget:self action:@selector(send) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self addSubview:send];
 }
 
 -(void)initValid {
@@ -208,6 +253,14 @@
         self.des.text = @"暂无";
     }
     
+    if (self.ticket.type.length > 0) {
+        self.type.text = self.ticket.type;
+    }else {
+        self.type.text = @"其他";
+    }
+    
+    self.image.image = [SSNTTicketService getTicketImageById:self.ticket.id];
+    
     if (self.ticket.validStart) {
 //        self.validStart.text = [NSString stringWithFormat:@"%@ (星期%d)",[self.ticket.validStart getDateStringForTodayYesterdayWithFormate:@"yyyy年MM月dd日 HH:mm"],[self.ticket.validStart week]];
         self.validStart.text = [self.ticket.validStart formate:@"yyyy年MM月dd日 HH:mm"];
@@ -226,5 +279,66 @@
 
 -(void)edit:(UIControl*)sender {
     [self.delegate performSelector:self.editCallBack withObject:sender];
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark -
+#pragma mark Send Operation
+-(void)send {
+    UIActionSheet *sheet = [[[UIActionSheet alloc]initWithTitle:@"发送给好友" delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"通过短信发送" otherButtonTitles:@"通过邮件发送", nil]autorelease];
+    
+    [sheet showInView:self.delegate.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    switch (buttonIndex) {
+        case 0:
+        {
+            [self sendMessage];
+        }
+            break;
+        case 1:
+        {
+            [self sendMail];
+        }
+            break;
+        default:
+            break;
+    }
+}
+
+-(void)sendMessage {
+    
+    [SSSystemUtils sendShotMessage:self.delegate content:[self getSendContent:NO]];
+}
+
+-(void)sendMail {
+    [SSSystemUtils sendEmail:self.delegate title:[self getSendTitle] content:[self getSendContent:YES] toRecipients:nil];
+}
+
+-(NSString*)getSendTitle{
+    return [NSString stringWithFormat:@"送你个好东西！［%@］%@",self.ticket.type,self.ticket.code];
+}
+
+-(NSString*)getSendContent:(BOOL)needDetail {
+    NSMutableString *content = [NSMutableString stringWithCapacity:100];
+    
+    [content appendFormat:@"送你个好东西！［%@］%@",self.ticket.type,self.ticket.code];
+    [content appendFormat:@"\n 类型：%@",self.ticket.type];
+    [content appendFormat:@"\n 编号：%@",self.ticket.code];
+    
+    [content appendFormat:@"\n 有效期："];
+    if (!self.ticket.validEnd && !self.ticket.validStart) {
+        [content appendFormat:@"\n 有效期：永久有效"];
+    }else if(!self.ticket.validStart){
+        [content appendFormat:@"现在 ～ %@",[self.ticket.validEnd formate:@"yyyy年MM月dd日 HH:mm"]];
+    }else {
+        [content appendFormat:@"%@ ～ 永久有效",[self.ticket.validStart formate:@"yyyy年MM月dd日 HH:mm"]];
+    }
+    
+    [content appendFormat:@"\n 备注：%@",self.ticket.comment];
+    [content appendFormat:@"\n\n\n 来自网票管家"];
+        
+    return content;
 }
 @end

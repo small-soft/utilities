@@ -9,6 +9,7 @@
 #import "SSNTTicketService.h"
 #import "FMDatabase.h"
 #import "SSQUAppDelegate.h"
+#import "SSNativeFileService.h"
 
 @implementation SSNTTicketService
 
@@ -21,21 +22,13 @@
     if ([db open]) {
         NSMutableString *sql = [NSMutableString stringWithString: @"SELECT * from NTTicket"];
         
-        //        if (self.hasUpdate) {
-        //            [sql appendString: @" where hasUpdate=1 "];
-        //        }else if (self.statusArray && [self.statusArray count] >0) {
-        //            [sql appendString: @" where 1=1 "];
-        //
-        //            for (int i=0; i<[self.statusArray count]; i++) {
-        //                NSString *andOr = @"or";
-        //                if (i == 0) {
-        //                    andOr = @"and";
-        //                }
-        //
-        //                SSDQDeliveryResultStatus s = [(NSNumber*)[self.statusArray objectAtIndex:i] intValue];
-        //                [sql appendFormat:@" %@ status = %d",andOr,s];
-        //            }
-        //        }
+        if (type.length > 0) {
+            if ([type isEqualToString:@"已过期"]) {
+                [sql appendFormat:@" where validEnd <= %f AND  validEnd > 0",[[NSDate date] timeIntervalSince1970]];
+            }else {
+                [sql appendFormat:@" where type = '%@'",type];
+            }
+        }
         
         [sql appendString:@" order by id desc"];
         NSLog(@"execute sql:%@",sql);
@@ -88,7 +81,7 @@
         }
         
         if (ticket.type.length <= 0) {
-            ticket.type = @"未分类";
+            ticket.type = @"其他";
         }
         
         if (ticket.code.length <= 0) {
@@ -170,5 +163,23 @@
     [db close];
     
     return result;
+}
+
++(UIImage *)getTicketImageById:(int)id {
+    
+    return [UIImage imageWithContentsOfFile:[SSNTTicketService getImagePathById:id]];
+}
+
++(NSString *)getImagePathById:(int)id {
+    NSString *ticketImagePath = [SSNativeFileService getNativePathWithRelativePath:[NSString stringWithFormat:@"image/ticket/"]];
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath: ticketImagePath]) {
+        [[NSFileManager defaultManager] createDirectoryAtPath:ticketImagePath withIntermediateDirectories:YES attributes:nil error:nil];
+    }
+    
+    NSString *path = [NSString stringWithFormat:@"%@/%d.png",ticketImagePath,id];
+//    NSLog(@"image path is %@",path);
+    
+    return path;
 }
 @end

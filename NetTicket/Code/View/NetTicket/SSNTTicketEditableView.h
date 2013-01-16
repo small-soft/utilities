@@ -14,9 +14,10 @@
 @property(nonatomic,retain) SSNTTicket *ticket;
 @property(nonatomic,assign) UIViewController *delegate;
 @property(nonatomic) SEL returnCallBack;
+@property(nonatomic) SEL cancelCallBack;
 
 - (id)initWithFrame:(CGRect)frame ticket:(SSNTTicket*)ticket;
 
-- (void)setData:(SSNTTicket*)ticket;
+- (void)setData:(SSNTTicket*)ticket withType:(NSString*)type;
 - (void)saveUpdate;
 @end

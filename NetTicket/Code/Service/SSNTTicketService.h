@@ -15,4 +15,6 @@
 +(NSInteger)addTicket:(SSNTTicket*)ticket;
 +(NSInteger)update:(SSNTTicket*)ticket;
 +(NSInteger)delete:(int)ticketId;
++(UIImage*)getTicketImageById:(int)id;
++(NSString*)getImagePathById:(int)id;
 @end

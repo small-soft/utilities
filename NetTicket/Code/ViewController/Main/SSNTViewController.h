@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SSViewController.h"
 
 @interface SSNTViewController : SSViewController<UIScrollViewDelegate,UIPageViewControllerDelegate>
+
+@property(nonatomic,retain) NSString *type;
 
 @end
