@@ -53,6 +53,7 @@
     [self initMask];
     [self initBg];
     [self initImage];
+    [self initTypeDes];
     [self initMessageLabel];
     [self initAddButton];
 }
@@ -78,10 +79,19 @@
 }
 
 -(void)initImage {
-    UIImageView *image = [[[UIImageView alloc]initWithFrame:CGRectMake(([self.bg width] - 128)/2 + [self.bg x], 60, 128, 128)]autorelease];
-    image.image = [UIImage imageNamed:@"maidou.gif"];
+    UIImageView *image = [[[UIImageView alloc]initWithFrame:CGRectMake(40, 30, 150, 150)]autorelease];
+    image.image = [UIImage imageNamed:@"ecodeBg"];
     self.image = image;
     [self addSubview:self.image];
+}
+
+-(void)initTypeDes {
+    UILabel *typeDes = [[[UILabel alloc]initWithFrame:CGRectMake([self.image endX] + 10, [self.image y], 100, 150)]autorelease];
+    typeDes.text = @"电影票\n优惠券\n机票/车票\n会员卡\n...";
+    typeDes.numberOfLines = 7;
+    typeDes.backgroundColor = [UIColor clearColor];
+    typeDes.textColor = [UIColor whiteColor];
+    [self addSubview:typeDes];
 }
 
 -(void)initMessageLabel {

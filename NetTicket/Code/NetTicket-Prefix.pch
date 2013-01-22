@@ -36,6 +36,8 @@
 
 #define API_KEY ((NSString*)[[NSUserDefaults standardUserDefaults] objectForKey:@"api_key"])
 
+#define APP_ID @"595089393"
+
 // 发布时不打log
 #define DEBUG
 #ifdef DEBUG

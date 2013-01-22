@@ -26,8 +26,10 @@
             if ([type isEqualToString:@"已过期"]) {
                 [sql appendFormat:@" where validEnd <= %f AND  validEnd > 0",[[NSDate date] timeIntervalSince1970]];
             }else {
-                [sql appendFormat:@" where type = '%@'",type];
+                [sql appendFormat:@" where type = '%@' AND (validEnd = 0 OR validEnd > %f)",type,[[NSDate date] timeIntervalSince1970]];
             }
+        }else {
+            [sql appendFormat:@" where (validEnd = 0 OR validEnd > %f)",[[NSDate date] timeIntervalSince1970]];
         }
         
         [sql appendString:@" order by id desc"];

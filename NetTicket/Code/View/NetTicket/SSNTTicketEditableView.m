@@ -128,7 +128,7 @@
 }
 
 -(void)initImage {
-    UIImageView *image = [[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ecodeExample"]]autorelease];
+    UIImageView *image = [[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ecodeBg"]]autorelease];
     
     image.backgroundColor = [UIColor whiteColor];
     image.frame = CGRectMake(10, 10, 57, 57);
@@ -139,11 +139,25 @@
     self.imageView = image;
     [self addSubview:self.imageView];
     
+    [self initImageDes];
+    
     UIControl *imageMask = [[[UIControl alloc]initWithFrame:self.imageView.frame]autorelease];
     imageMask.backgroundColor = [UIColor clearColor];
     [imageMask addTarget:self action:@selector(imageGenerateSelector) forControlEvents:UIControlEventTouchUpInside];
     
     [self addSubview:imageMask];
+}
+
+-(void)initImageDes {
+    UILabel *sendLabel = [[[UILabel alloc]initWithFrame:CGRectMake([self.imageView x], [self.imageView endY] - 12, [self.imageView width], 12)]autorelease];
+    sendLabel.backgroundColor = [UIColor blueColor];
+    sendLabel.font = [UIFont systemFontOfSize:10];
+    sendLabel.text = @"点击设置";
+    sendLabel.textColor = [UIColor whiteColor];
+    sendLabel.textAlignment = UITextAlignmentCenter;
+    sendLabel.alpha = 0.7;
+    
+    [self addSubview:sendLabel];
 }
 
 -(void)initCodeField {
@@ -220,7 +234,7 @@
     if (image) {
         self.imageView.image = image;
     }else {
-        self.imageView.image = [UIImage imageNamed:@"ecodeExample"];
+        self.imageView.image = [UIImage imageNamed:@"ecodeBg"];
     }
     
     if (self.ticket.type.length > 0) {

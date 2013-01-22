@@ -110,7 +110,7 @@
 }
 
 -(void)initImage {
-    UIImageView *image = [[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ecodeExample"]]autorelease];
+    UIImageView *image = [[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"ecodeBg"]]autorelease];
     image.backgroundColor = [UIColor whiteColor];
     image.frame = CGRectMake(48, 20, 215, 215);
     image.layer.borderWidth = 1;
@@ -313,7 +313,12 @@
 }
 
 -(void)sendMail {
-    [SSSystemUtils sendEmail:self.delegate title:[self getSendTitle] content:[self getSendContent:YES] toRecipients:nil];
+    // 添加图片
+    UIImage *addPic = self.image.image;
+    NSData *imageData = UIImagePNGRepresentation(addPic);            // png
+    // NSData *imageData = UIImageJPEGRepresentation(addPic, 1);    // jpeg
+    
+    [SSSystemUtils sendEmail:self.delegate title:[self getSendTitle] content:[self getSendContent:YES] toRecipients:nil attachment:imageData];
 }
 
 -(NSString*)getSendTitle{
@@ -337,8 +342,11 @@
     }
     
     [content appendFormat:@"\n 备注：%@",self.ticket.comment];
-    [content appendFormat:@"\n\n\n 来自网票管家"];
-        
+    [content appendFormat:@"\n\n 网票管家，带你进入二维码时代！"];
+    if (self.image.image) {
+//        [content appendFormat:@"\n 二维码图片：如下"];
+    }
+    
     return content;
 }
 @end

@@ -32,6 +32,8 @@
 @property(nonatomic,retain) SSNTNoDataView *noDataView;
 
 @property(nonatomic,retain) UILabel *statusTitleLabel;
+
+@property(nonatomic,retain) NSString *statusTitleBak;
 @end
 
 @implementation SSNTViewController
@@ -44,6 +46,7 @@
 @synthesize type = _type;
 @synthesize statusTitleLabel = _statusTitleLabel;
 @synthesize noDataView = _noDataView;
+@synthesize statusTitleBak = _statusTitleBak;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 #pragma mark -
@@ -57,6 +60,7 @@
     self.type = nil;
     self.statusTitleLabel = nil;
     self.noDataView = nil;
+    self.statusTitleBak = nil;
     [super dealloc];
 }
 
@@ -94,6 +98,7 @@
 }
 
 -(void)initScrollView {
+    [_scrollView setHeight:372 + SCREEN_HEIGHT - 480];
     _scrollView.contentSize = CGSizeMake(320*self.data.count, [_scrollView height]);
 }
 
@@ -165,7 +170,7 @@
 
 -(void)initNoDataView {
     if (self.noDataView == nil) {
-        self.noDataView = [[[SSNTNoDataView alloc]initWithFrame:self.view.frame]autorelease];
+        self.noDataView = [[[SSNTNoDataView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 80)]autorelease];
         [self.noDataView.addButton addTarget:self action:@selector(addBtnPress) forControlEvents:UIControlEventTouchUpInside];
         
         [self.view addSubview:self.noDataView];
@@ -176,7 +181,7 @@
 
 -(void)initTicketEditableView {
     if (self.ticketEditableView == nil) {
-        self.ticketEditableView = [[SSNTTicketEditableView alloc]initWithFrame:self.view.frame];
+        self.ticketEditableView = [[SSNTTicketEditableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 80)];
         self.ticketEditableView.delegate = self;
         self.ticketEditableView.returnCallBack = @selector(editReturn);
         self.ticketEditableView.cancelCallBack = @selector(cancelEdit:);
@@ -235,13 +240,23 @@
 #pragma mark Private Method
 -(void)addBtnPress {
     self.pageNo = 0;
+    self.statusTitleBak = self.statusTitleLabel.text;
+    self.statusTitleLabel.text = @"创建网票";
     
     NSString *type = @"";
     if (![self.type isEqualToString:@"已过期"]) {
         type = self.type;
+
+        if (type.length > 0) {
+            self.statusTitleLabel.text = [NSString stringWithFormat:@"创建%@",type];
+        }
     }
     [self.ticketEditableView setData:nil withType:type];
     [self showTicketEditableView];
+}
+
+-(void)setEditTitle {
+    
 }
 
 -(void)showTicketEditableView {
@@ -257,7 +272,7 @@
 
 -(void)showNoDataView {
     if (self.type.length <= 0) {
-        self.noDataView.messageLabel.text = @"还没有网票哦";
+        self.noDataView.messageLabel.text = @"还没有网票哦，out啦！";
         [self.noDataView.addButton setTitle:@"赶紧体验一下吧" forState:UIControlStateNormal];
     }else if ([self.type isEqualToString:@"其他"] || [self.type isEqualToString:@"已过期"]) {
         self.noDataView.messageLabel.text = @"没有找到相应数据哦";
@@ -275,7 +290,9 @@
 
 -(void)editReturn {
     [self reload];
+    
     [self initRightBarButton];
+    [self restoreStatusTitle];
 }
 
 -(void)reload {
@@ -296,20 +313,30 @@
 //    [self initRightBarButton];
 }
 
--(void)editTicket:(UIControl*)sender {    
-    [self.ticketEditableView setData:[self.data objectAtIndex:self.pageControl.currentPage] withType:nil];
+-(void)editTicket:(UIControl*)sender {
+    SSNTTicket *ticket = [self.data objectAtIndex:self.pageControl.currentPage];
+    [self.ticketEditableView setData:ticket withType:nil];
     self.pageNo = self.pageControl.currentPage;
     [self showTicketEditableView];
+    
+    self.statusTitleBak = self.statusTitleLabel.text;
+    self.statusTitleLabel.text = [NSString stringWithFormat:@"编辑[%@]%@",ticket.type,ticket.code];
 }
 
 -(void)endEdit:(id)sender {
     [self.ticketEditableView saveUpdate];
     [self hideTicketEditableView];
+    [self restoreStatusTitle];
     [self reload];
+}
+
+-(void)restoreStatusTitle {
+    self.statusTitleLabel.text = self.statusTitleBak;
 }
 
 -(void)cancelEdit:(id)sender {
     [self initRightBarButton];
+    [self restoreStatusTitle];
 //    _pageControl.currentPage = self.pageNo;
 }
 

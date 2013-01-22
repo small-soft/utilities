@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/View/NetTicket/SSNTTicketEditableView.m"
-         timestampString = "380021271.742408"
+         timestampString = "380288358.951862"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "701"
-         endingLineNumber = "701"
+         startingLineNumber = "715"
+         endingLineNumber = "715"
          landmarkName = "-scan"
          landmarkType = "5">
       </FileBreakpoint>
@@ -21,11 +21,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/View/NetTicket/SSNTTicketEditableView.m"
-         timestampString = "380021271.742408"
+         timestampString = "380288358.951862"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "657"
-         endingLineNumber = "657"
+         startingLineNumber = "671"
+         endingLineNumber = "671"
          landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,11 +60,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/View/NetTicket/SSNTTicketEditableView.m"
-         timestampString = "380021271.742408"
+         timestampString = "380288358.951862"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "659"
-         endingLineNumber = "659"
+         startingLineNumber = "673"
+         endingLineNumber = "673"
          landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -73,11 +73,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/ViewController/Main/SSNTViewController.m"
-         timestampString = "380021271.742408"
+         timestampString = "380293194.774184"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "317"
-         endingLineNumber = "317"
+         startingLineNumber = "344"
+         endingLineNumber = "344"
          landmarkName = "-showStatusPicker"
          landmarkType = "5">
       </FileBreakpoint>
@@ -86,11 +86,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/ViewController/Main/SSNTViewController.m"
-         timestampString = "380017127.850572"
+         timestampString = "380293194.774184"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "147"
-         endingLineNumber = "147"
+         startingLineNumber = "152"
+         endingLineNumber = "152"
          landmarkName = "-initDataView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -99,11 +99,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/ViewController/Main/SSNTViewController.m"
-         timestampString = "380021271.742408"
+         timestampString = "380293194.774184"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "230"
-         endingLineNumber = "230"
+         startingLineNumber = "235"
+         endingLineNumber = "235"
          landmarkName = "-scrollViewDidScroll:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -112,11 +112,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/ViewController/Main/SSNTViewController.m"
-         timestampString = "380021271.742408"
+         timestampString = "380293194.774184"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "312"
-         endingLineNumber = "312"
+         startingLineNumber = "338"
+         endingLineNumber = "338"
          landmarkName = "-cancelEdit:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,11 +125,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/ViewController/Main/SSNTViewController.m"
-         timestampString = "380021271.742408"
+         timestampString = "380293194.774184"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "306"
-         endingLineNumber = "306"
+         startingLineNumber = "327"
+         endingLineNumber = "327"
          landmarkName = "-endEdit:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -138,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/View/NetTicket/SSNTTicketEditableView.m"
-         timestampString = "380021271.742408"
+         timestampString = "380288358.951862"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "412"
-         endingLineNumber = "412"
+         startingLineNumber = "426"
+         endingLineNumber = "426"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -151,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/ViewController/Main/SSNTViewController.m"
-         timestampString = "380021271.742408"
+         timestampString = "380293194.774184"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "323"
-         endingLineNumber = "323"
+         startingLineNumber = "350"
+         endingLineNumber = "350"
          landmarkName = "-actionSheet:clickedButtonAtIndex:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/ViewController/Main/SSNTViewController.m"
-         timestampString = "380017127.850572"
+         timestampString = "380293194.774184"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "123"
-         endingLineNumber = "123"
+         startingLineNumber = "128"
+         endingLineNumber = "128"
          landmarkName = "-initDataView"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/View/NetTicket/SSNTTicketEditableView.m"
-         timestampString = "380021271.742408"
+         timestampString = "380288358.951862"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "488"
-         endingLineNumber = "488"
+         startingLineNumber = "502"
+         endingLineNumber = "502"
          landmarkName = "-saveUpdate"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +190,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/View/NetTicket/SSNTTicketEditableView.m"
-         timestampString = "380021271.742408"
+         timestampString = "380288358.951862"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "580"
-         endingLineNumber = "580"
+         startingLineNumber = "594"
+         endingLineNumber = "594"
          landmarkName = "-hideAll"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/ViewController/Main/SSNTViewController.m"
-         timestampString = "380021561.572024"
+         timestampString = "380293194.774184"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "239"
-         endingLineNumber = "239"
+         startingLineNumber = "246"
+         endingLineNumber = "246"
          landmarkName = "-addBtnPress"
          landmarkType = "5">
       </FileBreakpoint>
@@ -216,12 +216,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Code/View/NetTicket/SSNTTicketEditableView.m"
-         timestampString = "380021690.817471"
+         timestampString = "380284399.185031"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "211"
-         endingLineNumber = "211"
+         startingLineNumber = "225"
+         endingLineNumber = "225"
          landmarkName = "-setData:withType:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Lib/Pivot/SSSDK/SSSDK/Code/UI/ViewController/More/SSMoreViewController.m"
+         timestampString = "380296353.081019"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "112"
+         endingLineNumber = "112"
+         landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

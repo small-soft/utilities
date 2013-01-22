@@ -96,7 +96,7 @@
     _advBannerView = [[MobWinBannerView alloc] initMobWinBannerSizeIdentifier:MobWINBannerSizeIdentifier320x25];
     
     self.advBannerView.rootViewController = self.rootViewController;
-	[self.advBannerView setAdUnitID:@"957A5D4A8AD812FF9C880127647BEBC7"];
+	[self.advBannerView setAdUnitID:@"FAD7C48D9F1D9126DFC4E1A6040E4A64"];
     //    NSLog(@"advframe %f %f %f %f",self.advBannerView.frame.origin.x,self.advBannerView.frame.origin.y,self.advBannerView.frame.size.width,self.advBannerView.frame.size.height);
     self.advBannerView.frame = CGRectMake(self.rootViewController.view.frame.origin.x, self.rootViewController.view.frame.size.height-45, self.advBannerView.frame.size.width, 25);
     //    NSLog(@"advframe %f %f %f %f",self.advBannerView.frame.origin.x,self.advBannerView.frame.origin.y,self.advBannerView.frame.size.width,self.advBannerView.frame.size.height);
