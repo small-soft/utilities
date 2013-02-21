@@ -43,7 +43,7 @@
 	<key>HasAd</key>
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
-	<false/>
+	<true/>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

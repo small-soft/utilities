@@ -13,9 +13,6 @@
 #import "SSMoreViewController.h"
 #import "MobWinBannerView.h"
 #import "SSUncaughtExceptionService.h"
-#import "SSSNHotSitesViewController.h"
-#import "SSSNFavoritesViewController.h"
-#import "SSSNHistoryViewController.h"
 
 @interface SSQUAppDelegate()
 @property (nonatomic, retain) MobWinBannerView *advBannerView;
